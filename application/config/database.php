@@ -80,12 +80,12 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'psb23',
-	'username' => 'u9048253_dwk',
-	
+
+	// 'username' => 'u9048253_dwk',
 	// 'password' => 'PesantrenDWKIT2021',
 	// 'database' => 'u9048253_psb22',
-	// 'dbdriver' => 'mysqli',
-
+	
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
