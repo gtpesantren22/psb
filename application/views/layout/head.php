@@ -48,12 +48,12 @@
                     <a class="navbar-brand" href="<?= base_url(); ?>javascript:;">
                         <img src="<?= base_url(); ?>assets/img/logo/Logo_Pesantren.png" height="75" />
                         <div class="home-header-text d-none d-sm-block">
-                            <h5>PENERIMAAN SANTRI BARU 2023/2024</h5>
+                            <h5>PENERIMAAN SANTRI BARU</h5>
                             <h6>PONPES DARUL LUGHAH WAL KAROMAH</h6>
-                            <h6>Tahun Pelajaran 2022/2023</h6>
+                            <h6>Tahun Pelajaran 2023/2024</h6>
                         </div>
                         <span class="logo-mini-unbk d-block d-sm-none">PSB </span>
-                        <span class="logo-mini-tahun d-block d-sm-none">_PPDWK 2022</span>
+                        <span class="logo-mini-tahun d-block d-sm-none">_PPDWK 2023</span>
                     </a>
                     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -80,7 +80,7 @@
                                 <a class="nav-link" href="<?= base_url(); ?>data" id="link-persyaratan">Data Pendaftar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= base_url(); ?>adminppdb" id="link-persyaratan"><i class="fa fa-lock"></i> Login</a>
+                                <a class="nav-link" href="<?= base_url('login'); ?>" id="link-persyaratan"><i class="fa fa-lock"></i> Login</a>
                             </li>
 
                         </ul>

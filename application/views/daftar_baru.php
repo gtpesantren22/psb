@@ -288,7 +288,7 @@
                 </div>
                 <div class="card-body">
                     <div class="col-12 animated bounceIn">
-                        <p>Adapun berkas pendaftaran yang harus dibawa oleh calon santri adalah berikut ini</p>
+                        <p class="text-danger">Harap dibaca dulu sebelum melakukan pengisian !</p>
                         <div class="activities">
                             <div class="activity">
 
