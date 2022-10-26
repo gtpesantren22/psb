@@ -13,9 +13,9 @@ class User extends CI_Controller
     public function index()
     {
 
-        // $data['daftar'] = $this->DataModel->data()->result();
+        $data['menu'] = 'home';
 
-        $this->load->view('user/head');
+        $this->load->view('user/head', $data);
         $this->load->view('user/home');
         $this->load->view('user/foot');
     }

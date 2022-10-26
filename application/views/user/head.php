@@ -31,7 +31,7 @@
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-green layout-top-nav">
     <div class="wrapper">
 
         <header class="main-header">
@@ -47,22 +47,22 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="#"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                            <li class="dropdown">
+                            <li class="<?= $menu === 'home' ? 'active' : '' ?>"><a href="<?= base_url('user') ?>">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="dropdown <?= $menu === 'identitas' ? 'active' : '' ?>">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kelengkapan Santri <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i>Identitas Santri</a></li>
+                                    <li><a href="<?= base_url('equipt') ?>"><i class="fa fa-angle-right"></i>Identitas Santri</a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i>Berkas Pendaftaran</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown <?= $menu === 'regist' ? 'bg-green' : '' ?>">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registrasi <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#"><i class="fa fa-angle-right"></i>Biaya Pendaftaran</a></li>
                                     <li><a href="#"><i class="fa fa-angle-right"></i>Biaya Registrasi Ulang</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#"><i class="fa fa-info"></i> Informasi</a></li>
+                            <li class="<?= $menu === 'info' ? 'active' : '' ?>"><a href="#"><i class="fa fa-info"></i> Informasi</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
