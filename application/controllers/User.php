@@ -15,9 +15,9 @@ class User extends CI_Controller
 
         // $data['daftar'] = $this->DataModel->data()->result();
 
-        // $this->load->view('layout/head');
+        $this->load->view('user/head');
         $this->load->view('user/home');
-        // $this->load->view('layout/foot');
+        $this->load->view('user/foot');
     }
 
     public function logAuth()
