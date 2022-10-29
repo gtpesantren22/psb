@@ -17,7 +17,8 @@
             <div class="callout callout-info">
                 <h4>20231001 - Ahmad Danial Karomat</h4>
 
-                <p>Aplikasi pendaftaran santri baru Tahun Pelajaran 2023/2024. Pondok Pesantren Darul Lughah Wal Karmoah</p>
+                <p>Aplikasi pendaftaran santri baru Tahun Pelajaran 2023/2024. Pondok Pesantren Darul Lughah Wal Karmoah
+                </p>
             </div>
             <div class="callout callout-danger">
                 <h4>Perhatian!</h4>
@@ -30,7 +31,8 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Status Santri</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                        class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
@@ -45,20 +47,23 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Kelengkapan Santri</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                        class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="box-body">
                             Identitas Santri :
                             <div class="progress progress-md active">
-                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                     20% selesai
                                 </div>
                             </div>
                             Berkas Pendaftaran :
                             <div class="progress progress-md active">
-                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                     20% selesai
                                 </div>
                             </div>
@@ -70,7 +75,8 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Registrasi Santri</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                        class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
