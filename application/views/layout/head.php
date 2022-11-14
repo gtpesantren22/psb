@@ -13,7 +13,7 @@
     <link href="<?= base_url(); ?>assets/css/front.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/logo/Logo_Pesantren.png">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/1.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/2.css">
+    <!-- <link rel="stylesheet" href="<?= base_url(); ?>assets/css/2.css"> -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/3.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/components2.css">
     <script src="<?= base_url(); ?>assets/modules/sweetalert/sweetalert.min.js"></script>

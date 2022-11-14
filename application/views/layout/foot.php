@@ -8,8 +8,8 @@
 var baseURL = '/';
 </script>
 
-<script src="<?= base_url() ?>assets/sw/sweetalert2.all.min.js"></script>
-<script src="<?= base_url(); ?>vendor/jquery-3.2.1.min.js"></script>
+<script src="<?= base_url(); ?>assets/sw/sweetalert2.all.min.js"></script>
+<!-- <script src="<?= base_url(); ?>vendor/jquery-3.2.1.min.js"></script> -->
 <script src="<?= base_url(); ?>vendor/jquery.form.min.js"></script>
 <script src="<?= base_url(); ?>vendor/bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>vendor/popper.min.js"></script>
@@ -19,17 +19,9 @@ var baseURL = '/';
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-<!-- <script type="text/javascript">
-    $('#sampleTable').DataTable();
-</script> -->
-
-
-
-
 <!-- Vendor -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
@@ -55,18 +47,7 @@ var baseURL = '/';
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" language="javascript"
     src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript"
-    src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" language="javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script type="text/javascript" language="javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script type="text/javascript" language="javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script type="text/javascript" language="javascript"
-    src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
-<script type="text/javascript" language="javascript"
-    src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.print.min.js"></script>
+
 <script type="text/javascript" class="init">
 $(document).ready(function() {
     $('#sampleTable').DataTable({

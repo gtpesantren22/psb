@@ -52,7 +52,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kelengkapan Santri <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="<?= base_url('equipt') ?>"><i class="fa fa-angle-right"></i>Identitas Santri</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i>Berkas Pendaftaran</a></li>
+                                    <li><a href="<?= base_url('equipt/file') ?>"><i class="fa fa-angle-right"></i>Berkas Pendaftaran</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown <?= $menu === 'regist' ? 'bg-green' : '' ?>">

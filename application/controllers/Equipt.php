@@ -12,4 +12,24 @@ class Equipt extends CI_Controller
         $this->load->view('user/identitas', $data);
         $this->load->view('user/foot');
     }
+
+    public function file()
+    {
+        $data['menu'] = 'identitas';
+        $data['btn'] = 'berkas';
+
+        $this->load->view('user/head', $data);
+        $this->load->view('user/berkas', $data);
+        $this->load->view('user/foot');
+    }
+
+    public function img()
+    {
+        $data['menu'] = 'identitas';
+        $data['btn'] = 'foto';
+
+        $this->load->view('user/head', $data);
+        $this->load->view('user/foto', $data);
+        $this->load->view('user/foot');
+    }
 }
