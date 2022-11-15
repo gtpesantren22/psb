@@ -212,18 +212,24 @@
                             <small class="or text-center">Login</small>
                             <div class="line"></div>
                         </div>
-                        <?= form_open('login/logAuth'); ?>
+
                         <div class="row px-3">
                             <labes class="mb-1">
                                 <h6 class="mb-0 text-sm">Username</h6>
                             </labes>
                             <input class="mb-4" type="text" name="username" placeholder="Masukan User">
+                            <div class="invalid-feedback">
+                                <?= form_error('username') ?>
+                            </div>
                         </div>
                         <div class="row px-3">
                             <label class="mb-1">
                                 <h6 class="mb-0 text-sm">Password</h6>
                             </label>
                             <input type="password" name="password" placeholder="Masukan password">
+                            <div class="invalid-feedback">
+                                <?= form_error('password') ?>
+                            </div>
                         </div>
                         <div class="row px-3 mb-4">
                             <div class="custom-control custom-checkbox custom-control-inline">
@@ -235,7 +241,7 @@
                         <div class="row mb-3 px-3">
                             <button type="submit" class="btn btn-blue text-center">Login</button>
                         </div>
-                        <?= form_close(); ?>
+
                         <div class="row mb-4 px-3">
                             <small class="font-weight-bold">Don't have an account? <a class="text-danger"
                                     href="<?= base_url('daftar') ?>">Daftar disni!</a></small>

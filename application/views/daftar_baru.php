@@ -130,7 +130,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="nohp">Kabupaten/Kota *</label>
-                                                    <select id="kota" name="kabupaten" class="form-control" required>
+                                                    <select id="kota" name="kabupaten" class="form-control">
                                                         <option value="">Pilih Kabupaten</option>
                                                     </select>
                                                 </div>
@@ -138,26 +138,26 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="nama">Kecamatan *</label>
-                                                    <select id="kec" name="kecamatan" class="form-control " required>
+                                                    <select id="kec" name="kecamatan" class="form-control ">
                                                         <option value="">Pilih kecamatan</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="nohp">Desa *</label>
-                                                    <select id="kel" name="kelurahan" class="form-control " required>
+                                                    <select id="kel" name="kelurahan" class="form-control ">
                                                         <option value="">Pilih kelurahan</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="form-group">
                                                 <label for="asal_sekolah">Lembaga Pilihan *</label><br>
-                                                <input type="radio" name="lembaga" value="1" required /> MTs
-                                                <input type="radio" name="lembaga" value="2" required /> SMP
-                                                <input type="radio" name="lembaga" value="3" required /> MA
-                                                <input type="radio" name="lembaga" value="4" required /> SMK
-                                                <input type="radio" name="lembaga" value="5" required /> MI
-                                                <input type="radio" name="lembaga" value="6" required /> RA
+                                                <input type="radio" name="lembaga" value="RA" required /> RA
+                                                <input type="radio" name="lembaga" value="MI" required /> MI
+                                                <input type="radio" name="lembaga" value="MTs" required /> MTs
+                                                <input type="radio" name="lembaga" value="SMP" required /> SMP
+                                                <input type="radio" name="lembaga" value="MA" required /> MA
+                                                <input type="radio" name="lembaga" value="SMK" required /> SMK
                                             </div>
 
                                             <div class="form-group">

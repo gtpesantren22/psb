@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
@@ -116,8 +115,10 @@ class Daftar extends CI_Controller
 
     public function daftarAct()
     {
+        $key = $this->DaftarModel->apiKey()->row();
+
         $id = Uuid::uuid4();
-        $jalur = $this->input->post('reguler');
+        $jalur = 'Reguler';
         $nik = $this->input->post('nik', TRUE);
         $no_kk = $this->input->post('no_kk', TRUE);
         $nama = strtoupper($this->input->post('nama', TRUE));
@@ -126,23 +127,30 @@ class Daftar extends CI_Controller
         $bulan = $this->input->post('bulan', TRUE);
         $tahun = $this->input->post('tahun', TRUE);
         $jkl = $this->input->post('jkl', TRUE);
-        $anak_ke = $this->input->post('anak_ke', TRUE);
-        $jml = $this->input->post('jml', TRUE);
+        // $anak_ke = $this->input->post('anak_ke', TRUE);
+        // $jml = $this->input->post('jml', TRUE);
         $lembaga = $this->input->post('lembaga', TRUE);
         $hp = $this->input->post('hp', TRUE);
-        $jln = $this->input->post('jln', TRUE);
-        $rt = $this->input->post('rt', TRUE);
-        $rw = $this->input->post('rw', TRUE);
+        // $jln = $this->input->post('jln', TRUE);
+        // $rt = $this->input->post('rt', TRUE);
+        // $rw = $this->input->post('rw', TRUE);
+
         $provinsi = $this->input->post('provinsi', TRUE);
         $kabupaten = $this->input->post('kabupaten', TRUE);
         $kecamatan = $this->input->post('kecamatan', TRUE);
         $kelurahan = $this->input->post('kelurahan', TRUE);
-        $asal = $this->input->post('asal', TRUE);
-        $asal_skl = $this->input->post('asal_skl', TRUE);
-        $bapak = strtoupper($this->input->post('bapak', TRUE));
-        $ibu = strtoupper($this->input->post('ibu', TRUE));
-        $a_pkj = $this->input->post('a_pkj', TRUE);
-        $i_pkj = $this->input->post('i_pkj', TRUE);
+        // $provinsi = '35';
+        // $kabupaten = '35.13';
+        // $kecamatan = '35.13.14';
+        // $kelurahan = '35.13.14.2013';
+
+
+        // $asal = $this->input->post('asal', TRUE);
+        // $asal_skl = $this->input->post('asal_skl', TRUE);
+        // $bapak = strtoupper($this->input->post('bapak', TRUE));
+        // $ibu = strtoupper($this->input->post('ibu', TRUE));
+        // $a_pkj = $this->input->post('a_pkj', TRUE);
+        // $i_pkj = $this->input->post('i_pkj', TRUE);
 
         $tgl_ok = $tanggal . '-' . $bulan . '-' . $tahun;
         $pr = $this->db->query("SELECT nama FROM provinsi WHERE id_prov = '$provinsi' ")->row();
@@ -188,21 +196,21 @@ class Daftar extends CI_Controller
 
         $alm = $kelOk . '-' . $kecOk . '-' . $kabOk;
 
-        if ($lembaga == 1) {
-            $bg = 'MTs DWK';
-        } else if ($lembaga == 2) {
-            $bg = 'SMP DWK';
-        } else if ($lembaga == 3) {
-            $bg = 'MA DWK';
-        } else if ($lembaga == 4) {
-            $bg = 'SMK DWK';
-        }
+        // if ($lembaga == 1) {
+        //     $bg = 'MTs DWK';
+        // } else if ($lembaga == 2) {
+        //     $bg = 'SMP DWK';
+        // } else if ($lembaga == 3) {
+        //     $bg = 'MA DWK';
+        // } else if ($lembaga == 4) {
+        //     $bg = 'SMK DWK';
+        // }
 
-        if ($jalur == 1) {
-            $lj = 'Reguler';
-        } else {
-            $lj = 'Prestasi';
-        }
+        // if ($jalur == 1) {
+        //     $lj = 'Reguler';
+        // } else {
+        //     $lj = 'Prestasi';
+        // }
 
         $pesan = '*Selamat*
 
@@ -210,8 +218,8 @@ Data yang anda isi telah  tersimpan di data panitia Penerimaan santri baru PP. D
         
 Nama : ' . $nama . '
 Alamat : ' . $alm . '
-Lembaga tujuan : ' . $bg . '
-jalur : ' . $lj . '
+Lembaga tujuan : ' . $lembaga . ' DWK
+jalur : ' . $jalur . '
 Gel :  ' . $gel . '
         
 selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI 0582-0101-4254-500 a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA https://wa.me/6282338631044*
@@ -225,8 +233,8 @@ _*NB : Calon Santri diwajibkan memakai baju putih songkok/kerudung hitam & Bawah
 No. Pendaftaran : ' . $nis . '
 Nama : ' . $nama . '
 Alamat : ' . $alm . '
-Lembaga tujuan : ' . $bg . '
-jalur : ' . $lj . '
+Lembaga tujuan : ' . $lembaga . ' DWK
+jalur : ' . $jalur . '
 Gel :  ' . $gel . '
 No. HP : ' . $hp . '
 Waktu Daftar : ' . date('d-m-Y H:i:s') . '
@@ -242,33 +250,33 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             'tanggal' => $tgl_ok,
             'jkl' => $jkl,
             'lembaga' => $lembaga,
-            'jln' => $jln,
-            'rt' => $rt,
-            'rw' => $rw,
+            // 'jln' => $jln,
+            // 'rt' => $rt,
+            // 'rw' => $rw,
             'desa' => $kelOk,
             'kec' => $kecOk,
             'kab' => $kabOk,
             'prov' => $provOk,
-            'bapak' => $bapak,
-            'ibu' => $ibu,
+            // 'bapak' => $bapak,
+            // 'ibu' => $ibu,
             'hp' => $hp,
             'username' => $nis,
-            'password' => $ps,
+            // 'password' => $ps,
             'stts' => 'Belum Terverifikasi',
             'gel' => $gel,
             'jalur' => $jalur,
             'waktu_daftar' => date('Y-m-d H:i:s'),
-            'anak_ke' => $anak_ke,
-            'jml_sdr' => $jml,
-            'a_pkj' => $a_pkj,
-            'i_pkj' => $i_pkj,
+            // 'anak_ke' => $anak_ke,
+            // 'jml_sdr' => $jml,
+            // 'a_pkj' => $a_pkj,
+            // 'i_pkj' => $i_pkj,
             'no_kk' => $no_kk,
-            'ket' => 'baru',
-            'asal' => $asal,
-            'a_asal' => $asal_skl
+            'ket' => 'baru'
+            // 'asal' => $asal,
+            // 'a_asal' => $asal_skl
         );
 
-        if ($cekNik == 1) {
+        if ($cekNik > 0) {
             echo "
             <script>
                 alert('Maaf. NIK anda sudah ada');
@@ -276,64 +284,30 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             </script>
             ";
         } else {
-            
-                if ( $lembaga === '2' || $lembaga === 2 ) {
-                    echo "
+
+            if ($lembaga === '2' || $lembaga === 2) {
+                echo "
                     <script>
                         alert('Maaf. Kuota SMP sudah penuh');
                         window.location = '" . base_url('daftar') . "';
                     </script>
                 ";
-                } else {
+            } else {
 
-                    // proses simpan data
-                    $this->DaftarModel->input_data('tb_santri', $data);
-                    if ($this->db->affected_rows() > 0) {
-                        $this->session->set_flashdata('success', 'Success Message...');
+                // proses simpan data
+                $this->DaftarModel->input_data('tb_santri', $data);
+                if ($this->db->affected_rows() > 0) {
+                    $this->session->set_flashdata('success', 'Pesan');
 
-                        //PEsan Grup
-                        $curl2 = curl_init();
-                        curl_setopt_array(
-                            $curl2,
-                            array(
-                                CURLOPT_URL => 'http://8.215.26.187:3000/api/sendMessageGroup',
-                                CURLOPT_RETURNTRANSFER => true,
-                                CURLOPT_ENCODING => '',
-                                CURLOPT_MAXREDIRS => 10,
-                                CURLOPT_TIMEOUT => 0,
-                                CURLOPT_FOLLOWLOCATION => true,
-                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                                CURLOPT_CUSTOMREQUEST => 'POST',
-                                CURLOPT_POSTFIELDS => 'apiKey=fb209be1f23625e43cbf285e57c0c0f2&id_group=INPTtXYBKdUF5FS1dEie8m&message=' . $pesan2,
-                            )
-                        );
-                        $response = curl_exec($curl2);
-                        curl_close($curl2);
+                    //PEsan Grup
+                    kirim_group($key->api_key, 'INPTtXYBKdUF5FS1dEie8m', $pesan2);
 
-                        // Pesan HP
-                        $curl = curl_init();
-                        curl_setopt_array(
-                            $curl,
-                            array(
-                                CURLOPT_URL => 'http://8.215.26.187:3000/api/sendMessage',
-                                CURLOPT_RETURNTRANSFER => true,
-                                CURLOPT_ENCODING => '',
-                                CURLOPT_MAXREDIRS => 10,
-                                CURLOPT_TIMEOUT => 0,
-                                CURLOPT_FOLLOWLOCATION => true,
-                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                                CURLOPT_CUSTOMREQUEST => 'POST',
-                                CURLOPT_POSTFIELDS => 'apiKey=fb209be1f23625e43cbf285e57c0c0f2&phone=' . $hp . '&message=' . $pesan,
-                            )
-                        );
-                        $response = curl_exec($curl);
-                        curl_close($curl);
-                        // echo $result;
+                    // Pesan HP
+                    kirim_person($key->api_key, $hp, $pesan);
 
-                        redirect(base_url('data'));
-                    }
+                    redirect('data');
                 }
             }
-        
+        }
     }
 }

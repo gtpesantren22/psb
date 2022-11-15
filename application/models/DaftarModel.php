@@ -42,7 +42,7 @@ class DaftarModel extends CI_Model
         $this->db->from('tb_santri');
         return $this->db->get();
     }
-    
+
     function cekNIS2($nis)
     {
         $this->db->where('nis', $nis);
@@ -75,12 +75,19 @@ class DaftarModel extends CI_Model
     {
         $this->db->insert($table, $data);
     }
-    
+
     function cariNis($nis)
     {
         $this->db->where('nis', $nis);
         $this->db->select('*');
         $this->db->from('tb_lama');
         return $this->db->get()->result_array();
+    }
+
+    function apikey()
+    {
+        $this->db->select('*');
+        $this->db->from('api');
+        return $this->db->get();
     }
 }
