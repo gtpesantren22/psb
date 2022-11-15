@@ -89,10 +89,8 @@
                                                     <select class="form-control" name="bulan" required>
                                                         <option value=""> -pilih- </option>
                                                         <?php
-                                                        $bulan = array("", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "July", "Agustus", "September", "Oktober", "November", "Desember");
-
                                                         for ($i = 1; $i <= 12; $i++) { ?>
-                                                        <option value="<?= $i; ?>"><?= $bulan[$i]; ?></option>
+                                                        <option value="<?= $i; ?>"><?= bulan($i); ?></option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>

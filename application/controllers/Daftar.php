@@ -117,7 +117,7 @@ class Daftar extends CI_Controller
     public function daftarAct()
     {
         $id = Uuid::uuid4();
-        $jalur = $this->input->post('jalur', TRUE);
+        $jalur = $this->input->post('reguler');
         $nik = $this->input->post('nik', TRUE);
         $no_kk = $this->input->post('no_kk', TRUE);
         $nama = strtoupper($this->input->post('nama', TRUE));
@@ -181,7 +181,7 @@ class Daftar extends CI_Controller
         $kodeBarang = $data->maxKode;
         $noUrut = (int) substr($kodeBarang, 0, 3);
         $noUrut++;
-        $char = "2022";
+        $char = "2023";
         $kodeBarang = $char . $jk . sprintf("%03s", $noUrut);
         $nis = htmlspecialchars($kodeBarang);
         $ps = rand(0, 99999999);
