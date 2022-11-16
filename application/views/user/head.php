@@ -77,7 +77,7 @@
                                     <!-- The user image in the navbar-->
                                     <img src="<?= base_url() ?>assets/user/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                    <span class="hidden-xs">Alexander Pierce</span>
+                                    <span class="hidden-xs"><?= $name->nama ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
@@ -85,8 +85,8 @@
                                         <img src="<?= base_url() ?>assets/user/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                         <p>
-                                            Alexander Pierce - Web Developer
-                                            <small>Member since Nov. 2012</small>
+                                            <?= $name->nis . ' - ' . $name->nama ?>
+                                            <small><?= $name->waktu_daftar ?></small>
                                         </p>
                                     </li>
                             </li>

@@ -209,18 +209,13 @@
                             <div class="line"></div>
                             <small class="or text-center">Login</small>
                             <div class="line"></div>
-                            <?php if ($this->session->flashdata('message_login_error')) : ?>
-                                <div class="invalid-feedback">
-                                    <?= $this->session->flashdata('message_login_error') ?>
-                                </div>
-                            <?php endif ?>
                         </div>
-                        <?= form_open('login/logAuth') ?>
+                        <?= form_open('login/masuk') ?>
                         <div class="row px-3">
                             <labes class="mb-1">
                                 <h6 class="mb-0 text-sm">Username</h6>
                             </labes>
-                            <input class="mb-4" type="text" name="username" placeholder="Masukan User">
+                            <input class="mb-4" type="text" name="username" placeholder="Masukan User" required>
                             <div class="invalid-feedback">
                                 <?= form_error('username') ?>
                             </div>
@@ -229,7 +224,7 @@
                             <label class="mb-1">
                                 <h6 class="mb-0 text-sm">Password</h6>
                             </label>
-                            <input type="password" name="password" placeholder="Masukan password">
+                            <input type="password" name="password" placeholder="Masukan password" required>
                             <div class="invalid-feedback">
                                 <?= form_error('password') ?>
                             </div>

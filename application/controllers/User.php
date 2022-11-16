@@ -9,6 +9,8 @@ class User extends CI_Controller
 
         // $this->load->model('DataModel');
         $this->load->model('Auth_model');
+        $this->load->model('UserModel', 'model');
+
         if (!$this->Auth_model->current_user()) {
             redirect('login');
         }
@@ -18,6 +20,7 @@ class User extends CI_Controller
     {
 
         $data['menu'] = 'home';
+        $data['name'] = $this->Auth_model->current_user();
 
         $this->load->view('user/head', $data);
         $this->load->view('user/home');

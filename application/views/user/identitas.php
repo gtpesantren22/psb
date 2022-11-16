@@ -1,3 +1,11 @@
+<?php
+
+$split = explode('-', $name->tanggal);
+$tgl_a = $split[0];
+$bln_a =  $split[1];
+$thn_a = $split[2];
+
+?>
 <div class="content-wrapper">
     <div class="container">
         <!-- Content Header (Page header) -->
@@ -40,17 +48,17 @@
                     <div class="box box-default color-palette-box">
                         <div class="box-body box-profile">
                             <img class="profile-user-img img-responsive img-circle" src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg" alt="User profile picture">
-                            <h3 class="profile-username text-center">Ahmad Danial Karomat</h3>
-                            <p class="text-muted text-center">20231001</p>
+                            <h3 class="profile-username text-center"><?= $name->nama ?></h3>
+                            <p class="text-muted text-center"><?= $name->nis ?></p>
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
-                                    <b>Alamat</b> <a class="pull-right">Asembakor - Kraksaan Probolinggo</a>
+                                    <b>Alamat</b> <a class="pull-right"><?= $name->desa . ' - ' . $name->kec . ' - ' . $name->kab ?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Waktu Daftar</b> <a class="pull-right">2019-09-09</a>
+                                    <b>Waktu Daftar</b> <a class="pull-right"><?= $name->waktu_daftar ?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Status</b> <a class="pull-right">Terverifkasi</a>
+                                    <b>Status</b> <a class="pull-right"><?= $name->stts ?></a>
                                 </li>
                             </ul>
                         </div>
@@ -62,7 +70,93 @@
                             <h3 class="box-title"><i class="fa fa-user"></i> Identitas saya</h3>
                         </div>
                         <div class="box-body">
+                            <div class="row">
+                                <form action="" method="post" class="form-horizontal">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">NIK</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="nik" class="form-control" value="<?= $name->nik ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">No. KK</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="no_kk" class="form-control" value="<?= $name->no_kk ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">NISN</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="nisn" class="form-control" value="<?= $name->nisn ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Nama</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="nama" class="form-control" value="<?= $name->nama ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Tmp Lahir</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="tempat" class="form-control" value="<?= $name->tempat ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Tgl Lahir</label>
+                                            <div class="col-sm-9">
 
+                                                <div class="col-xl-4">
+                                                    <select class="form-control" name="tanggal" required>
+                                                        <option value=""> -pilih- </option>
+                                                        <?php
+                                                        for ($tanggal = 1; $tanggal <= 31; $tanggal++) {
+                                                            $i = $tanggal;
+                                                            if ($tgl_a == $i) {
+                                                                echo "<option value=$i selected>$i</option>";
+                                                            } else {
+                                                                echo "<option value=$i>$i</option>";
+                                                            }
+                                                            echo "<option value=$i>$i</option>";
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <select class="form-control" name="bulan" required>
+                                                        <option value=""> -pilih- </option>
+                                                        <?php
+                                                        for ($bulan = 1; $bulan <= 12; $bulan++) {
+                                                            if ($bln_a == $bulan) {
+                                                                echo "<option value=$bulan selected>" . bulan($bulan) . "</option>";
+                                                            } else {
+                                                                echo "<option value=$bulan>" . bulan($bulan) . "</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <select class="form-control" name="tahun" required>
+                                                        <option value=""> -pilih- </option>
+                                                        <?php
+                                                        $now = date("Y");
+                                                        for ($tahun = 1945; $tahun <= $now; $tahun++) {
+                                                            if ($thn_a == $tahun) {
+                                                                echo "<option value=$tahun selected>$tahun</option>";
+                                                            } else {
+                                                                echo "<option value=$tahun>$tahun</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

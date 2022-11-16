@@ -21,13 +21,16 @@ class Login extends CI_Controller
         // $this->load->view('layout/foot');
     }
 
-    public function logAuth()
+    public function masuk()
     {
-        $rules = $this->Auth_model->rules();
-        $this->form_validation->set_rules($rules);
+        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+
+        // $rules = $this->Auth_model->rules();
+        // $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == FALSE) {
-            return $this->load->view('login');
+             $this->load->view('login');
         }
 
         $username = $this->input->post('username', true);
@@ -36,8 +39,14 @@ class Login extends CI_Controller
         if ($this->Auth_model->login($username, $password)) {
             redirect('user');
         } else {
-            $this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan username dan passwrod benar!');
-            $this->load->view('login');
+            // $this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan username dan passwrod benar!');
+            echo "
+            <script>
+                alert('Maaf username atau password salah');
+                window.location = '".base_url('login')."';
+            </script>
+            ";
+            // $this->load->view('login');
         }
 
     }

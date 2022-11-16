@@ -15,7 +15,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="callout callout-info">
-                <h4>20231001 - Ahmad Danial Karomat</h4>
+                <h4><?= $name->nis .' - '. $name->nama ?></h4>
 
                 <p>Aplikasi pendaftaran santri baru Tahun Pelajaran 2023/2024. Pondok Pesantren Darul Lughah Wal Karmoah
                 </p>
@@ -37,8 +37,14 @@
                             </div>
                         </div>
                         <div class="box-body">
-                            <span class="label label-success">Terverifikasi</span><br><br>
-                            Waktu Pendaftaran :
+                            <?php 
+                            if ($name->stts === 'Terverifikasi') {
+                                echo "<span class='label label-success'>". $name->stts ."</span><br><br>";
+                            }else{
+                                echo "<span class='label label-danger'>". $name->stts ."</span><br><br>";
+                            }
+                            ?>
+                            Waktu Pendaftaran : <?= $name->waktu_daftar ?>
                         </div>
                     </div>
                 </div>

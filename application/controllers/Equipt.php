@@ -18,6 +18,7 @@ class Equipt extends CI_Controller
     {
         $data['menu'] = 'identitas';
         $data['btn'] = 'identitas';
+        $data['name'] = $this->Auth_model->current_user();
 
         $this->load->view('user/head', $data);
         $this->load->view('user/identitas', $data);
