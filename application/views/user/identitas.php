@@ -26,19 +26,24 @@ $thn_a = $split[2];
                 <div class="col-md-12">
                     <div class="box box-default color-palette-box">
                         <div class="box-header with-border">
-                            <a class="btn btn-app <?= $btn === 'identitas' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt'); ?>"
+                                class="btn btn-app <?= $btn === 'identitas' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-user"></i> Identitas Diri
                             </a>
-                            <a class="btn btn-app <?= $btn === 'mahrom' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/parent'); ?>"
+                                class="btn btn-app <?= $btn === 'mahrom' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-users"></i> Data Mahrom
                             </a>
-                            <a class="btn btn-app <?= $btn === 'domisili' ? 'bg-green' : '' ?>">
-                                <i class="fa fa-home"></i> Domisili
+                            <a href="<?= base_url('equipt/addres'); ?>"
+                                class="btn btn-app <?= $btn === 'domisili' ? 'bg-green' : '' ?>">
+                                <i class="fa fa-home"></i> Alamat
                             </a>
-                            <a class="btn btn-app <?= $btn === 'pendidikan' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/univ'); ?>"
+                                class="btn btn-app <?= $btn === 'pendidikan' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-graduation-cap"></i> Pendidikan
                             </a>
-                            <a class="btn btn-app <?= $btn === 'lain' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/other'); ?>"
+                                class="btn btn-app <?= $btn === 'lain' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-list"></i> Lainnya
                             </a>
                         </div>
@@ -47,12 +52,15 @@ $thn_a = $split[2];
                 <div class="col-md-4">
                     <div class="box box-default color-palette-box">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg" alt="User profile picture">
+                            <img class="profile-user-img img-responsive img-circle"
+                                src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg"
+                                alt="User profile picture">
                             <h3 class="profile-username text-center"><?= $name->nama ?></h3>
                             <p class="text-muted text-center"><?= $name->nis ?></p>
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
-                                    <b>Alamat</b> <a class="pull-right"><?= $name->desa . ' - ' . $name->kec . ' - ' . $name->kab ?></a>
+                                    <b>Alamat</b> <a
+                                        class="pull-right"><?= $name->desa . ' - ' . $name->kec . ' - ' . $name->kab ?></a>
                                 </li>
                                 <li class="list-group-item">
                                     <b>Waktu Daftar</b> <a class="pull-right"><?= $name->waktu_daftar ?></a>
@@ -71,36 +79,43 @@ $thn_a = $split[2];
                         </div>
                         <div class="box-body">
                             <div class="row">
-                                <form action="" method="post" class="form-horizontal">
+                                <form action="<?= base_url('equipt/saveIdentitas'); ?>" method="post"
+                                    class="form-horizontal">
+                                    <input type="hidden" name="nis" value="<?= $name->nis ?>">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">NIK</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="nik" class="form-control" value="<?= $name->nik ?>" required>
+                                                <input type="text" name="nik" class="form-control"
+                                                    value="<?= $name->nik ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">No. KK</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="no_kk" class="form-control" value="<?= $name->no_kk ?>" required>
+                                                <input type="text" name="no_kk" class="form-control"
+                                                    value="<?= $name->no_kk ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">NISN</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="nisn" class="form-control" value="<?= $name->nisn ?>" required>
+                                                <input type="text" name="nisn" class="form-control"
+                                                    value="<?= $name->nisn ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">Nama</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="nama" class="form-control" value="<?= $name->nama ?>" required>
+                                                <input type="text" name="nama" class="form-control"
+                                                    value="<?= $name->nama ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">Tmp Lahir</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="tempat" class="form-control" value="<?= $name->tempat ?>" required>
+                                                <input type="text" name="tempat" class="form-control"
+                                                    value="<?= $name->tempat ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -152,6 +167,66 @@ $thn_a = $split[2];
                                                         ?>
                                                     </select>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Lembaga</label>
+                                            <div class="col-sm-9">
+                                                <?= $name->lembaga; ?> DWK
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Gelombang</label>
+                                            <div class="col-sm-9">
+                                                ke <?= $name->gel; ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Jenkel</label>
+                                            <div class="col-sm-9">
+                                                <input type="radio" name="jkl" value="Laki-laki"
+                                                    <?= $name->jkl === 'Laki-laki' ? 'checked' : '' ?> required>
+                                                Laki-laki
+                                                <input type="radio" name="jkl" value="Perempuan"
+                                                    <?= $name->jkl === 'Perempuan' ? 'checked' : '' ?> required>
+                                                Perempuan
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Agama</label>
+                                            <div class="col-sm-9">
+                                                <select name="agama" id="" class="form-control" required>
+                                                    <option value=""> -pilih- </option>
+                                                    <?php foreach ($agama as $ar) : ?>
+                                                    <option value="<?= $ar->nama; ?>"
+                                                        <?= $ar->nama === $name->agama ? 'selected' : '' ?>>
+                                                        <?= $ar->nama; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Anak ke</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" name="anak_ke" id="" class="form-control"
+                                                    value="<?= $name->anak_ke; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label">Jml Sdr</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" name="jml_sdr" id="" class="form-control"
+                                                    value="<?= $name->jml_sdr; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-3 control-label"></label>
+                                            <div class="col-sm-9">
+                                                <button class="btn btn-success pull-right" type="submit"><i
+                                                        class="fa fa-save"></i>
+                                                    Simpan</button>
                                             </div>
                                         </div>
                                     </div>
