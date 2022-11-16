@@ -37,15 +37,15 @@ class Login extends CI_Controller
             redirect('user');
         } else {
             $this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan username dan passwrod benar!');
+            $this->load->view('login');
         }
 
-        $this->load->view('login');
     }
 
     public function logout()
     {
-        $this->load->model('Auth_model');
+        // $this->load->model('Auth_model');
         $this->Auth_model->logout();
-        redirect(site_url());
+        redirect('login');
     }
 }

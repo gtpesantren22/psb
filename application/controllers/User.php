@@ -8,6 +8,10 @@ class User extends CI_Controller
         parent::__construct();
 
         // $this->load->model('DataModel');
+        $this->load->model('Auth_model');
+        if (!$this->Auth_model->current_user()) {
+            redirect('login');
+        }
     }
 
     public function index()
@@ -20,7 +24,4 @@ class User extends CI_Controller
         $this->load->view('user/foot');
     }
 
-    public function logAuth()
-    {
-    }
 }
