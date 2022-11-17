@@ -85,7 +85,7 @@ $thn_i = $spliti[2];
                             <h3 class="box-title"><i class="fa fa-user"></i> Data Ayah</h3>
                         </div>
                         <div class="box-body">
-                            <form action="<?= base_url('equipt/saveIdentitas'); ?>" method="post"
+                            <form action="<?= base_url('equipt/saveMahrom'); ?>" method="post"
                                 class="form-horizontal">
                                 <div class="row">
                                     <input type="hidden" name="nis" value="<?= $name->nis ?>">
@@ -93,7 +93,7 @@ $thn_i = $spliti[2];
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">NIK Ayah</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="a_nik" class="form-control"
+                                                <input type="text" name="a_nik" class="form-control" maxlength="16"
                                                     value="<?= $name->a_nik ?>" required>
                                             </div>
                                         </div>
@@ -227,7 +227,7 @@ $thn_i = $spliti[2];
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">NIK Ibu</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="i_nik" class="form-control"
+                                                <input type="text" name="i_nik" class="form-control" maxlength="16"
                                                     value="<?= $name->i_nik ?>" required>
                                             </div>
                                         </div>
