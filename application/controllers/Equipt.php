@@ -98,33 +98,217 @@ class Equipt extends CI_Controller
         }
     }
 
+
     public function addres()
     {
         $data['menu'] = 'identitas';
         $data['btn'] = 'domisili';
         $data['name'] = $this->Auth_model->current_user();
         $data['provinsi'] = $this->ProvinsiModel->view();
-        
+
 
         $this->load->view('user/head', $data);
         $this->load->view('user/alamat', $data);
         $this->load->view('user/foot');
     }
 
+    public function saveAddres()
+    {
+        if ($this->input->post('kelurahan') === '') {
+            $almt = explode('-', $this->input->post('alamat'));
+            $provOk = $almt[3];
+            $kabOk = $almt[2];
+            $kecOk = $almt[1];
+            $kelOk = $almt[0];
+        } else {
+            $provinsi = $this->input->post('provinsi', TRUE);
+            $kabupaten = $this->input->post('kabupaten', TRUE);
+            $kecamatan = $this->input->post('kecamatan', TRUE);
+            $kelurahan = $this->input->post('kelurahan', TRUE);
+
+            $pr = $this->db->query("SELECT nama FROM provinsi WHERE id_prov = '$provinsi' ")->row();
+            $provOk = $pr->nama;
+            $kb = $this->db->query("SELECT nama FROM kabupaten WHERE id_kab = '$kabupaten' ")->row();
+            $kabOk = $kb->nama;
+            $kc = $this->db->query("SELECT nama FROM kecamatan WHERE id_kec = '$kecamatan' ")->row();
+            $kecOk = $kc->nama;
+            $kl = $this->db->query("SELECT nama FROM kelurahan WHERE id_kel = '$kelurahan' ")->row();
+            $kelOk = $kl->nama;
+        }
+
+        $data = [
+            'jln' => $this->input->post('jln', true),
+            'rt' => $this->input->post('rt', true),
+            'rw' => $this->input->post('rw', true),
+            'kd_pos' => $this->input->post('kd_pos', true),
+            'desa' => $kelOk,
+            'kec' => $kecOk,
+            'kab' => $kabOk,
+            'prov' => $provOk
+        ];
+
+        $where = $this->input->post('nis', true);
+
+        $this->model->update($data, $where);
+        if ($this->db->affected_rows() > 0) {
+            redirect('equipt/addres');
+        }
+    }
+
+    public function univ()
+    {
+        $data['menu'] = 'identitas';
+        $data['btn'] = 'pendidikan';
+        $data['name'] = $this->Auth_model->current_user();
+        $data['provinsi'] = $this->ProvinsiModel->view();
+
+        $this->load->view('user/head', $data);
+        $this->load->view('user/univ', $data);
+        $this->load->view('user/foot');
+    }
+
+    public function saveUniv()
+    {
+        $npsn = $this->input->post('npsn');
+        $dtSkl = $this->model->getSkl($npsn);
+
+        $data = [
+            'npsn' => $npsn,
+            'asal' => $dtSkl->nama,
+            'a_asal' => $dtSkl->alamat . ', Desa/Kel. ' . $dtSkl->desa
+        ];
+
+        $where = $this->input->post('nis', true);
+
+        $this->model->update($data, $where);
+        if ($this->db->affected_rows() > 0) {
+            redirect('equipt/univ');
+        }
+    }
+
+    public function other()
+    {
+        $data['menu'] = 'identitas';
+        $data['btn'] = 'lain';
+        $data['name'] = $this->Auth_model->current_user();
+
+        $this->load->view('user/head', $data);
+        $this->load->view('user/lain', $data);
+        $this->load->view('user/foot');
+    }
+
+    public function saveOther()
+    {
+
+        $data = [
+            'hp' => $this->input->post('hp', true),
+            'jenis' => $this->input->post('jenis', true),
+            'tinggal' => $this->input->post('tinggal', true)
+        ];
+
+        $where = $this->input->post('nis', true);
+
+        $this->model->update($data, $where);
+        if ($this->db->affected_rows() > 0) {
+            redirect('equipt/other');
+        }
+    }
+
     public function file()
     {
         $data['menu'] = 'identitas';
         $data['btn'] = 'berkas';
+        $data['name'] = $this->Auth_model->current_user();
+        $data['file'] = $this->model->getFile($data['name']->nis)->row();
 
         $this->load->view('user/head', $data);
         $this->load->view('user/berkas', $data);
         $this->load->view('user/foot');
     }
 
+    public function uploadAkta()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png|pdf';
+        $config['file_name']            = 'AKTA-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'akta' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input($nis);
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            } else {
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            }
+        }
+    }
+
+    public function uploadKK()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png|pdf';
+        $config['file_name']            = 'KK-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'kk' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input($nis);
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            } else {
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            }
+        }
+    }
+
     public function img()
     {
         $data['menu'] = 'identitas';
         $data['btn'] = 'foto';
+        $data['name'] = $this->Auth_model->current_user();
 
         $this->load->view('user/head', $data);
         $this->load->view('user/foto', $data);

@@ -99,5 +99,3 @@ function kirim_group($key, $id_group, $pesan)
     $response = curl_exec($curl2);
     curl_close($curl2);
 }
-
-?>

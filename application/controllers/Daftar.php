@@ -18,6 +18,7 @@ class Daftar extends CI_Controller
         $this->load->model('KotaModel');
         $this->load->model('KecModel');
         $this->load->model('DesaModel');
+        $this->load->model('SklModel');
     }
 
 
@@ -92,6 +93,32 @@ class Daftar extends CI_Controller
         echo json_encode($callback); // konversi varibael $callback menjadi JSON
     }
 
+    public function listSkl()
+    {
+        // Ambil data ID Provinsi yang dikirim via ajax post
+        $id_kec = $this->input->post('id_kec');
+
+        $desa = $this->SklModel->viewById($id_kec);
+
+        // Buat variabel untuk menampung tag-tag option nya
+        // Set defaultnya dengan tag option Pilih
+        $lists = "<option value=''>-Pilih Sekolah-</option>";
+
+        // $a = "var npsn = new Array();\n;";
+        // $b = "var nama = new Array();\n;";
+
+
+        foreach ($desa as $data) {
+            $lists .= "<option value='" . $data->npsn . "'>" . $data->npsn . " - " . $data->nama . " - " . $data->desa  . "</option>"; // Tambahkan tag option ke variabel $lists
+            // $a .= "npsn['" . $data->npsn . "'] = {npsn:'" . addslashes($data->npsn) . "'};\n";
+            // $b .= "nama['" . $data->npsn . "'] = {nama:'" . addslashes($data->nama) . "'};\n";
+        }
+
+        $callback = array('list_skl' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
+
+        echo json_encode($callback); // konversi varibael $callback menjadi JSON
+    }
+
     public function get_kab()
     {
         $id_provinsi = $this->input->post('id_provinsi');
@@ -110,6 +137,13 @@ class Daftar extends CI_Controller
     {
         $id_kec = $this->input->post('id_kec');
         $data = $this->DaftarModel->getKel($id_kec);
+        echo json_encode($data);
+    }
+
+    public function get_skl()
+    {
+        $id_kec = $this->input->post('skl');
+        $data = $this->SklModel->getKel($id_kec);
         echo json_encode($data);
     }
 

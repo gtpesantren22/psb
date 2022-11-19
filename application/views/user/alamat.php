@@ -26,19 +26,24 @@ $thn_a = $split[2];
                 <div class="col-md-12">
                     <div class="box box-default color-palette-box">
                         <div class="box-header with-border">
-                            <a href="<?= base_url('equipt'); ?>" class="btn btn-app <?= $btn === 'identitas' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt'); ?>"
+                                class="btn btn-app <?= $btn === 'identitas' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-user"></i> Identitas Diri
                             </a>
-                            <a href="<?= base_url('equipt/parent'); ?>" class="btn btn-app <?= $btn === 'mahrom' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/parent'); ?>"
+                                class="btn btn-app <?= $btn === 'mahrom' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-users"></i> Data Mahrom
                             </a>
-                            <a href="<?= base_url('equipt/addres'); ?>" class="btn btn-app <?= $btn === 'domisili' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/addres'); ?>"
+                                class="btn btn-app <?= $btn === 'domisili' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-home"></i> Alamat
                             </a>
-                            <a href="<?= base_url('equipt/univ'); ?>" class="btn btn-app <?= $btn === 'pendidikan' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/univ'); ?>"
+                                class="btn btn-app <?= $btn === 'pendidikan' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-graduation-cap"></i> Pendidikan
                             </a>
-                            <a href="<?= base_url('equipt/other'); ?>" class="btn btn-app <?= $btn === 'lain' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/other'); ?>"
+                                class="btn btn-app <?= $btn === 'lain' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-list"></i> Lainnya
                             </a>
                         </div>
@@ -47,12 +52,15 @@ $thn_a = $split[2];
                 <div class="col-md-4">
                     <div class="box box-default color-palette-box">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg" alt="User profile picture">
+                            <img class="profile-user-img img-responsive img-circle"
+                                src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg"
+                                alt="User profile picture">
                             <h3 class="profile-username text-center"><?= $name->nama ?></h3>
                             <p class="text-muted text-center"><?= $name->nis ?></p>
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
-                                    <b>Alamat</b> <a class="pull-right"><?= $name->desa . ' - ' . $name->kec . ' - ' . $name->kab ?></a>
+                                    <b>Alamat</b> <a
+                                        class="pull-right"><?= $name->desa . ' - ' . $name->kec . ' - ' . $name->kab ?></a>
                                 </li>
                                 <li class="list-group-item">
                                     <b>Waktu Daftar</b> <a class="pull-right"><?= $name->waktu_daftar ?></a>
@@ -71,25 +79,29 @@ $thn_a = $split[2];
                         </div>
                         <div class="box-body">
                             <div class="row">
-                                <form action="<?= base_url('equipt/saveIdentitas'); ?>" method="post" class="form-horizontal">
+                                <form action="<?= base_url('equipt/saveAddres'); ?>" method="post"
+                                    class="form-horizontal">
                                     <input type="hidden" name="nis" value="<?= $name->nis ?>">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">Jln/Dusun</label>
                                             <div class="col-sm-9">
-                                                <textarea name="jln" id="" cols="10" rows="5" class="form-control" required><?= $name->jln ?></textarea>
+                                                <textarea name="jln" id="" cols="10" rows="5" class="form-control"
+                                                    required><?= $name->jln ?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">RT</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="rt" class="form-control" value="<?= $name->rt ?>" required>
+                                                <input type="text" name="rt" class="form-control"
+                                                    value="<?= $name->rt ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">RW</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="rw" class="form-control" value="<?= $name->rw ?>" required>
+                                                <input type="text" name="rw" class="form-control"
+                                                    value="<?= $name->rw ?>" required>
                                             </div>
                                         </div>
 
@@ -100,10 +112,11 @@ $thn_a = $split[2];
                                             <label for="" class="col-sm-3 control-label">Alamat</label>
                                             <div class="col-sm-9">
                                                 <div class="col-xl-4">
-                                                    <textarea class="form-control" name="alamat" readonly><?= $name->desa . '-' . $name->kec . '-' . $name->kab . '-' . $name->prov ?></textarea>
+                                                    <textarea class="form-control" name="alamat"
+                                                        readonly><?= $name->desa . '-' . $name->kec . '-' . $name->kab . '-' . $name->prov ?></textarea>
                                                 </div>
                                                 <div class="col-xl-4">
-                                                    <select name="provinsi" id="provinsi" class="form-control" required>
+                                                    <select name="provinsi" id="provinsi" class="form-control">
                                                         <option value="">Pilih Provinsi</option>
                                                         <?php
                                                         foreach ($provinsi as $value) {
@@ -132,13 +145,15 @@ $thn_a = $split[2];
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label">Kode Pos</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="kd_pos" class="form-control" value="<?= $name->kd_pos ?>" required>
+                                                <input type="text" name="kd_pos" class="form-control"
+                                                    value="<?= $name->kd_pos ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="col-sm-3 control-label"></label>
                                             <div class="col-sm-9">
-                                                <button class="btn btn-success pull-right" type="submit"><i class="fa fa-save"></i>
+                                                <button class="btn btn-success pull-right" type="submit"><i
+                                                        class="fa fa-save"></i>
                                                     Simpan</button>
                                             </div>
                                         </div>
