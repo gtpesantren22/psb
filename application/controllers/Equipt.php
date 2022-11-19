@@ -304,11 +304,168 @@ class Equipt extends CI_Controller
         }
     }
 
+    public function uploadktp_ayah()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png|pdf';
+        $config['file_name']            = 'ktp_ayah-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'ktp_ayah' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input($nis);
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            } else {
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            }
+        }
+    }
+
+    public function uploadktp_ibu()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png|pdf';
+        $config['file_name']            = 'ktp_ibu-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'ktp_ibu' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input($nis);
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            } else {
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            }
+        }
+    }
+
+    public function uploadskl()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png|pdf';
+        $config['file_name']            = 'skl-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'skl' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input($nis);
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            } else {
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            }
+        }
+    }
+
+    public function uploadijazah()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png|pdf';
+        $config['file_name']            = 'ijazah-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'ijazah' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input($nis);
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            } else {
+                $this->model->upload($new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            }
+        }
+    }
+
     public function img()
     {
         $data['menu'] = 'identitas';
         $data['btn'] = 'foto';
         $data['name'] = $this->Auth_model->current_user();
+        $data['file'] = $this->model->getFoto($data['name']->nis)->row();
 
         $this->load->view('user/head', $data);
         $this->load->view('user/foto', $data);

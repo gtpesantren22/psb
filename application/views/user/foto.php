@@ -50,11 +50,62 @@
                 <div class="col-md-8">
                     <div class="box box-default color-palette-box">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><i class="fa fa-image"></i> Upload Foto</h3>
+                            <h3 class="box-title"><i class="fa fa-file"></i> Berkas Pendaftaran</h3>
                         </div>
                         <div class="box-body">
-                            <?= form_open_multipart() ?>
-                            <?= form_close() ?>
+                            <b class=""><i>Warning ! (Harap dibaca dulu!)</i></b>
+                            <p class="text-danger">
+                                - Foto yang diupload harus foto resmi. (Berkopyah/Kerudung) - Bukan Foto Selfi dll. <br>
+                                - Ukuran Foto ada 3x4 <br>
+                                - Maksimal ukuran file yang diupload adalah 50 MB.
+                            </p>
+                            <hr>
+                            <div class="form-group">
+                                <label for="">Upload Foto Pribadi</label>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-default"> Upload Disini
+                                            !</button>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <?php if ($file->diri != '') : ?>
+                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                                Upload</span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Upload Kartu Keluarga (KK)</label>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-kk"> Upload Disini
+                                            !</button>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <?php if ($file->ayah != '') : ?>
+                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                                Upload</span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Upload KTP Bapak</label>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-ktp_ayah"> Upload Disini
+                                            !</button>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <?php if ($file->ibu != '') : ?>
+                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                                Upload</span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -65,3 +116,70 @@
     <!-- /.container -->
 </div>
 <!-- /.content-wrapper -->
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Upload Akta Kelahiran</h4>
+            </div>
+            <?= form_open_multipart('equipt/uploadAkta') ?>
+            <div class="modal-body">
+                <input type="hidden" name="nis" value="<?= $name->nis; ?>">
+                <input type="hidden" name="file_lama" value="<?= $file->akta; ?>">
+                <input type="file" name="berkas" class="form-control" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Simpan Berkas</button>
+            </div>
+            <?= form_close() ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-kk">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Upload Kartu Keluarga (KK)</h4>
+            </div>
+            <?= form_open_multipart('equipt/uploadKK') ?>
+            <div class="modal-body">
+                <input type="hidden" name="nis" value="<?= $name->nis; ?>">
+                <input type="hidden" name="file_lama" value="<?= $file->kk; ?>">
+                <input type="file" name="berkas" class="form-control" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Simpan Berkas</button>
+            </div>
+            <?= form_close() ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-ktp_ayah">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Upload KTP Ayah</h4>
+            </div>
+            <?= form_open_multipart('equipt/uploadktp_ayah') ?>
+            <div class="modal-body">
+                <input type="hidden" name="nis" value="<?= $name->nis; ?>">
+                <input type="hidden" name="file_lama" value="<?= $file->ktp_ayah; ?>">
+                <input type="file" name="berkas" class="form-control" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Simpan Berkas</button>
+            </div>
+            <?= form_close() ?>
+        </div>
+    </div>
+</div>

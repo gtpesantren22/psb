@@ -58,6 +58,13 @@ class EquiptModel extends CI_Model
         return $this->db->get();
     }
 
+    function getFoto($nis)
+    {
+        $this->db->where('nis', $nis);
+        $this->db->from('foto_file');
+        return $this->db->get();
+    }
+
     function input($nis)
     {
         $this->db->insert('berkas_file', ['nis' => $nis]);
