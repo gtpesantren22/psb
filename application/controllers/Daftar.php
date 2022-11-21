@@ -202,19 +202,19 @@ class Daftar extends CI_Controller
         $cekPi = $this->DaftarModel->cekPi()->num_rows();
 
         $jl = date('Y-m-d');
-        $g1 = '2022-02-23';
-        $g2 = '2022-03-23';
-        $g3 = '2022-03-24';
+        $g1 = '2023-01-28';
+        $g2 = '2022-03-11';
+        $g3 = '2022-03-12';
 
         if ($jl <= $g1) {
             $gel = "1";
-            $by = 'Rp. 50.000';
+            $by = 'Rp. 70.000';
         } else if ($jl > $g1 && $jl <= $g2) {
             $gel = "2";
-            $by = 'Rp. 100.000';
+            $by = 'Rp. 120.000';
         } else if ($jl >= $g3) {
             $gel = "3";
-            $by = 'Rp. 150.000';
+            $by = 'Rp. 170.000';
         }
 
         $jk = $jkl == 'Laki-laki' ? '1' : '2';
@@ -330,6 +330,9 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
 
                 // proses simpan data
                 $this->DaftarModel->input_data('tb_santri', $data);
+                $this->DaftarModel->input_data('berkas_file', ['nis' => $nis]);
+                $this->DaftarModel->input_data('foto_file', ['nis' => $nis]);
+
                 if ($this->db->affected_rows() > 0) {
                     $this->session->set_flashdata('success', 'Pesan');
 

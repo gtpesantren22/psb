@@ -251,13 +251,13 @@ class Equipt extends CI_Controller
             ];
 
             if ($this->model->getFile($nis)->num_rows() < 1) {
-                $this->model->input($nis);
-                $this->model->upload($new_data, $nis);
+                $this->model->input('berkas_file', $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
             } else {
-                $this->model->upload($new_data, $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
@@ -290,13 +290,13 @@ class Equipt extends CI_Controller
             ];
 
             if ($this->model->getFile($nis)->num_rows() < 1) {
-                $this->model->input($nis);
-                $this->model->upload($new_data, $nis);
+                $this->model->input('berkas_file', $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
             } else {
-                $this->model->upload($new_data, $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
@@ -329,13 +329,13 @@ class Equipt extends CI_Controller
             ];
 
             if ($this->model->getFile($nis)->num_rows() < 1) {
-                $this->model->input($nis);
-                $this->model->upload($new_data, $nis);
+                $this->model->input('berkas_file', $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
             } else {
-                $this->model->upload($new_data, $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
@@ -368,13 +368,13 @@ class Equipt extends CI_Controller
             ];
 
             if ($this->model->getFile($nis)->num_rows() < 1) {
-                $this->model->input($nis);
-                $this->model->upload($new_data, $nis);
+                $this->model->input('berkas_file', $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
             } else {
-                $this->model->upload($new_data, $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
@@ -407,13 +407,13 @@ class Equipt extends CI_Controller
             ];
 
             if ($this->model->getFile($nis)->num_rows() < 1) {
-                $this->model->input($nis);
-                $this->model->upload($new_data, $nis);
+                $this->model->input('berkas_file', $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
             } else {
-                $this->model->upload($new_data, $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
@@ -446,13 +446,13 @@ class Equipt extends CI_Controller
             ];
 
             if ($this->model->getFile($nis)->num_rows() < 1) {
-                $this->model->input($nis);
-                $this->model->upload($new_data, $nis);
+                $this->model->input('berkas_file', $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
             } else {
-                $this->model->upload($new_data, $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
                 if ($this->db->affected_rows() > 0) {
                     redirect('equipt/file');
                 }
@@ -472,6 +472,122 @@ class Equipt extends CI_Controller
         $this->load->view('user/foot');
     }
 
+    public function uploaddiri()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png';
+        $config['file_name']            = 'diri-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'diri' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input('foto_file', $nis);
+                $this->model->upload('foto_file', $new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/img');
+                }
+            } else {
+                $this->model->upload('foto_file', $new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/img');
+                }
+            }
+        }
+    }
+
+    public function uploadayah()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png';
+        $config['file_name']            = 'ayah-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'ayah' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input('foto_file', $nis);
+                $this->model->upload('foto_file', $new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/img');
+                }
+            } else {
+                $this->model->upload('foto_file', $new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/img');
+                }
+            }
+        }
+    }
+
+    public function uploadibu()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png';
+        $config['file_name']            = 'ibu-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'ibu' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input('foto_file', $nis);
+                $this->model->upload('foto_file', $new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/img');
+                }
+            } else {
+                $this->model->upload('foto_file', $new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/img');
+                }
+            }
+        }
+    }
 
     public function listKota()
     {

@@ -10,10 +10,10 @@ class EquiptModel extends CI_Model
         $this->db->update('tb_santri', $data);
     }
 
-    function upload($data, $where)
+    function upload($tbl, $data, $where)
     {
         $this->db->where('nis', $where);
-        $this->db->update('berkas_file', $data);
+        $this->db->update($tbl, $data);
     }
 
     function agama()
@@ -65,8 +65,8 @@ class EquiptModel extends CI_Model
         return $this->db->get();
     }
 
-    function input($nis)
+    function input($tbl, $nis)
     {
-        $this->db->insert('berkas_file', ['nis' => $nis]);
+        $this->db->insert($tbl, ['nis' => $nis]);
     }
 }

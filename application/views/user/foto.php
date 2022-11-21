@@ -18,10 +18,12 @@
                 <div class="col-md-12">
                     <div class="box box-default color-palette-box">
                         <div class="box-header with-border">
-                            <a href="<?= base_url('equipt/file') ?>" class="btn btn-app <?= $btn === 'berkas' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/file') ?>"
+                                class="btn btn-app <?= $btn === 'berkas' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-file"></i> Berkas Pendaftaran
                             </a>
-                            <a href="<?= base_url('equipt/img') ?>" class="btn btn-app <?= $btn === 'foto' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/img') ?>"
+                                class="btn btn-app <?= $btn === 'foto' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-image"></i> Foto
                             </a>
                         </div>
@@ -30,7 +32,9 @@
                 <div class="col-md-4">
                     <div class="box box-default color-palette-box">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg" alt="User profile picture">
+                            <img class="profile-user-img img-responsive img-circle"
+                                src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg"
+                                alt="User profile picture">
                             <h3 class="profile-username text-center">Ahmad Danial Karomat</h3>
                             <p class="text-muted text-center">20231001</p>
                             <ul class="list-group list-group-unbordered">
@@ -64,43 +68,46 @@
                                 <label for="">Upload Foto Pribadi</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-default"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-default"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->diri != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <img src="<?= base_url('assets/berkas/') . $file->diri; ?>" class="img-fluid"
+                                            height="100">
                                         <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="">Upload Kartu Keluarga (KK)</label>
+                                <label for="">Upload Foto Ayah</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-kk"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-ayah"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->ayah != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <img src="<?= base_url('assets/berkas/') . $file->ayah; ?>" class="img-fluid"
+                                            height="100">
                                         <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="">Upload KTP Bapak</label>
+                                <label for="">Upload Foto Ibu</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-ktp_ayah"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-ibu"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->ibu != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <img src="<?= base_url('assets/berkas/') . $file->ibu; ?>" class="img-fluid"
+                                            height="100">
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -123,12 +130,12 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Upload Akta Kelahiran</h4>
+                <h4 class="modal-title">Upload Foto Pribadi</h4>
             </div>
-            <?= form_open_multipart('equipt/uploadAkta') ?>
+            <?= form_open_multipart('equipt/uploaddiri') ?>
             <div class="modal-body">
                 <input type="hidden" name="nis" value="<?= $name->nis; ?>">
-                <input type="hidden" name="file_lama" value="<?= $file->akta; ?>">
+                <input type="hidden" name="file_lama" value="<?= $file->diri; ?>">
                 <input type="file" name="berkas" class="form-control" required>
             </div>
             <div class="modal-footer">
@@ -139,18 +146,18 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="modal-kk">
+<div class="modal fade" id="modal-ayah">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Upload Kartu Keluarga (KK)</h4>
+                <h4 class="modal-title">Upload Foto Ayah</h4>
             </div>
-            <?= form_open_multipart('equipt/uploadKK') ?>
+            <?= form_open_multipart('equipt/uploadayah') ?>
             <div class="modal-body">
                 <input type="hidden" name="nis" value="<?= $name->nis; ?>">
-                <input type="hidden" name="file_lama" value="<?= $file->kk; ?>">
+                <input type="hidden" name="file_lama" value="<?= $file->ayah; ?>">
                 <input type="file" name="berkas" class="form-control" required>
             </div>
             <div class="modal-footer">
@@ -161,18 +168,18 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="modal-ktp_ayah">
+<div class="modal fade" id="modal-ibu">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Upload KTP Ayah</h4>
+                <h4 class="modal-title">Upload Foto Ibu</h4>
             </div>
-            <?= form_open_multipart('equipt/uploadktp_ayah') ?>
+            <?= form_open_multipart('equipt/uploadibu') ?>
             <div class="modal-body">
                 <input type="hidden" name="nis" value="<?= $name->nis; ?>">
-                <input type="hidden" name="file_lama" value="<?= $file->ktp_ayah; ?>">
+                <input type="hidden" name="file_lama" value="<?= $file->ibu; ?>">
                 <input type="file" name="berkas" class="form-control" required>
             </div>
             <div class="modal-footer">

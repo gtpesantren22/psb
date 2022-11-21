@@ -15,14 +15,15 @@
                         <div class="carousel-item active">
                             <div>
                                 <h5 data-animation="animated fadeInDownBig">
-                                    Selamat Datang Di website PSB PPDWK 2022
+                                    Selamat Datang Di website PSB PPDWK 2023
                                 </h5>
                                 <ul>
                                     <li data-animation="animated fadeInDownBig" data-delay="1s">
-                                        Aplikasi Penerimaan Santri Baru Tahun Pelajaran 2022/2023
+                                        Aplikasi Penerimaan Santri Baru Tahun Pelajaran 2023/2024
                                     </li>
                                     <li data-animation="animated flipInX" data-delay="3s">
-                                        Pendaftaran Santri Baru Tahun 2022/2023 ini telah dibukSilahkan Segera Daftar kan putra putri anda.
+                                        Pendaftaran Santri Baru Tahun 2023/2024 ini telah dibukSilahkan Segera Daftar
+                                        kan putra putri anda.
                                     </li>
                                 </ul>
 
@@ -40,16 +41,16 @@
                                     Waktu Gelombang Pendaftaran
                                 </h5>
                                 <h5 data-animation="animated fadeInDownBig">
-                                    PSB Tahun Pelajaran 2022/2023 </h5>
+                                    PSB Tahun Pelajaran 2023/2024 </h5>
                                 <ul>
                                     <li data-animation="animated fadeInDownBig" data-delay="1s">
-                                        Gelombang 1 : 08 - 23 Februari 2022
+                                        Gelombang 1 : 01 Desember 2022 - 28 Januari 2023
                                     </li>
                                     <li data-animation="animated flipInX" data-delay="2s">
-                                        Gelombang 2 : 24 Februari - 23 Maret 2022
+                                        Gelombang 2 : 29 Januari - 11 Maret 2023
                                     </li>
                                     <li data-animation="animated flipInX" data-delay="3s">
-                                        Gelombang 3 : 24 Maret - 25 Mei 2022
+                                        Gelombang 3 : 12 Maret - 28 Mei 2023
                                     </li>
                                 </ul>
                             </div>
@@ -61,15 +62,16 @@
                                 </h5>
                                 <ul>
                                     <li data-animation="animated fadeInDownBig" data-delay="1s">
-                                        Jl. Mayjend Pandjaitan No. 12, Sidomukti - Kraksaan - Probollinggo. PP Darul Lughah Wal Karomah
+                                        Jl. Mayjend Pandjaitan No. 12, Sidomukti - Kraksaan - Probollinggo. PP Darul
+                                        Lughah Wal Karomah
                                     </li>
                                     <li data-animation="animated flipInX" data-delay="2s">
                                         Contact Person : <br>
                                         <ul>
-                                            <li data-animation="animated flipInX" data-delay="3s">Ust. Muhammad Fadlil, M.Pd (0852-5728-8025)</li>
-                                            <li data-animation="animated flipInX" data-delay="4s">Ust. Ahmad Musthafa Lutfi, SE (0852-3673-0773)</li>
-                                            <li data-animation="animated flipInX" data-delay="5s">Ust. Hadiryanto Putra P, S.Pd (0823-3863-1044)</li>
-                                            <li data-animation="animated flipInX" data-delay="6s">Ust. Sony Sugiarto, SE (0853-3448-2793)</li>
+                                            <li data-animation="animated flipInX" data-delay="3s">Ust. Ihya'ulumuddin,
+                                                M.Pd (0852-3558-3647)</li>
+                                            <li data-animation="animated flipInX" data-delay="5s">Ust. Hadiryanto Putra
+                                                P, S.Pd (0823-3863-1044)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -113,7 +115,8 @@
                             </div>
                             <div class="card-body">
                                 <div class="col-12 animated bounceIn">
-                                    <p>Adapun berkas pendaftaran yang harus dibawa oleh calon santri adalah berikut ini</p>
+                                    <p>Adapun berkas pendaftaran yang harus dibawa oleh calon santri adalah berikut ini
+                                    </p>
                                     <div class="activities">
                                         <div class="activity">
 
@@ -170,109 +173,107 @@
                             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header text-white" style="background-color: #005f6b">
-                                        <h4>Waktu, Biaya & Jalur Pendaftaran</h4>
+                                        <h4>Waktu dan Biaya Pendaftaran</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="activities">
                                             <div class="activity">
                                                 <div class="activity-detail">
-                                                    <table>
+                                                    <table class="table table-sm table-borderless">
                                                         <tr>
                                                             <th>a. </th>
-                                                            <th>Gelombang 1</th>
-                                                            <th>: 08-23 Februari 2022</th>
+                                                            <th colspan="3">Gelombang 1</th>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
-                                                            <td>Penyerahan & Verifikasi Berkas</td>
-                                                            <td>: 26-28 Februari 2022</td>
+                                                            <td>Waktu Pendaftaran</td>
+                                                            <td>:</td>
+                                                            <td>01 Desember 2022 – 28 Januari 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Tes Pendaftaran</td>
-                                                            <td>: 26-28 Februari 2022</td>
+                                                            <td>:</td>
+                                                            <td>29 Februari 2023 (Tes Pengetahuan Akademik dan
+                                                                Skrinning Kesehatan, Tes Al Qur’an, dan Pengumuman)</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
-                                                            <td>Penggumuman Tes Gel. 1</td>
-                                                            <td>: 28 Februari 2022</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>Jalur Pendaftaran</td>
-                                                            <td>: Prestasi & Reguler</td>
+                                                            <td>Registrasi Ulang dan Verifikasi Berkas</td>
+                                                            <td>:</td>
+                                                            <td>29 Februari 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Biaya Pendaftaran</td>
-                                                            <td>: Rp. 50.000</td>
+                                                            <td>:</td>
+                                                            <td>Rp. 70.000</td>
                                                         </tr>
 
                                                     </table>
-                                                    <br>
-                                                    <table>
+
+                                                    <table class="table table-sm table-borderless">
                                                         <tr>
                                                             <th>b. </th>
-                                                            <th>Gelombang 2</th>
-                                                            <th>: 24 Februari s/d 23 Maret 2022</th>
+                                                            <th colspan="3">Gelombang 2</th>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
-                                                            <td>Penyerahan & Verifikasi Berkas</td>
-                                                            <td>: 26-28 Maret 2022</td>
+                                                            <td>Waktu Pendaftaran</td>
+                                                            <td>:</td>
+                                                            <td>29 Januari – 11 Maret 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Tes Pendaftaran</td>
-                                                            <td>: 26-28 Maret 2022</td>
+                                                            <td>:</td>
+                                                            <td>12 Maret 2023 (Tes Pengetahuan Akademik dan
+                                                                Skrinning Kesehatan, Tes Al Qur’an, dan Pengumuman)</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
-                                                            <td>Penggumuman Tes Gel. 2</td>
-                                                            <td>: 28 Maret 2022</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>Jalur Pendaftaran</td>
-                                                            <td>: Prestasi & Reguler</td>
+                                                            <td>Registrasi Ulang dan Verifikasi Berkas</td>
+                                                            <td>:</td>
+                                                            <td>12 Maret 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Biaya Pendaftaran</td>
-                                                            <td>: Rp. 100.000</td>
+                                                            <td>:</td>
+                                                            <td>Rp. 120.000</td>
                                                         </tr>
+
                                                     </table>
-                                                    <br>
-                                                    <table>
+
+                                                    <table class="table table-sm table-borderless">
                                                         <tr>
                                                             <th>c. </th>
-                                                            <th>Gelombang 3</th>
-                                                            <th>: 24 Maret s/d 25 Mei 2022</th>
+                                                            <th colspan="3">Gelombang 3</th>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
-                                                            <td>Penyerahan & Verifikasi Berkas</td>
-                                                            <td>: 28-30 Mei 2022</td>
+                                                            <td>Waktu Pendaftaran</td>
+                                                            <td>:</td>
+                                                            <td>12 Maret – 28 Mei 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Tes Pendaftaran</td>
-                                                            <td>: 28-30 Mei 2022</td>
+                                                            <td>:</td>
+                                                            <td>29 Mei 2023 (Tes Pengetahuan Akademik dan
+                                                                Skrinning Kesehatan, Tes Al Qur’an, dan Pengumuman)</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
-                                                            <td>Penggumuman Tes Gel. 3</td>
-                                                            <td>: 30 Mei 2022</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>Jalur Pendaftaran</td>
-                                                            <td>: Prestasi & Reguler</td>
+                                                            <td>Registrasi Ulang dan Verifikasi Berkas</td>
+                                                            <td>:</td>
+                                                            <td>29 Mei 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Biaya Pendaftaran</td>
-                                                            <td>: Rp. 150.000</td>
+                                                            <td>:</td>
+                                                            <td>Rp. 70.000</td>
                                                         </tr>
 
                                                     </table>

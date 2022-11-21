@@ -18,10 +18,12 @@
                 <div class="col-md-12">
                     <div class="box box-default color-palette-box">
                         <div class="box-header with-border">
-                            <a href="<?= base_url('equipt/file') ?>" class="btn btn-app <?= $btn === 'berkas' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/file') ?>"
+                                class="btn btn-app <?= $btn === 'berkas' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-file"></i> Berkas Pendaftaran
                             </a>
-                            <a href="<?= base_url('equipt/img') ?>" class="btn btn-app <?= $btn === 'foto' ? 'bg-green' : '' ?>">
+                            <a href="<?= base_url('equipt/img') ?>"
+                                class="btn btn-app <?= $btn === 'foto' ? 'bg-green' : '' ?>">
                                 <i class="fa fa-image"></i> Foto
                             </a>
                         </div>
@@ -30,7 +32,9 @@
                 <div class="col-md-4">
                     <div class="box box-default color-palette-box">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg" alt="User profile picture">
+                            <img class="profile-user-img img-responsive img-circle"
+                                src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg"
+                                alt="User profile picture">
                             <h3 class="profile-username text-center">Ahmad Danial Karomat</h3>
                             <p class="text-muted text-center">20231001</p>
                             <ul class="list-group list-group-unbordered">
@@ -64,13 +68,14 @@
                                 <label for="">Upload Akta Kelahiran</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-default"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-default"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->akta != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                            Upload</span>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -79,13 +84,14 @@
                                 <label for="">Upload Kartu Keluarga (KK)</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-kk"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-kk"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->kk != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                            Upload</span>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -94,13 +100,14 @@
                                 <label for="">Upload KTP Bapak</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-ktp_ayah"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-ktp_ayah"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->ktp_ayah != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                            Upload</span>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -109,13 +116,14 @@
                                 <label for="">Upload KTP Ibu</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-ktp_ibu"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-ktp_ibu"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->ktp_ibu != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                            Upload</span>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -124,13 +132,14 @@
                                 <label for="">Upload Surat Keterangan Lulus (SKL)</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-skl"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-skl"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->skl != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                            Upload</span>
                                         <?php endif; ?>
                                         <i class="text-danger">*) Upload jika sudah keluar (menyusul)</i>
                                     </div>
@@ -140,13 +149,14 @@
                                 <label for="">Upload Ijazah</label>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-ijazah"> Upload Disini
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-ijazah"> Upload Disini
                                             !</button>
                                     </div>
                                     <div class="col-md-9">
                                         <?php if ($file->ijazah != '') : ?>
-                                            <span class="label label-success"><i class="fa fa-check"></i> Sudah
-                                                Upload</span>
+                                        <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                            Upload</span>
                                         <?php endif; ?>
                                         <i class="text-danger">*) Upload jika sudah keluar (menyusul)</i>
                                     </div>

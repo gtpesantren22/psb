@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/user/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/user/dist/css/AdminLTE.min.css">
+
+    <link rel="stylesheet" href="<?= base_url() ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/user/dist/css/skins/_all-skins.min.css">
@@ -79,12 +81,15 @@
                                             Pendaftaran</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown <?= $menu === 'regist' ? 'bg-green' : '' ?>">
+                            <li class="dropdown <?= $menu === 'regist' ? 'active' : '' ?>">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registrasi <span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#"><i class="fa fa-angle-right"></i>Biaya Pendaftaran</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-right"></i>Biaya Registrasi Ulang</a></li>
+                                    <li><a href="<?= base_url('regist'); ?>"><i class="fa fa-angle-right"></i>Biaya
+                                            Pendaftaran</a></li>
+                                    <li><a href="<?= base_url('regist/ulang'); ?>"><i
+                                                class="fa fa-angle-right"></i>Biaya
+                                            Registrasi Ulang</a></li>
                                 </ul>
                             </li>
                             <li class="<?= $menu === 'info' ? 'active' : '' ?>"><a href="#"><i class="fa fa-info"></i>

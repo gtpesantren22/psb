@@ -99,3 +99,9 @@ function kirim_group($key, $id_group, $pesan)
     $response = curl_exec($curl2);
     curl_close($curl2);
 }
+
+function gel($gel)
+{
+    $nm = array(0, 70000, 120000, 170000);
+    return $nm[$gel];
+}
