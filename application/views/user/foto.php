@@ -33,7 +33,7 @@
                     <div class="box box-default color-palette-box">
                         <div class="box-body box-profile">
                             <img class="profile-user-img img-responsive img-circle"
-                                src="<?= base_url('assets/user/') ?>dist/img/user4-128x128.jpg"
+                                src="<?= base_url('') ?>assets/img/logo/avatar.jpg"
                                 alt="User profile picture">
                             <h3 class="profile-username text-center">Ahmad Danial Karomat</h3>
                             <p class="text-muted text-center">20231001</p>

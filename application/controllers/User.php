@@ -10,6 +10,7 @@ class User extends CI_Controller
         // $this->load->model('DataModel');
         $this->load->model('Auth_model');
         $this->load->model('UserModel', 'model');
+        $this->load->model('RegistModel');
 
         if (!$this->Auth_model->current_user()) {
             redirect('login');
@@ -21,6 +22,11 @@ class User extends CI_Controller
 
         $data['menu'] = 'home';
         $data['name'] = $this->Auth_model->current_user();
+        $data['list'] = $this->RegistModel->bp_total($data['name']->nis)->result();
+        $data['data'] = $this->RegistModel->bp_daftar($data['name']->nis)->result();
+
+        $data['listSum'] = $this->RegistModel->registSum($data['name']->nis)->result();
+        $data['tangg'] = $this->RegistModel->tangg($data['name']->nis)->result();
 
         $this->load->view('user/head', $data);
         $this->load->view('user/home');

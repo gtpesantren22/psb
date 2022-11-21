@@ -27,8 +27,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Rincian Daftar Ulang</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
@@ -44,44 +43,44 @@
                             <br><br>
 
                             <?php foreach ($tangg as $row) : ?>
-                            <div class="table-responsive">
-                                <table id="" class="table table-bordered table-striped">
-                                    <tr>
-                                        <th>Seragam Pesantren</th>
-                                        <th>Rp. <?= rupiah($row->seragam_pes); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Seragam Lembaga</th>
-                                        <th>Rp. <?= rupiah($row->seragam_lem); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>ORSABA</th>
-                                        <th>Rp. <?= rupiah($row->orsaba); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>KTS, Kartu Mahrom, Kartu Kesehatan & Foto</th>
-                                        <th>Rp. <?= rupiah($row->kartu); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Buku Pedoman Wiridan, Perizinan & Tatib </th>
-                                        <th>Rp. <?= rupiah($row->buku); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Kalender Pesantren</th>
-                                        <th>Rp. <?= rupiah($row->kalender); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Uang Gedung</th>
-                                        <th>Rp. <?= rupiah($row->infaq); ?></th>
-                                    </tr>
-                                    <tr style="color: white; background-color: #F39C12;">
-                                        <th>TOTAL</th>
-                                        <th>Rp.
-                                            <?= rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq); ?>
-                                        </th>
-                                    </tr>
-                                </table>
-                            </div>
+                                <div class="table-responsive">
+                                    <table id="" class="table table-bordered table-striped">
+                                        <tr>
+                                            <th>Seragam Pesantren</th>
+                                            <th>Rp. <?= rupiah($row->seragam_pes); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Seragam Lembaga</th>
+                                            <th>Rp. <?= rupiah($row->seragam_lem); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>ORSABA</th>
+                                            <th>Rp. <?= rupiah($row->orsaba); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>KTS, Kartu Mahrom, Kartu Kesehatan & Foto</th>
+                                            <th>Rp. <?= rupiah($row->kartu); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Buku Pedoman Wiridan, Perizinan & Tatib </th>
+                                            <th>Rp. <?= rupiah($row->buku); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Kalender Pesantren</th>
+                                            <th>Rp. <?= rupiah($row->kalender); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Uang Gedung</th>
+                                            <th>Rp. <?= rupiah($row->infaq); ?></th>
+                                        </tr>
+                                        <tr style="color: white; background-color: #F39C12;">
+                                            <th>TOTAL</th>
+                                            <th>Rp.
+                                                <?= rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq); ?>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -91,8 +90,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">History Pembayaran</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
@@ -109,12 +107,12 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($list as $row) : ?>
-                                        <tr>
-                                            <td>Rp. <?= rupiah($row->nominal) ?></td>
-                                            <td><?= $row->tgl_bayar; ?></td>
-                                            <td><?= $row->kasir; ?></td>
-                                            <td><?= $row->via; ?></td>
-                                        </tr>
+                                            <tr>
+                                                <td>Rp. <?= rupiah($row->nominal) ?></td>
+                                                <td><?= $row->tgl_bayar; ?></td>
+                                                <td><?= $row->kasir; ?></td>
+                                                <td><?= $row->via; ?></td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -134,16 +132,22 @@
                                 <tr style="color: green;">
                                     <th>Sudah Bayar</th>
                                     <th><?php
-                                        foreach ($listSum as $row) {
-                                            echo 'Rp. ' . rupiah($row->nominal);
+                                        foreach ($listSum as $row2) {
+                                            echo 'Rp. ' . rupiah($row2->nominal);
                                         }
                                         ?></th>
                                 </tr>
                                 <tr style="color: red;">
                                     <th>Kurang</th>
-                                    <th></th>
+                                    <th><?= rupiah(($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq) - $row2->nominal) ?></th>
                                 </tr>
                             </table>
+                            <br>
+                            <b>Catatan :</b><br>
+                            Nominal Pendaftaran bisa dibayarkan melalui transfer ke <b>No.Rek BRI 0582-0101-4254-500
+                                a.n.
+                                Hadiryanto Putra Pratama</b> dan melakukan konfirmasi
+                            pembayaran disertai bukti transfer ke No. WA 082338631044
                         </div>
                     </div>
                 </div>

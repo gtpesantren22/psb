@@ -31,8 +31,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Status Santri</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
@@ -53,23 +52,20 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Kelengkapan Santri</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="box-body">
                             Identitas Santri :
                             <div class="progress progress-md active">
-                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                     20% selesai
                                 </div>
                             </div>
                             Berkas Pendaftaran :
                             <div class="progress progress-md active">
-                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                     20% selesai
                                 </div>
                             </div>
@@ -81,16 +77,37 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Registrasi Santri</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="box-body">
                             Biaya Pendaftaran :
-                            <span class="label label-success">Lunas</span><br><br>
+                            <?php foreach ($list as $rw) {
+                                if ($rw->jml < gel($name->gel)) {
+                            ?>
+                                    <span class="label label-danger"><i class="fa fa-times"></i> Belum Lunas</span><br><br>
+                                <?php } else { ?>
+                                    <span class="label label-success"><i class="fa fa-check"></i> Sudah Lunas</span><br><br>
+                            <?php }
+                            } ?>
+
                             Registrasi Ulang :
-                            <span class="label label-success">Lunas</span><br>
+                            <?php
+                            foreach ($tangg as $row) {
+                                 'Rp. ' . rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq);
+                            }
+
+                            foreach ($listSum as $row2) {
+                                 'Rp. ' . rupiah($row2->nominal);
+                            }
+
+                            if (($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq) >= $row2->nominal) {
+                                echo "<span class='label label-danger'><i class='fa fa-times'></i> Belum Lunas</span><br><br>";
+                            }else {
+                                echo "<span class='label label-success'><i class='fa fa-check'></i> Sudah Lunas</span><br><br>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
