@@ -226,25 +226,18 @@ class Daftar extends CI_Controller
         $char = "2023";
         $kodeBarang = $char . $jk . sprintf("%03s", $noUrut);
         $nis = htmlspecialchars($kodeBarang);
-        $ps = rand(0, 99999999);
 
         $alm = $kelOk . '-' . $kecOk . '-' . $kabOk;
 
-        // if ($lembaga == 1) {
-        //     $bg = 'MTs DWK';
-        // } else if ($lembaga == 2) {
-        //     $bg = 'SMP DWK';
-        // } else if ($lembaga == 3) {
-        //     $bg = 'MA DWK';
-        // } else if ($lembaga == 4) {
-        //     $bg = 'SMK DWK';
-        // }
-
-        // if ($jalur == 1) {
-        //     $lj = 'Reguler';
-        // } else {
-        //     $lj = 'Prestasi';
-        // }
+        if ($lembaga === 'MI' || $lembaga === 'RA') {
+            $tambahan = '';
+            $bawahan = '_*Catatan Penting :*_
+*- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
+        }else {
+            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI xxxx-xxxx-xxxx-xx a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA https://wa.me/6282338631044*';
+            $bawahan = '_*Catatan Penting :*_
+_*Calon santri diwajibkan memakai baju putih, songkok/kerudung hitam saat tes pendaftaran dengan bawahan hitam atau gelap*_';
+        }
 
         $pesan = '*Selamat*
 
@@ -256,11 +249,11 @@ Lembaga tujuan : ' . $lembaga . ' DWK
 jalur : ' . $jalur . '
 Gel :  ' . $gel . '
         
-selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI 0582-0101-4254-500 a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA https://wa.me/6282338631044*
+'.$tambahan.'
     
 *Terimakasih*
 
-_*NB : Calon Santri diwajibkan memakai baju putih songkok/kerudung hitam & Bawahan bebas (Ketika tes dan berangkat mondok)*_';
+'.$bawahan;
 
         $pesan2 = '*Info tambahan santri baru*
  
