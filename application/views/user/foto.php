@@ -33,19 +33,19 @@
                     <div class="box box-default color-palette-box">
                         <div class="box-body box-profile">
                             <img class="profile-user-img img-responsive img-circle"
-                                src="<?= base_url('') ?>assets/img/logo/avatar.jpg"
-                                alt="User profile picture">
-                            <h3 class="profile-username text-center">Ahmad Danial Karomat</h3>
-                            <p class="text-muted text-center">20231001</p>
+                                src="<?= base_url('') ?>assets/img/logo/avatar.jpg" alt="User profile picture">
+                            <h3 class="profile-username text-center"><?= $name->nama ?></h3>
+                            <p class="text-muted text-center"><?= $name->nis ?></p>
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
-                                    <b>Alamat</b> <a class="pull-right">Asembakor - Kraksaan Probolinggo</a>
+                                    <b>Alamat</b> <a
+                                        class="pull-right"><?= $name->desa . ' - ' . $name->kec . ' - ' . $name->kab ?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Waktu Daftar</b> <a class="pull-right">2019-09-09</a>
+                                    <b>Waktu Daftar</b> <a class="pull-right"><?= $name->waktu_daftar ?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Status</b> <a class="pull-right">Terverifkasi</a>
+                                    <b>Status</b> <a class="pull-right"><?= $name->stts ?></a>
                                 </li>
                             </ul>
                         </div>

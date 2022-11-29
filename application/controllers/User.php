@@ -25,12 +25,11 @@ class User extends CI_Controller
         $data['list'] = $this->RegistModel->bp_total($data['name']->nis)->result();
         $data['data'] = $this->RegistModel->bp_daftar($data['name']->nis)->result();
 
-        $data['listSum'] = $this->RegistModel->registSum($data['name']->nis)->result();
-        $data['tangg'] = $this->RegistModel->tangg($data['name']->nis)->result();
+        $data['listSum'] = $this->RegistModel->registSum($data['name']->nis);
+        $data['tangg'] = $this->RegistModel->tangg($data['name']->nis);
 
         $this->load->view('user/head', $data);
         $this->load->view('user/home');
         $this->load->view('user/foot');
     }
-
 }
