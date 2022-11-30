@@ -35,8 +35,8 @@ class Regist extends CI_Controller
         $data['menu'] = 'regist';
         $data['name'] = $this->Auth_model->current_user();
         $data['list'] = $this->model->regist($data['name']->nis)->result();
-        $data['listSum'] = $this->model->registSum($data['name']->nis)->result();
-        $data['tangg'] = $this->model->tangg($data['name']->nis)->result();
+        $data['listSum'] = $this->model->registSum($data['name']->nis);
+        $data['tangg'] = $this->model->tangg($data['name']->nis);
 
         $this->load->view('user/head', $data);
         $this->load->view('user/ulang', $data);

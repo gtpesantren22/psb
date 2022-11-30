@@ -86,7 +86,7 @@
             </div>
             <div class="col-sm-4">
 
-                <img src="assets/img/logo/LOGO-PSB-2022-2.png" height="200" alt="" srcset="">
+                <img src="<?= base_url('assets/img/logo/LOGO-12.png'); ?>" width="250" alt="" srcset="">
                 <br>
 
                 <div class="carousel-item active">

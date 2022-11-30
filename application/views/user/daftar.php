@@ -19,6 +19,7 @@
 
                 <span class="label label-warning">Tanggal Daftar : <?= $name->waktu_daftar; ?></span>
                 <span class="label label-success">Gelombag <?= $name->gel; ?></span>
+                <span class="label label-danger">Jalur : <?= $name->jalur; ?></span>
             </div>
 
             <div class="row">
@@ -34,7 +35,7 @@
                         </div>
                         <div class="box-body">
                             <p class="text-center text-bold fs-3">Gelombang <?= $name->gel; ?></p>
-                            <h2 class="text-success text-bold text-center">Rp. <?= rupiah(gel($name->gel)) ?></h2>
+                            <h2 class="text-success text-bold text-center"><?= rupiah(gel($name->gel)) ?></h2>
                             <?php foreach ($list as $rw) {
                                 if ($rw->jml < gel($name->gel)) {
                             ?>
@@ -80,7 +81,7 @@
                                     <tbody>
                                         <?php foreach ($data as $row) : ?>
                                         <tr>
-                                            <td>Rp. <?= rupiah($row->nominal) ?></td>
+                                            <td><?= rupiah($row->nominal) ?></td>
                                             <td><?= $row->tgl_bayar; ?></td>
                                             <td><?= $row->kasir; ?></td>
                                             <td><?= $row->via; ?></td>

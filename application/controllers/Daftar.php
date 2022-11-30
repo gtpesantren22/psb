@@ -203,8 +203,8 @@ class Daftar extends CI_Controller
 
         $jl = date('Y-m-d');
         $g1 = '2023-01-28';
-        $g2 = '2022-03-11';
-        $g3 = '2022-03-12';
+        $g2 = '2023-03-11';
+        $g3 = '2023-03-12';
 
         if ($jl <= $g1) {
             $gel = "1";
@@ -233,8 +233,8 @@ class Daftar extends CI_Controller
             $tambahan = '';
             $bawahan = '_*Catatan Penting :*_
 *- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
-        }else {
-            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI xxxx-xxxx-xxxx-xx a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA https://wa.me/6282338631044*';
+        } else {
+            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI BRI 0582-0101-4254-500 a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA https://wa.me/6282338631044*';
             $bawahan = '_*Catatan Penting :*_
 _*Calon santri diwajibkan memakai baju putih, songkok/kerudung hitam saat tes pendaftaran dengan bawahan hitam atau gelap*_';
         }
@@ -249,11 +249,11 @@ Lembaga tujuan : ' . $lembaga . ' DWK
 jalur : ' . $jalur . '
 Gel :  ' . $gel . '
         
-'.$tambahan.'
+' . $tambahan . '
     
 *Terimakasih*
 
-'.$bawahan;
+' . $bawahan;
 
         $pesan2 = '*Info tambahan santri baru*
  
