@@ -110,3 +110,5 @@ function gel($gel)
     $nm = array(0, 70000, 120000, 170000);
     return $nm[$gel];
 }
+
+// ok
