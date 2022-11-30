@@ -231,10 +231,12 @@ class Daftar extends CI_Controller
 
         if ($lembaga === 'MI' || $lembaga === 'RA') {
             $tambahan = '';
+            $tinggal = 'Non Mukim';
             $bawahan = '_*Catatan Penting :*_
-*- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
+            *- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
         } else {
-            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI BRI 0582-0101-4254-500 a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA https://wa.me/6282338631044*';
+            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI 0582-0101-4254-500 a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA https://wa.me/6282338631044*';
+            $tinggal = 'Mukim';
             $bawahan = '_*Catatan Penting :*_
 _*Calon santri diwajibkan memakai baju putih, songkok/kerudung hitam saat tes pendaftaran dengan bawahan hitam atau gelap*_';
         }
@@ -298,8 +300,8 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             // 'a_pkj' => $a_pkj,
             // 'i_pkj' => $i_pkj,
             'no_kk' => $no_kk,
-            'ket' => 'baru'
-            // 'asal' => $asal,
+            'ket' => 'baru',
+            'tinggal' => $tinggal
             // 'a_asal' => $asal_skl
         );
 

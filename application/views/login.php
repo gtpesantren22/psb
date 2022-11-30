@@ -197,7 +197,7 @@
                             </div>
                         </div>
                         <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
-                            <img src="<?= base_url('assets/img/logo/LOGO-12.png') ?>" class="img-fluid" width="300">
+                            <img src="<?= base_url('assets/img/logo/LogoOk.png') ?>" class="img-fluid" width="300">
                         </div>
                     </div>
                 </div>

@@ -22,7 +22,7 @@
                                         Aplikasi Penerimaan Santri Baru Tahun Pelajaran 2023/2024
                                     </li>
                                     <li data-animation="animated flipInX" data-delay="3s">
-                                        Pendaftaran Santri Baru Tahun 2023/2024 ini telah dibukSilahkan Segera Daftar
+                                        Pendaftaran Santri Baru Tahun 2023/2024 ini telah dibuka Silahkan Segera Daftar
                                         kan putra putri anda.
                                     </li>
                                 </ul>
@@ -68,10 +68,12 @@
                                     <li data-animation="animated flipInX" data-delay="2s">
                                         Contact Person : <br>
                                         <ul>
-                                            <li data-animation="animated flipInX" data-delay="3s">Ust. Ihya'ulumuddin,
-                                                M.Pd (0852-3558-3647)</li>
                                             <li data-animation="animated flipInX" data-delay="5s">Ust. Hadiryanto Putra
                                                 P, S.Pd (0823-3863-1044)</li>
+                                            <li data-animation="animated flipInX" data-delay="3s">Ust. Ihya'ulumuddin,
+                                                M.Pd (0852-3558-3647)</li>
+                                            <li data-animation="animated flipInX" data-delay="3s">Ust. Rizal Asayadi M
+                                                (0821-4434-8785)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -86,7 +88,7 @@
             </div>
             <div class="col-sm-4">
 
-                <img src="<?= base_url('assets/img/logo/LOGO-12.png'); ?>" width="250" alt="" srcset="">
+                <img src="<?= base_url('assets/img/logo/LogoOk.png'); ?>" width="250" alt="" srcset="">
                 <br>
 
                 <div class="carousel-item active">
