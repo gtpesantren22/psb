@@ -28,7 +28,9 @@ class Daftar_lama extends CI_Controller
         $data['hasil'] = $this->DaftarModel->getprov();
         $data['provinsi'] = $this->ProvinsiModel->view();
 
+        $this->load->view('layout/head', $data);
         $this->load->view('daftar_lama', $data);
+        $this->load->view('layout/foot', $data);
     }
 
     public function cari()

@@ -44,7 +44,7 @@
                                     PSB Tahun Pelajaran 2023/2024 </h5>
                                 <ul>
                                     <li data-animation="animated fadeInDownBig" data-delay="1s">
-                                        Gelombang 1 : 01 Desember 2022 - 28 Januari 2023
+                                        Gelombang 1 : 11 Desember 2022 - 28 Januari 2023
                                     </li>
                                     <li data-animation="animated flipInX" data-delay="2s">
                                         Gelombang 2 : 29 Januari - 11 Maret 2023
@@ -188,20 +188,20 @@
                                                             <td></td>
                                                             <td>Waktu Pendaftaran</td>
                                                             <td>:</td>
-                                                            <td>01 Desember 2022 – 28 Januari 2023</td>
+                                                            <td>11 Desember 2022 – 28 Januari 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Tes Pendaftaran</td>
                                                             <td>:</td>
-                                                            <td>29 Februari 2023 (Tes Pengetahuan Akademik dan
+                                                            <td>29 Januari 2023 (Tes Pengetahuan Akademik dan
                                                                 Skrinning Kesehatan, Tes Al Qur’an, dan Pengumuman)</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Registrasi Ulang dan Verifikasi Berkas</td>
                                                             <td>:</td>
-                                                            <td>29 Februari 2023</td>
+                                                            <td>29 Januari 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
