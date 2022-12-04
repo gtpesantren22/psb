@@ -460,6 +460,45 @@ class Equipt extends CI_Controller
         }
     }
 
+    public function uploadkip()
+    {
+        $nis = $this->input->post('nis', true);
+        $lama = $this->input->post('file_lama', true);
+
+        $config['upload_path']          = FCPATH . '/assets/berkas/';
+        $config['allowed_types']        = 'jpg|jpeg|png|pdf';
+        $config['file_name']            = 'kip-' . $nis;
+        $config['overwrite']            = true;
+        $config['max_size']             = 0;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('berkas')) {
+            $data['error'] = $this->upload->display_errors();
+        } else {
+            if ($lama != '') {
+                unlink('assets/berkas/' . $lama);
+            }
+            $uploaded_data = $this->upload->data();
+            $new_data = [
+                'kip' => $uploaded_data['file_name']
+            ];
+
+            if ($this->model->getFile($nis)->num_rows() < 1) {
+                $this->model->input('berkas_file', $nis);
+                $this->model->upload('berkas_file', $new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            } else {
+                $this->model->upload('berkas_file', $new_data, $nis);
+                if ($this->db->affected_rows() > 0) {
+                    redirect('equipt/file');
+                }
+            }
+        }
+    }
+
     public function img()
     {
         $data['menu'] = 'identitas';

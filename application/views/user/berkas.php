@@ -61,7 +61,7 @@
                             <p class="text-danger">
                                 - Upload file berupa PDF dan IMG/gambar <br>
                                 - File yang diupload harus jelas/bisa dibaca <br>
-                                - Maksimal ukuran file yang diupload adalah 50 MB.
+                                - Maksimal ukuran file yang diupload adalah 10 MB.
                             </p>
                             <hr>
                             <div class="form-group">
@@ -159,6 +159,23 @@
                                             Upload</span>
                                         <?php endif; ?>
                                         <i class="text-danger">*) Upload jika sudah keluar (menyusul)</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Upload KIP</label>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#modal-kip"> Upload Disini
+                                            !</button>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <?php if ($file->kip != '') : ?>
+                                        <span class="label label-success"><i class="fa fa-check"></i> Sudah
+                                            Upload</span>
+                                        <?php endif; ?>
+                                        <i class="text-danger">*) Upload jika mempunyai KIP (Gambar Kartu KIP)</i>
                                     </div>
                                 </div>
                             </div>
@@ -295,6 +312,28 @@
             <div class="modal-body">
                 <input type="hidden" name="nis" value="<?= $name->nis; ?>">
                 <input type="hidden" name="file_lama" value="<?= $file->ijazah; ?>">
+                <input type="file" name="berkas" class="form-control" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Simpan Berkas</button>
+            </div>
+            <?= form_close() ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-kip">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Upload KIP</h4>
+            </div>
+            <?= form_open_multipart('equipt/uploadkip') ?>
+            <div class="modal-body">
+                <input type="hidden" name="nis" value="<?= $name->nis; ?>">
+                <input type="hidden" name="file_lama" value="<?= $file->kip; ?>">
                 <input type="file" name="berkas" class="form-control" required>
             </div>
             <div class="modal-footer">
