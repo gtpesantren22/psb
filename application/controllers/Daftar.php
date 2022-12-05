@@ -230,7 +230,7 @@ class Daftar extends CI_Controller
         $alm = $kelOk . '-' . $kecOk . '-' . $kabOk;
 
         if ($lembaga === 'MI' || $lembaga === 'RA') {
-            $tambahan = '';
+            $tambahan = $lembaga === 'MI' ? 'Silahkan bergabung ke Grup Siswa Baru MI DWK untuk mengetahui informasi lebih lanjut dengan mengklik link berikut ini : https://chat.whatsapp.com/Eqwog9EcvmzHXz4hZX14Fc' : 'Silahkan bergabung ke Grup Siswa Baru RA DWK untuk mengetahui informasi lebih lanjut dengan mengklik link berikut ini : https://chat.whatsapp.com/LhePAcQXgD8HWz3O8YJdNF';
             $tinggal = 'Non Mukim';
             $bawahan = '_*Catatan Penting :*_
             *- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
