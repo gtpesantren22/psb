@@ -111,4 +111,13 @@ function gel($gel)
     return $nm[$gel];
 }
 
-// ok
+function random($panjang)
+{
+    $karakter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $string = '';
+    for ($i = 0; $i < $panjang; $i++) {
+        $pos = rand(0, strlen($karakter) - 1);
+        $string .= $karakter[$pos];
+    }
+    return $string;
+}

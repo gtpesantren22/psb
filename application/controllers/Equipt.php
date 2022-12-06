@@ -233,7 +233,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png|pdf';
-        $config['file_name']            = 'AKTA-' . $nis;
+        $config['file_name']            = 'AKTA-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -272,7 +272,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png|pdf';
-        $config['file_name']            = 'KK-' . $nis;
+        $config['file_name']            = 'KK-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -311,7 +311,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png|pdf';
-        $config['file_name']            = 'ktp_ayah-' . $nis;
+        $config['file_name']            = 'ktp_ayah-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -350,7 +350,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png|pdf';
-        $config['file_name']            = 'ktp_ibu-' . $nis;
+        $config['file_name']            = 'ktp_ibu-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -389,7 +389,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png|pdf';
-        $config['file_name']            = 'skl-' . $nis;
+        $config['file_name']            = 'skl-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -428,7 +428,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png|pdf';
-        $config['file_name']            = 'ijazah-' . $nis;
+        $config['file_name']            = 'ijazah-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -467,7 +467,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png|pdf';
-        $config['file_name']            = 'kip-' . $nis;
+        $config['file_name']            = 'kip-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -518,7 +518,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png';
-        $config['file_name']            = 'diri-' . $nis;
+        $config['file_name']            = 'diri-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -557,7 +557,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png';
-        $config['file_name']            = 'ayah-' . $nis;
+        $config['file_name']            = 'ayah-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
@@ -596,7 +596,7 @@ class Equipt extends CI_Controller
 
         $config['upload_path']          = FCPATH . '/assets/berkas/';
         $config['allowed_types']        = 'jpg|jpeg|png';
-        $config['file_name']            = 'ibu-' . $nis;
+        $config['file_name']            = 'ibu-' . $nis . random(4);
         $config['overwrite']            = true;
         $config['max_size']             = 0;
 
