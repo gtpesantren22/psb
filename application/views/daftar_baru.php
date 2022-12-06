@@ -53,7 +53,7 @@
                                 <div class="activity-detail">
                                     <?php
                                     $skr = date('Y-m-d');
-                                    $buka = date('2022-11-11');
+                                    $buka = date('2022-12-11');
                                     if ($skr >= $buka) { ?>
                                     <?= form_open('daftar/daftarAct'); ?>
                                     <div class="row">
