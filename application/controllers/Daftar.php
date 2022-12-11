@@ -246,7 +246,7 @@ _*Catatan Penting :*_
 _*Catatan Penting :*_
 *- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
         } else {
-            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI 0582-0101-4254-500 a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA https://wa.me/6282338631044*';
+            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI 0582-0101-4254-500 a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA 082338631044*';
             $tinggal = 'Mukim';
             $bawahan = '_*Catatan Penting :*_
 _*Calon santri diwajibkan memakai baju putih, songkok/kerudung hitam saat tes pendaftaran dengan bawahan hitam atau gelap*_';
@@ -341,16 +341,15 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
 
                 if ($this->db->affected_rows() > 0) {
                     $this->session->set_flashdata('success', 'Pesan');
-                    // Pesan Tempalate
-                    kirim_tmp($key->api_key, $hp, $pesan, $tmp, 'https://i.postimg.cc/8c8fghZq/LOGO-WA.jpg');
-
                     //PEsan Grup
-                    kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
 
-                    // Pesan HP
-                    // kirim_person($key->api_key, $hp, $pesan);
-
-
+                    if ($lembaga === 'MI' || $lembaga === 'RA') {
+                        kirim_tmp($key->api_key, $hp, $pesan, $tmp, 'https://i.postimg.cc/8c8fghZq/LOGO-WA.jpg');
+                        kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
+                    } else {
+                        kirim_person($key->api_key, $hp, $pesan);
+                        kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
+                    }
                     redirect('data');
                 }
             }
