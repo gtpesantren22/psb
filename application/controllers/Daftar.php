@@ -345,7 +345,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                     kirim_tmp($key->api_key, $hp, $pesan, $tmp, 'https://i.postimg.cc/8c8fghZq/LOGO-WA.jpg');
 
                     //PEsan Grup
-                    // kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
+                    kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
 
                     // Pesan HP
                     kirim_person($key->api_key, $hp, $pesan);
