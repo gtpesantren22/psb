@@ -332,7 +332,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                     $this->session->set_flashdata('success', 'Pesan');
 
                     //PEsan Grup
-                    kirim_group($key->api_key, 'INPTtXYBKdUF5FS1dEie8m', $pesan2);
+                    kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
 
                     // Pesan HP
                     kirim_person($key->api_key, $hp, $pesan);
