@@ -348,7 +348,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                     kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
 
                     // Pesan HP
-                    kirim_person($key->api_key, $hp, $pesan);
+                    // kirim_person($key->api_key, $hp, $pesan);
 
 
                     redirect('data');
