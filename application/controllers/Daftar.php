@@ -198,8 +198,10 @@ class Daftar extends CI_Controller
 
 
         $cekNik = $this->DaftarModel->cekNIK($nik)->num_rows();
-        $cekPa = $this->DaftarModel->cekPa()->num_rows();
-        $cekPi = $this->DaftarModel->cekPi()->num_rows();
+        $cekSMPPa = $this->DaftarModel->cekSMPPa()->num_rows();
+        $cekSMPPi = $this->DaftarModel->cekSMPPi()->num_rows();
+        $cekMI = $this->DaftarModel->cekMI()->num_rows();
+        $cekRA = $this->DaftarModel->cekRA()->num_rows();
 
         $jl = date('Y-m-d');
         $g1 = '2023-01-28';
@@ -231,7 +233,7 @@ class Daftar extends CI_Controller
 
 
 
-        if ($lembaga === 'MI') {
+        if ($lembaga === 'RA') {
             $tambahan = 'Silahkan bergabung ke Grup Siswa Baru MI DWK untuk mengetahui informasi lebih lanjut dengan mengklik link dipaling bawah';
             $tmp = array(array('url' => 'https://chat.whatsapp.com/Eqwog9EcvmzHXz4hZX14Fc', 'text' => 'Klik disini untuk bergabung'));
             $tinggal = 'Non Mukim';
@@ -324,7 +326,6 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             </script>
             ";
         } else {
-
             if ($lembaga === '2' || $lembaga === 2) {
                 echo "
                     <script>
@@ -333,6 +334,27 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                     </script>
                 ";
             } else {
+
+                if ($cekSMPPa >= 55 AND $lembaga === 'SMP' AND $jkl === 'Laki-laki') {
+                    // return false;
+                    $this->session->set_flashdata('error', 'Maaf. Kuota SMP Putra sudah penuh');
+                    redirect('daftar');
+                }
+                if ($cekSMPPi >= 55 AND $lembaga === 'SMP' and $jkl === 'Perempuan') {
+                    // return false;
+                    $this->session->set_flashdata('error', 'Maaf. Kuota SMP Putri sudah penuh');
+                    redirect('daftar');
+                }
+                if ($cekMI >= 40 AND $lembaga === 'MI') {
+                    // return false;
+                    $this->session->set_flashdata('error', 'Maaf. Kuota MI sudah penuh');
+                    redirect('daftar');
+                }
+                if ($cekRA >= 40 AND $lembaga === 'RA') {
+                    // return false;
+                    $this->session->set_flashdata('error', 'Maaf. Kuota RA sudah penuh');
+                    redirect('daftar');
+                }
 
                 // proses simpan data
                 $this->DaftarModel->input_data('tb_santri', $data);

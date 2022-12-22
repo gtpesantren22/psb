@@ -50,17 +50,32 @@ class DaftarModel extends CI_Model
         return $this->db->get();
     }
 
-    function cekPa()
+    function cekSMPPa()
     {
-        $this->db->where('lembaga', '2');
+        $this->db->where('lembaga', 'SMP');
         $this->db->where('jkl', 'Laki-laki');
         $this->db->from('tb_santri');
         return $this->db->get();
     }
-    function cekPi()
+
+    function cekSMPPi()
     {
-        $this->db->where('lembaga', '2');
+        $this->db->where('lembaga', 'SMP');
         $this->db->where('jkl', 'Perempuan');
+        $this->db->from('tb_santri');
+        return $this->db->get();
+    }
+
+    function cekMI()
+    {
+        $this->db->where('lembaga', 'MI');
+        $this->db->from('tb_santri');
+        return $this->db->get();
+    }
+
+    function cekRA()
+    {
+        $this->db->where('lembaga', 'RA');
         $this->db->from('tb_santri');
         return $this->db->get();
     }
