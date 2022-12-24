@@ -28,7 +28,7 @@
                         <div class="box-body">
                             <?php foreach ($info as $row) : ?>
                                 <b style="font-weight: bold; font-size: 20px;"><?= $row->judul ?></b><br>
-                                <i><small class="text-primary"><?= tanggalIndo($row->tgl) ?></small></i><br><br>
+                                <i><small class="text-primary"><?= tanggalIndo($row->tanggal) ?></small></i><br>
                                 <p><?= $row->isi ?></p>
 <hr>
                             <?php endforeach; ?>

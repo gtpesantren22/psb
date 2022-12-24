@@ -6,7 +6,7 @@ class InfoModel extends CI_Model
 {
     function data(){
         $this->db->from('info');
-        $this->db->order_by('tgl', 'DESC');
+        $this->db->order_by('tanggal', 'DESC');
         return $this->db->get();
     }
 }
