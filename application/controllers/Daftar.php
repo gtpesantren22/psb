@@ -202,6 +202,7 @@ class Daftar extends CI_Controller
         $cekSMPPi = $this->DaftarModel->cekSMPPi()->num_rows();
         $cekMI = $this->DaftarModel->cekMI()->num_rows();
         $cekRA = $this->DaftarModel->cekRA()->num_rows();
+        $cekLama = $this->DaftarModel->cekLama($nik)->num_rows();
 
         $jl = date('Y-m-d');
         $g1 = '2023-01-28';
@@ -335,22 +336,27 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                 ";
             } else {
 
-                if ($cekSMPPa >= 55 AND $lembaga === 'SMP' AND $jkl === 'Laki-laki') {
+                if ($cekLama > 0) {
                     // return false;
                     $this->session->set_flashdata('error', 'Maaf. Kuota SMP Putra sudah penuh');
                     redirect('daftar');
                 }
-                if ($cekSMPPi >= 55 AND $lembaga === 'SMP' and $jkl === 'Perempuan') {
+                if ($cekSMPPa >= 55 and $lembaga === 'SMP' and $jkl === 'Laki-laki') {
+                    // return false;
+                    $this->session->set_flashdata('error', 'Maaf. Kuota SMP Putra sudah penuh');
+                    redirect('daftar');
+                }
+                if ($cekSMPPi >= 55 and $lembaga === 'SMP' and $jkl === 'Perempuan') {
                     // return false;
                     $this->session->set_flashdata('error', 'Maaf. Kuota SMP Putri sudah penuh');
                     redirect('daftar');
                 }
-                if ($cekMI >= 40 AND $lembaga === 'MI') {
+                if ($cekMI >= 40 and $lembaga === 'MI') {
                     // return false;
                     $this->session->set_flashdata('error', 'Maaf. Kuota MI sudah penuh');
                     redirect('daftar');
                 }
-                if ($cekRA >= 40 AND $lembaga === 'RA') {
+                if ($cekRA >= 40 and $lembaga === 'RA') {
                     // return false;
                     $this->session->set_flashdata('error', 'Maaf. Kuota RA sudah penuh');
                     redirect('daftar');

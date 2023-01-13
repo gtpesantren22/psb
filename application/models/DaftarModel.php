@@ -43,6 +43,13 @@ class DaftarModel extends CI_Model
         return $this->db->get();
     }
 
+    function cekLama($nik)
+    {
+        $this->db->where('nik', $nik);
+        $this->db->from('tb_lama');
+        return $this->db->get();
+    }
+
     function cekNIS2($nis)
     {
         $this->db->where('nis', $nis);
