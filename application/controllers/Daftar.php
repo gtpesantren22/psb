@@ -338,7 +338,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
 
                 if ($cekLama > 0) {
                     // return false;
-                    $this->session->set_flashdata('error', 'Maaf. Kuota SMP Putra sudah penuh');
+                    $this->session->set_flashdata('error', 'Maaf. Nik Anda sudah terdaftar di Santri Aktif');
                     redirect('daftar');
                 }
                 if ($cekSMPPa >= 55 and $lembaga === 'SMP' and $jkl === 'Laki-laki') {
