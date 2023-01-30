@@ -89,6 +89,7 @@
                             </li>
                             <li class="<?= $menu === 'info' ? 'active' : '' ?>"><a href="<?= base_url('info') ?>"><i class="fa fa-info"></i>
                                     Informasi</a></li>
+                            <li class="<?= $menu === 'announ' ? 'active' : '' ?>"><a href="<?= base_url('announ') ?>"><i class="fa fa-bullhorn"></i> Pengumuman</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->

@@ -9,6 +9,12 @@ class InfoModel extends CI_Model
         $this->db->order_by('tanggal', 'DESC');
         return $this->db->get();
     }
+
+    public function getBy($table, $where, $dtwhere)
+    {
+        $this->db->where($where, $dtwhere);
+        return $this->db->get($table);
+    }
 }
 
 ?>

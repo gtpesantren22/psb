@@ -27,6 +27,8 @@ class User extends CI_Controller
 
         $data['listSum'] = $this->RegistModel->registSum($data['name']->nis);
         $data['tangg'] = $this->RegistModel->tangg($data['name']->nis);
+        $data['row'] = $this->model->berkas($data['name']->nis)->row();
+        $data['rowSn'] = $this->model->getBy($data['name']->nis)->row();
 
         $this->load->view('user/head', $data);
         $this->load->view('user/home');
