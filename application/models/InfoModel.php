@@ -15,6 +15,14 @@ class InfoModel extends CI_Model
         $this->db->where($where, $dtwhere);
         return $this->db->get($table);
     }
+
+    public function getKts($nis)
+    {
+        $this->db->from('tb_santri');
+        $this->db->join('foto_file', 'ON tb_santri.nis=foto_file.nis');
+        $this->db->where('tb_santri.nis', $nis);
+        return $this->db->get();
+    }
 }
 
 ?>

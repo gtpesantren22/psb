@@ -59,7 +59,7 @@ function bulan($bulan)
 function tanggalIndo($tanggal)
 {
     $a = explode('-', $tanggal);
-    $tanggal = $a['2'] . " " . bulan($a['1']) . " " . $a['0'];
+    $tanggal = $a['0'] . " " . bulan($a['1']) . " " . $a['2'];
     return $tanggal;
 }
 

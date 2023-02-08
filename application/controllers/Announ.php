@@ -22,6 +22,7 @@ class Announ extends CI_Controller
         $data['menu'] = 'announ';
         $data['name'] = $this->Auth_model->current_user();
         $data['hasil'] = $this->model->getBy('test', 'nis', $data['name']->nis)->result();
+        $data['diri'] = $this->model->getKts($data['name']->nis)->result();
 
         $this->load->view('user/head', $data);
         $this->load->view('user/pengumuman', $data);
