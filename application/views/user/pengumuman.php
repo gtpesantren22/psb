@@ -25,7 +25,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="box-body">
+                        <!-- <div class="box-body">
                             <h4>Beberapa test yang diikuti oleh santri : </h4>
                             <?php foreach ($hasil as $hasil) : ?>
                                 <table class="table table-striped table-bordered">
@@ -53,7 +53,7 @@
                                 <strong></strong>
                             <?php endforeach; ?>
                             <p style="color: red;">* Hasil test ini akan digunakan untuk penetuan penempatan kelas madin dan kelas Al-Qur'an</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
