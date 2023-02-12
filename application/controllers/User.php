@@ -25,8 +25,8 @@ class User extends CI_Controller
         $data['list'] = $this->RegistModel->bp_total($data['name']->nis)->result();
         $data['data'] = $this->RegistModel->bp_daftar($data['name']->nis)->result();
 
-        $data['listSum'] = $this->RegistModel->registSum($data['name']->nis);
-        $data['tangg'] = $this->RegistModel->tangg($data['name']->nis);
+        $data['listSum'] = $this->RegistModel->registSum($data['name']->nis)->row();
+        $data['tangg'] = $this->RegistModel->tangg($data['name']->nis)->row();
         $data['row'] = $this->model->berkas($data['name']->nis)->row();
         $data['rowSn'] = $this->model->getBy($data['name']->nis)->row();
 
