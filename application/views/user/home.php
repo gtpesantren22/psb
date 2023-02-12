@@ -201,7 +201,7 @@
                             Registrasi Ulang :
                             <?php
 
-                            if (($tangg->seragam_pes + $tangg->seragam_lem + $tangg->orsaba + $tangg->kartu + $tangg->buku + $tangg->kalender + $tangg->infaq) >= $listSum->nominal) {
+                            if (($tangg->seragam_pes + $tangg->seragam_lem + $tangg->orsaba + $tangg->kartu + $tangg->buku + $tangg->kalender + $tangg->infaq) < $listSum->nominal) {
                                 echo "<span class='label label-danger'><i class='fa fa-times'></i> Belum Lunas</span><br><br>";
                             } else {
                                 echo "<span class='label label-success'><i class='fa fa-check'></i> Sudah Lunas</span><br><br>";
