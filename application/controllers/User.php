@@ -31,7 +31,7 @@ class User extends CI_Controller
         $data['rowSn'] = $this->model->getBy($data['name']->nis)->row();
 
         $this->load->view('user/head', $data);
-        $this->load->view('user/home');
+        $this->load->view('user/home', $data);
         $this->load->view('user/foot');
     }
 }
