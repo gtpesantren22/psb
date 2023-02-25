@@ -234,7 +234,7 @@ class Daftar extends CI_Controller
 
 
 
-        if ($lembaga === 'RA') {
+        if ($lembaga === 'MI') {
             $tambahan = 'Silahkan bergabung ke Grup Siswa Baru MI DWK untuk mengetahui informasi lebih lanjut dengan mengklik link dipaling bawah';
             $tmp = array(array('url' => 'https://chat.whatsapp.com/Eqwog9EcvmzHXz4hZX14Fc', 'text' => 'Klik disini untuk bergabung'));
             $tinggal = 'Non Mukim';
