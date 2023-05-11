@@ -50,7 +50,7 @@
                                         Gelombang 2 : 29 Januari - 11 Maret 2023
                                     </li>
                                     <li data-animation="animated flipInX" data-delay="3s">
-                                        Gelombang 3 : 12 Maret - 28 Mei 2023
+                                        Gelombang 3 : 12 Maret - 03 Juni 2023
                                     </li>
                                 </ul>
                             </div>

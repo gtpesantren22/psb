@@ -57,7 +57,8 @@
                                     <?php
                                     $skr = date('Y-m-d');
                                     $buka = date('2022-12-11');
-                                    if ($skr >= $buka) { ?>
+                                    $tutup = date('2023-06-04');
+                                    if ($skr >= $buka && $skr <= $tutup) { ?>
                                         <?= form_open('daftar/daftarAct'); ?>
                                         <div class="row">
                                             <div class="col-md-6">
@@ -178,7 +179,8 @@
                                         </div>
                                         <?= form_open(); ?>
                                     <?php } else {
-                                        echo "<h3 class='text-center text-danger'>Pendaftaran Akan dibuka pada tanggal 11 Desember 2022 !</h3>";
+                                        // echo "<h3 class='text-center text-danger'>Pendaftaran Akan dibuka pada tanggal 11 Desember 2022 !</h3>";
+                                        echo "<h3 class='text-center text-danger'>Pendaftaran Sudah Tutup pada akhir Gelombang 3 (03 Juni 2023)</h3>";
                                     } ?>
                                 </div>
 
