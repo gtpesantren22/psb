@@ -275,7 +275,7 @@
                                                             <td></td>
                                                             <td>Biaya Pendaftaran</td>
                                                             <td>:</td>
-                                                            <td>Rp. 70.000</td>
+                                                            <td>Rp. 170.000</td>
                                                         </tr>
 
                                                     </table>
