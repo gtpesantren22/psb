@@ -50,7 +50,7 @@
                                         Gelombang 2 : 29 Januari - 11 Maret 2023
                                     </li>
                                     <li data-animation="animated flipInX" data-delay="3s">
-                                        Gelombang 3 : 12 Maret - 28 Mei 2023
+                                        Gelombang 3 : 12 Maret - 03 Juni 2023
                                     </li>
                                 </ul>
                             </div>
@@ -256,20 +256,20 @@
                                                             <td></td>
                                                             <td>Waktu Pendaftaran</td>
                                                             <td>:</td>
-                                                            <td>12 Maret – 28 Mei 2023</td>
+                                                            <td>12 Maret – 03 Juni 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Tes Pendaftaran</td>
                                                             <td>:</td>
-                                                            <td>29 Mei 2023 (Tes Pengetahuan Akademik dan
+                                                            <td>04 Juni 2023 (Tes Pengetahuan Akademik dan
                                                                 Skrinning Kesehatan, Tes Al Qur’an, dan Pengumuman)</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td>Registrasi Ulang dan Verifikasi Berkas</td>
                                                             <td>:</td>
-                                                            <td>29 Mei 2023</td>
+                                                            <td>04 Juni 2023</td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
