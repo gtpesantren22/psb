@@ -53,11 +53,11 @@
                                 <div class="activity-detail">
                                     <?php if ($this->session->flashdata('error')) { ?>
                                         <div class="alert alert-danger"><?= $this->session->flashdata('error') ?></div>
-                                        <?php } ?>
+                                    <?php } ?>
                                     <?php
                                     $skr = date('Y-m-d');
                                     $buka = date('2022-12-11');
-                                    $tutup = date('2023-06-04');
+                                    $tutup = date('2023-12-04');
                                     if ($skr >= $buka && $skr <= $tutup) { ?>
                                         <?= form_open('daftar/daftarAct'); ?>
                                         <div class="row">
