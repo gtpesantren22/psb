@@ -269,7 +269,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             'asal' => $asal,
             'a_asal' => $asal_skl
         );
-        
+
         if ($cekNIS2 >= 1) {
             echo "
             <script>
@@ -303,18 +303,18 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                         </script>
                     ";
                     } else {
-    
+
                         // proses simpan data
                         $this->DaftarModel->input_data('tb_santri', $data);
                         if ($this->db->affected_rows() > 0) {
                             $this->session->set_flashdata('success', 'Success Message...');
-    
+
                             //PEsan Grup
                             $curl2 = curl_init();
                             curl_setopt_array(
                                 $curl2,
                                 array(
-                                    CURLOPT_URL => 'http://8.215.26.187:3000/api/sendMessageGroup',
+                                    CURLOPT_URL => 'http://156.67.221.155:3000/api/sendMessageGroup',
                                     CURLOPT_RETURNTRANSFER => true,
                                     CURLOPT_ENCODING => '',
                                     CURLOPT_MAXREDIRS => 10,
@@ -327,13 +327,13 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                             );
                             $response = curl_exec($curl2);
                             curl_close($curl2);
-    
+
                             // Pesan HP
                             $curl = curl_init();
                             curl_setopt_array(
                                 $curl,
                                 array(
-                                    CURLOPT_URL => 'http://8.215.26.187:3000/api/sendMessage',
+                                    CURLOPT_URL => 'http://156.67.221.155:3000/api/sendMessage',
                                     CURLOPT_RETURNTRANSFER => true,
                                     CURLOPT_ENCODING => '',
                                     CURLOPT_MAXREDIRS => 10,
@@ -347,7 +347,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                             $response = curl_exec($curl);
                             curl_close($curl);
                             // echo $result;
-    
+
                             redirect(base_url('data'));
                         }
                     }
