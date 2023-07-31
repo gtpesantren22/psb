@@ -60,7 +60,7 @@
                                     $tutup = date('2023-12-04');
                                     if ($skr >= $buka && $skr <= $tutup) { ?>
                                         <?= form_open('daftar/daftarAct'); ?>
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="nama">NIK</label>
@@ -173,7 +173,7 @@
                                                 </div>
 
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="col-md-8 col-lg-12">
                                             <button type="submit" id="btnsimpan" class="btn btn-primary btn-block"><i class="fa fa-check-square fa-lg fa-fw"></i> Daftar</button>
                                         </div>

@@ -1,7 +1,7 @@
 <?php if ($this->session->flashdata('success')) { ?>
-<script>
-alert('Pendaftaran Berhasil. Silahkan menunggu pesan WA untuk informasi lebih lanjut');
-</script>
+    <script>
+        alert('Pendaftaran Berhasil. Silahkan menunggu pesan WA untuk informasi lebih lanjut');
+    </script>
 <?php } ?>
 <div class="home-title">
     <div class="container">
@@ -31,28 +31,6 @@ alert('Pendaftaran Berhasil. Silahkan menunggu pesan WA untuk informasi lebih la
 
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <?php
-                                    foreach ($daftar as $key => $value) : ?>
-                                    <tr>
-                                        <td><?= $key + 1; ?></td>
-                                        <td><?= $value->nama; ?></td>
-                                        <td><?= $value->desa . ' - ' . $value->kec . ' - ' . $value->kab; ?></td>
-                                        <td><?= date('d-m-Y', strtotime($value->waktu_daftar)) ?></td>
-                                        <td><?= $value->lembaga; ?> DWK</td>
-                                        <td><span class='badge badge-success'><?= $value->ket ?></span>
-                                            <?php if ($value->stts == 'Belum Terverifikasi') {
-                                                    echo "<span class='badge badge-danger'>Belum Terverifikasi</span>";
-                                                } else if ($value->stts == 'Terverifikasi') {
-                                                    echo "<span class='badge badge-warning'>Terverifikasi</span>";
-                                                } else {
-                                                    echo "<span class='badge badge-success'>Sudah Registrasi</span>";
-                                                }
-                                                ?>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
                             </table>
                         </div>
                     </div>
