@@ -174,9 +174,9 @@
 
                                             </div>
                                         </div> -->
-                                        <div class="col-md-8 col-lg-12">
+                                        <!-- <div class="col-md-8 col-lg-12">
                                             <button type="submit" id="btnsimpan" class="btn btn-primary btn-block"><i class="fa fa-check-square fa-lg fa-fw"></i> Daftar</button>
-                                        </div>
+                                        </div> -->
                                         <?= form_open(); ?>
                                     <?php } else {
                                         // echo "<h3 class='text-center text-danger'>Pendaftaran Akan dibuka pada tanggal 11 Desember 2022 !</h3>";
