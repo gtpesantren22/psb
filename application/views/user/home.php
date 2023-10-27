@@ -17,7 +17,7 @@
             <div class="callout callout-info">
                 <h4><?= $name->nis . ' - ' . $name->nama ?></h4>
 
-                <p>Aplikasi pendaftaran santri baru Tahun Pelajaran 2023/2024. Pondok Pesantren Darul Lughah Wal Karmoah
+                <p>Aplikasi pendaftaran santri baru Tahun Pelajaran 2024/2025. Pondok Pesantren Darul Lughah Wal Karmoah
                 </p>
             </div>
             <div class="callout callout-danger">
@@ -201,10 +201,14 @@
                             Registrasi Ulang :
                             <?php
 
-                            if (($tangg->seragam_pes + $tangg->seragam_lem + $tangg->orsaba + $tangg->kartu + $tangg->buku + $tangg->kalender + $tangg->infaq) < $listSum->nominal) {
-                                echo "<span class='label label-danger'><i class='fa fa-times'></i> Belum Lunas</span><br><br>";
+                            if ($listSum && $tangg) {
+                                if ($listSum->nominal >= ($tangg->seragam_pes + $tangg->seragam_lem + $tangg->orsaba + $tangg->kartu + $tangg->buku + $tangg->kalender + $tangg->infaq)) {
+                                    echo "<span class='label label-success'><i class='fa fa-check'></i> Sudah Lunas</span><br><br>";
+                                } else {
+                                    echo "<span class='label label-danger'><i class='fa fa-times'></i> Belum Lunas</span><br><br>";
+                                }
                             } else {
-                                echo "<span class='label label-success'><i class='fa fa-check'></i> Sudah Lunas</span><br><br>";
+                                echo "<a href='" . base_url('regist/ulang') . "'><span class='label label-primary'><i class='fa fa-search'></i> Cek Biaya Registrasi Ulang</span></a><br><br>";
                             }
                             ?>
                         </div>

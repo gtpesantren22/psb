@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login extends CI_Controller
+class Login24 extends CI_Controller
 {
     public function __construct()
     {
@@ -17,7 +17,7 @@ class Login extends CI_Controller
         // $data['daftar'] = $this->DataModel->data()->result();
 
         // $this->load->view('layout/head');
-        $this->load->view('login');
+        $this->load->view('login_one');
         // $this->load->view('layout/foot');
     }
 
@@ -30,7 +30,7 @@ class Login extends CI_Controller
         // $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == FALSE) {
-             $this->load->view('login');
+            $this->load->view('login');
         }
 
         $username = $this->input->post('username', true);
@@ -43,12 +43,11 @@ class Login extends CI_Controller
             echo "
             <script>
                 alert('Maaf username atau password salah');
-                window.location = '".base_url('login')."';
+                window.location = '" . base_url('login') . "';
             </script>
             ";
             // $this->load->view('login');
         }
-
     }
 
     public function logout()

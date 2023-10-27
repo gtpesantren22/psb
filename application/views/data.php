@@ -1,42 +1,46 @@
-<?php if ($this->session->flashdata('success')) { ?>
-    <script>
-        alert('Pendaftaran Berhasil. Silahkan menunggu pesan WA untuk informasi lebih lanjut');
-    </script>
-<?php } ?>
-<div class="home-title">
-    <div class="container">
-        <h5 class="post-title" id="datadaftar">
-            <span class="fa fa-user"></span><span>Data Pendaftar</span>
-        </h5>
+<!--unic-cards start-->
+<section class="unique-cards section-py-space mt-10">
+    <div class="title">
+        <h1>&nbsp;</h1>
+        <h2>Data Pendaftar</h2>
     </div>
-</div>
-<div class="home-content-wrapper ">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-lg-12">
+    <div class="custom-container">
+        <div class="card">
+            <div class="card-header">
+                <h5>Data Calon Santri Terdaftar</h5>
+                <span>Daftar nama-nama calon santri yang sudah terdaftar</span>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="show-case">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>Nama Pendaftar</th>
+                                <th>Alamat</th>
+                                <th>Tujuan</th>
+                                <th>Satatus</th>
 
-                        <br>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-sm table-bordered" id="sampleTable">
-                                <thead>
-                                    <tr>
-                                        <th width="30">NO</th>
-                                        <th>Nama Pendaftar</th>
-                                        <th>Alamat</th>
-                                        <th>Tgl Daftar</th>
-                                        <th>Tujuan</th>
-                                        <th>Satatus</th>
-
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                    </div>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $no = 1;
+                            foreach ($daftar as $row) :
+                            ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $row->nama ?></td>
+                                    <td><?= $row->desa . ' - ' . $row->kec . ' - ' . $row->kab ?></td>
+                                    <td><?= $row->lembaga ?></td>
+                                    <td><?= $row->stts ?></td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
                 </div>
-                <hr>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!--unic-cards end-->

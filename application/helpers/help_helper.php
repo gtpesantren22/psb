@@ -128,7 +128,7 @@ function kirim_tmp($key, $no_hp, $pesan, $tmp, $link_logo)
 
 function gel($gel)
 {
-    $nm = array(0, 70000, 120000, 170000);
+    $nm = array(0, 80000, 130000, 180000);
     return $nm[$gel];
 }
 

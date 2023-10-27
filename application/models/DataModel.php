@@ -23,4 +23,17 @@ class DataModel extends CI_Model
         $this->db->from('tb_santri');
         return $this->db->get();
     }
+
+    public function down()
+    {
+        $this->db->from('downloads');
+        return $this->db->get();
+    }
+
+    function getBy($tbl, $wh, $dwh)
+    {
+        $this->db->where($wh, $dwh);
+        $this->db->from($tbl);
+        return $this->db->get();
+    }
 }

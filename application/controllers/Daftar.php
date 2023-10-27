@@ -6,7 +6,7 @@ require 'libs/vendor/autoload.php';
 
 use Ramsey\Uuid\Uuid;
 
-class Daftar extends CI_Controller
+class Daftar24 extends CI_Controller
 {
 
 
@@ -28,9 +28,9 @@ class Daftar extends CI_Controller
         $data['hasil'] = $this->DaftarModel->getprov();
         $data['provinsi'] = $this->ProvinsiModel->view();
 
-        $this->load->view('layout/head', $data);
+        // $this->load->view('layout/head', $data);
         $this->load->view('daftar_baru', $data);
-        $this->load->view('layout/foot', $data);
+        // $this->load->view('layout/foot', $data);
     }
 
     public function listKota()
@@ -155,14 +155,15 @@ class Daftar extends CI_Controller
         $jalur = 'Reguler';
         $nik = $this->input->post('nik', TRUE);
         $no_kk = $this->input->post('no_kk', TRUE);
+        $nisn = $this->input->post('nisn', TRUE);
         $nama = strtoupper($this->input->post('nama', TRUE));
         $tempat = strtoupper($this->input->post('tempat', TRUE));
         $tanggal = $this->input->post('tanggal', TRUE);
         $bulan = $this->input->post('bulan', TRUE);
         $tahun = $this->input->post('tahun', TRUE);
         $jkl = $this->input->post('jkl', TRUE);
-        // $anak_ke = $this->input->post('anak_ke', TRUE);
-        // $jml = $this->input->post('jml', TRUE);
+        $anak_ke = $this->input->post('anak_ke', TRUE);
+        $jml = $this->input->post('jml_sdr', TRUE);
         $lembaga = $this->input->post('lembaga', TRUE);
         $hp = $this->input->post('hp', TRUE);
         // $jln = $this->input->post('jln', TRUE);
@@ -179,10 +180,10 @@ class Daftar extends CI_Controller
         // $kelurahan = '35.13.14.2013';
 
 
-        // $asal = $this->input->post('asal', TRUE);
-        // $asal_skl = $this->input->post('asal_skl', TRUE);
-        // $bapak = strtoupper($this->input->post('bapak', TRUE));
-        // $ibu = strtoupper($this->input->post('ibu', TRUE));
+        $asal = $this->input->post('asal', TRUE);
+        $a_asal = $this->input->post('a_asal', TRUE);
+        $bapak = strtoupper($this->input->post('bapak', TRUE));
+        $ibu = strtoupper($this->input->post('ibu', TRUE));
         // $a_pkj = $this->input->post('a_pkj', TRUE);
         // $i_pkj = $this->input->post('i_pkj', TRUE);
 
@@ -205,34 +206,32 @@ class Daftar extends CI_Controller
         $cekLama = $this->DaftarModel->cekLama($nik)->num_rows();
 
         $jl = date('Y-m-d');
-        $g1 = '2023-01-28';
-        $g2 = '2023-03-11';
-        $g3 = '2023-03-12';
+        $g1 = '2023-12-14';
+        $g2 = '2024-02-15';
+        $g3 = '2024-02-16';
 
         if ($jl <= $g1) {
             $gel = "1";
-            $by = 'Rp. 70.000';
+            $by = 'Rp. 80.000';
         } else if ($jl > $g1 && $jl <= $g2) {
             $gel = "2";
-            $by = 'Rp. 120.000';
+            $by = 'Rp. 130.000';
         } else if ($jl >= $g3) {
             $gel = "3";
-            $by = 'Rp. 170.000';
+            $by = 'Rp. 180.000';
         }
 
         $jk = $jkl == 'Laki-laki' ? '1' : '2';
 
         $data = $this->db->query("SELECT max(substring(nis, 6)) as maxKode FROM tb_santri WHERE ket = 'baru' ")->row();
-        $kodeBarang = $data->maxKode;
+        $kodeBarang = $data->maxKode ? $data->maxKode : '00000000';
         $noUrut = (int) substr($kodeBarang, 0, 3);
         $noUrut++;
-        $char = "2023";
+        $char = "2024";
         $kodeBarang = $char . $jk . sprintf("%03s", $noUrut);
         $nis = htmlspecialchars($kodeBarang);
 
         $alm = $kelOk . '-' . $kecOk . '-' . $kabOk;
-
-
 
         if ($lembaga === 'MI') {
             $tambahan = 'Silahkan bergabung ke Grup Siswa Baru MI DWK untuk mengetahui informasi lebih lanjut dengan mengklik link dipaling bawah';
@@ -254,9 +253,7 @@ _*Catatan Penting :*_
             $bawahan = '_*Catatan Penting :*_
 _*Calon santri diwajibkan memakai baju putih, songkok/kerudung hitam saat tes pendaftaran dengan bawahan hitam atau gelap*_';
         }
-
         $pesan = '*Selamat*
-
 Data yang anda isi telah  tersimpan di data panitia Penerimaan santri baru PP. Darul Lughah Wal Karomah, atas :
         
 Nama : ' . $nama . '
@@ -284,10 +281,20 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             
 *Terimakasih*';
 
+        $pesanOk = '*Terimakasih*
+        
+Data yang anda isi telah  tersimpan di data panitia Penerimaan santri baru PP. Darul Lughah Wal Karomah dan Panitia akan melakukan verifikasi data. untuk informasi berikutnya akan kami informasikan lebih lanjut melalui pesan whatsapp ini.
+
+Atas perhatiannya kasmi sampaikan terimakasih
+TTD
+
+*Panitia PSB PPDWK*';
+
         $data = array(
             'id_santri' => $id,
             'nis' => $nis,
             'nik' => $nik,
+            'nisn' => $nisn,
             'nama' => $nama,
             'tempat' => $tempat,
             'tanggal' => $tgl_ok,
@@ -300,8 +307,8 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             'kec' => $kecOk,
             'kab' => $kabOk,
             'prov' => $provOk,
-            // 'bapak' => $bapak,
-            // 'ibu' => $ibu,
+            'bapak' => $bapak,
+            'ibu' => $ibu,
             'hp' => $hp,
             'username' => $nis,
             // 'password' => $ps,
@@ -309,15 +316,22 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             'gel' => $gel,
             'jalur' => $jalur,
             'waktu_daftar' => date('Y-m-d H:i:s'),
-            // 'anak_ke' => $anak_ke,
-            // 'jml_sdr' => $jml,
+            'anak_ke' => $anak_ke,
+            'jml_sdr' => $jml,
             // 'a_pkj' => $a_pkj,
             // 'i_pkj' => $i_pkj,
             'no_kk' => $no_kk,
             'ket' => 'baru',
-            'tinggal' => $tinggal
-            // 'a_asal' => $asal_skl
+            'tinggal' => $tinggal,
+            'asal' => $asal,
+            'a_asal' => $a_asal
         );
+
+        $data2 = [
+            'nis' => $nis,
+            'atasan' => $this->input->post('atasan', true),
+            'bawahan' => $this->input->post('bawahan', true),
+        ];
 
         if ($cekNik > 0) {
             echo "
@@ -362,25 +376,52 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                     redirect('daftar');
                 }
 
-                // proses simpan data
-                $this->DaftarModel->input_data('tb_santri', $data);
-                $this->DaftarModel->input_data('berkas_file', ['nis' => $nis]);
-                $this->DaftarModel->input_data('foto_file', ['nis' => $nis]);
+                $config['upload_path']          = FCPATH . '/assets/berkas/';
+                $config['allowed_types']        = 'jpg|jpeg|png|pdf';
+                $config['file_name']            = 'KK-' . $nis . random(4);
+                $config['overwrite']            = true;
+                $config['max_size']             = 0;
 
-                if ($this->db->affected_rows() > 0) {
-                    $this->session->set_flashdata('success', 'Pesan');
-                    //PEsan Grup
+                $this->load->library('upload', $config);
 
-                    if ($lembaga === 'MI' || $lembaga === 'RA') {
-                        kirim_tmp($key->api_key, $hp, $pesan, $tmp, 'https://i.postimg.cc/8c8fghZq/LOGO-WA.jpg');
-                        kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
-                    } else {
-                        kirim_person($key->api_key, $hp, $pesan);
-                        kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
+                if (!$this->upload->do_upload('berkas')) {
+                    $data['error'] = $this->upload->display_errors();
+                } else {
+
+                    $uploaded_data = $this->upload->data();
+                    $new_data = [
+                        'nis' => $nis,
+                        'kk' => $uploaded_data['file_name']
+                    ];
+
+                    // proses simpan data
+                    $this->DaftarModel->input_data('tb_santri_sm', $data);
+                    $this->DaftarModel->input_data('berkas_file', $new_data);
+                    $this->DaftarModel->input_data('seragam', $data2);
+
+                    if ($this->db->affected_rows() > 0) {
+                        // $this->session->set_flashdata('success', 'Pesan');
+                        //PEsan Grup
+
+                        if ($lembaga === 'MI' || $lembaga === 'RA') {
+                            // kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
+                            kirim_person($key->api_key, $hp, $pesanOk);
+                            kirim_person($key->api_key, '085236924510', $pesan2);
+                        } else {
+                            kirim_person($key->api_key, $hp, $pesanOk);
+                            // kirim_person($key->api_key, '085234980128', $pesanOk);
+                            kirim_person($key->api_key, '085236924510', $pesan2);
+                            redirect('daftar/sukses/', $nis);
+                        }
                     }
-                    redirect('data');
                 }
             }
         }
+    }
+
+    public function sukses($nis)
+    {
+        $data['nis'] = $nis;
+        $this->load->view('sukses', $data);
     }
 }

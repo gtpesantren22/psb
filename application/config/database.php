@@ -79,11 +79,11 @@ $db['default'] = array(
 
 	'username' => 'root',
 	'password' => '',
-	'database' => 'psb23',
+	'database' => 'psb24',
 
 	// 'username' => 'u9048253_dwk',
 	// 'password' => 'PesantrenDWKIT2021',
-	// 'database' => 'u9048253_psb22',
+	// 'database' => 'u9048253_psb24',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
