@@ -50,7 +50,7 @@
     <!-- Page Body Start-->
     <div class="container-fluid p-0">
       <div class="comingsoon">
-        <div class="comingsoon-inner text-center"><a href="#"><img src="<?= base_url('viho/') ?>assets/images/logo/logo-psb.png" height="100" alt=""></a>
+        <div class="comingsoon-inner text-center"><a href="#"><img src="<?= base_url('viho/') ?>assets/images/logo/Logo-psb.png" height="100" alt=""></a>
           <h5>COMING SOON</h5>
           <div class="countdown" id="clockdiv">
             <ul>
