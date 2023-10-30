@@ -36,4 +36,10 @@ class DataModel extends CI_Model
         $this->db->from($tbl);
         return $this->db->get();
     }
+
+    function ubah($tbl, $wh, $dwh, $data)
+    {
+        $this->db->where($wh, $dwh);
+        $this->db->update($tbl, $data);
+    }
 }

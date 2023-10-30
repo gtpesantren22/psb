@@ -105,13 +105,13 @@ function kirim_group($key, $id_group, $pesan)
     curl_close($curl2);
 }
 
-function kirim_tmp($key, $no_hp, $pesan, $tmp, $link_logo)
+function kirim_tmp($apiKey, $no_hp, $title, $desc, $isi, $link_logo, $link)
 {
     $curl2 = curl_init();
     curl_setopt_array(
         $curl2,
         array(
-            CURLOPT_URL => 'http://191.101.3.115:3000/api/sendTemplateMessage',
+            CURLOPT_URL => 'http://191.101.3.115:3000/api/sendAdReplyMessage',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -119,7 +119,7 @@ function kirim_tmp($key, $no_hp, $pesan, $tmp, $link_logo)
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => 'apiKey=' . $key . '&phone=' . $no_hp . '&body_message=' . $pesan . '&footer=&template=' . json_encode($tmp) . '&url_file=' . $link_logo,
+            CURLOPT_POSTFIELDS => 'apiKey=' . $apiKey . '&phone=' . $no_hp . '&title=' . $title . '&desc=' . $desc . '&body_message=' . $isi . '&url_file=' . $link_logo . '&url=' . $link,
         )
     );
     $response = curl_exec($curl2);

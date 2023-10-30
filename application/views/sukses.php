@@ -65,7 +65,7 @@
                                     <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                                         <tbody>
                                             <tr>
-                                                <td><a href="index.html"><img class="img-fluid" src="<?= base_url('viho/') ?>assets/images/logo/logo.png" alt=""></a></td>
+                                                <!-- <td><a href="index.html"><img class="img-fluid" src="<?= base_url('viho/') ?>assets/images/logo/logo.png" alt=""></a></td> -->
                                                 <td style="text-align: right; color:#999"><span><a href="<?= base_url('data') ?>"><i class="fa fa-arrow-circle-left"></i> Kembali</a></span></td>
                                             </tr>
                                         </tbody>
@@ -79,8 +79,8 @@
                             <tr>
                                 <td style="padding: 30px">
                                     <h6 style="font-weight: 600">Selamat!</h6>
-                                    <p>Data yang anda isi telah tersimpan di data panitia Penerimaan santri baru PP. Darul Lughah Wal Karomah dengan KODE PENDAFTARAN</p>
-                                    <p style="text-align: center"><a href="javascript:void(0)" style="padding: 10px; background-color: #24695c; color: #fff; display: inline-block; border-radius: 4px;font-weight:600;"><?= $nis ?></a></p>
+                                    <p>Data yang anda isi telah tersimpan di data panitia Penerimaan santri baru PP. Darul Lughah Wal Karomah</p>
+                                    <p style="text-align: center"><a href="javascript:void(0)" style="padding: 10px; background-color: #24695c; color: #fff; display: inline-block; border-radius: 4px;font-weight:600;">PENDAFTARAN BERHASIL</a></p>
                                     <p>Untuk selanjutnya Panitia akan melakukan verifikasi data. dan untuk informasi berikutnya akan kami informasikan lebih lanjut melalui pesan whatsapp ini.</p>
                                     <p>Atas perhatiannya kasmi sampaikan terimakasih</p>
                                     <p style="margin-bottom: 0">
@@ -103,5 +103,6 @@
         </tbody>
     </table>
 </body>
+
 
 </html>

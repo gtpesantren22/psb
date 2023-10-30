@@ -6,10 +6,8 @@ require 'libs/vendor/autoload.php';
 
 use Ramsey\Uuid\Uuid;
 
-class Daftar24 extends CI_Controller
+class Daftar extends CI_Controller
 {
-
-
     public function __construct()
     {
         parent::__construct();
@@ -19,6 +17,8 @@ class Daftar24 extends CI_Controller
         $this->load->model('KecModel');
         $this->load->model('DesaModel');
         $this->load->model('SklModel');
+
+        $this->load->helper('upload_helper');
     }
 
 
@@ -223,36 +223,40 @@ class Daftar24 extends CI_Controller
 
         $jk = $jkl == 'Laki-laki' ? '1' : '2';
 
-        $data = $this->db->query("SELECT max(substring(nis, 6)) as maxKode FROM tb_santri WHERE ket = 'baru' ")->row();
-        $kodeBarang = $data->maxKode ? $data->maxKode : '00000000';
-        $noUrut = (int) substr($kodeBarang, 0, 3);
-        $noUrut++;
-        $char = "2024";
-        $kodeBarang = $char . $jk . sprintf("%03s", $noUrut);
-        $nis = htmlspecialchars($kodeBarang);
+        // $data = $this->db->query("SELECT max(substring(nis, 6)) as maxKode FROM tb_santri WHERE ket = 'baru' ")->row();
+        // $kodeBarang = $data->maxKode ? $data->maxKode : '00000000';
+        // $noUrut = (int) substr($kodeBarang, 0, 3);
+        // $noUrut++;
+        // $char = "2024";
+        // $kodeBarang = $char . $jk . sprintf("%03s", $noUrut);
+        // $nis = htmlspecialchars($kodeBarang);
 
         $alm = $kelOk . '-' . $kecOk . '-' . $kabOk;
 
         if ($lembaga === 'MI') {
             $tambahan = 'Silahkan bergabung ke Grup Siswa Baru MI DWK untuk mengetahui informasi lebih lanjut dengan mengklik link dipaling bawah';
-            $tmp = array(array('url' => 'https://chat.whatsapp.com/Eqwog9EcvmzHXz4hZX14Fc', 'text' => 'Klik disini untuk bergabung'));
+            $linkImg = 'https://psb.ppdwk.com/viho/assets/images/logo/Logo-psb.png';
+            $linkgroup = 'https://chat.whatsapp.com/FKuDjKALmcx7U1I5Dv7w5O';
             $tinggal = 'Non Mukim';
             $bawahan = '
 _*Catatan Penting :*_
 *- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
         } elseif ($lembaga === 'RA') {
             $tambahan = 'Silahkan bergabung ke Grup Siswa Baru RA DWK untuk mengetahui informasi lebih lanjut dengan mengklik link dipaling bawah.';
-            $tmp = array(array('url' => 'https://chat.whatsapp.com/LhePAcQXgD8HWz3O8YJdNF', 'text' => 'Klik disini untuk bergabung'));
+            $linkImg = 'https://psb.ppdwk.com/viho/assets/images/logo/Logo-psb.png';
+            $linkgroup = 'https://chat.whatsapp.com/L51jKWYqQMX0kFgljf1g7u';
             $tinggal = 'Non Mukim';
             $bawahan = '
-_*Catatan Penting :*_
-*- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
+            _*Catatan Penting :*_
+            *- Wali murid segera menyetorkan berkas yang dibutuhkan kepada lembaga (Fotocopy KK, KTP bapak  ibu, Akta Kelahiran)*';
         } else {
-            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI 0582-0101-4254-500 a.n. Hadiryanto Putra Pratama* dan melakukan konfirmasi pembayaran disertai bukti transfer ke *No. WA 082338631044*';
+            $tambahan = 'selanjutnya, silahkan melakukan  pembayaran  Biaya Pendaftaran sebesar *' . $by . '* ke *No.Rek BRI 0582-01000-847-303 a.n. PP DARUL LUGHAH WAL KAROAH* dan melakukan upload bukti Transfer pada LINK Berikut ini';
+            $linkImg = 'https://psb.ppdwk.com/viho/assets/images/logo/Logo-psb.png';
             $tinggal = 'Mukim';
             $bawahan = '_*Catatan Penting :*_
 _*Calon santri diwajibkan memakai baju putih, songkok/kerudung hitam saat tes pendaftaran dengan bawahan hitam atau gelap*_';
         }
+
         $pesan = '*Selamat*
 Data yang anda isi telah  tersimpan di data panitia Penerimaan santri baru PP. Darul Lughah Wal Karomah, atas :
         
@@ -264,35 +268,11 @@ Gel :  ' . $gel . '
         
 ' . $tambahan . '
     
-*Terimakasih*
-
-' . $bawahan;
-
-        $pesan2 = '*Info tambahan santri baru*
- 
-No. Pendaftaran : ' . $nis . '
-Nama : ' . $nama . '
-Alamat : ' . $alm . '
-Lembaga tujuan : ' . $lembaga . ' DWK
-jalur : ' . $jalur . '
-Gel :  ' . $gel . '
-No. HP : ' . $hp . '
-Waktu Daftar : ' . date('d-m-Y H:i:s') . '
-            
 *Terimakasih*';
-
-        $pesanOk = '*Terimakasih*
-        
-Data yang anda isi telah  tersimpan di data panitia Penerimaan santri baru PP. Darul Lughah Wal Karomah dan Panitia akan melakukan verifikasi data. untuk informasi berikutnya akan kami informasikan lebih lanjut melalui pesan whatsapp ini.
-
-Atas perhatiannya kasmi sampaikan terimakasih
-TTD
-
-*Panitia PSB PPDWK*';
 
         $data = array(
             'id_santri' => $id,
-            'nis' => $nis,
+            'nis' => '',
             'nik' => $nik,
             'nisn' => $nisn,
             'nama' => $nama,
@@ -310,7 +290,7 @@ TTD
             'bapak' => $bapak,
             'ibu' => $ibu,
             'hp' => $hp,
-            'username' => $nis,
+            'username' => '',
             // 'password' => $ps,
             'stts' => 'Belum Terverifikasi',
             'gel' => $gel,
@@ -328,7 +308,7 @@ TTD
         );
 
         $data2 = [
-            'nis' => $nis,
+            'id_seragam' => $id,
             'atasan' => $this->input->post('atasan', true),
             'bawahan' => $this->input->post('bawahan', true),
         ];
@@ -376,52 +356,78 @@ TTD
                     redirect('daftar');
                 }
 
-                $config['upload_path']          = FCPATH . '/assets/berkas/';
-                $config['allowed_types']        = 'jpg|jpeg|png|pdf';
-                $config['file_name']            = 'KK-' . $nis . random(4);
-                $config['overwrite']            = true;
-                $config['max_size']             = 0;
+                $upload_path = FCPATH . '/assets/berkas/';
+                $allowed_types = 'jpg|jpeg|png|pdf';
+                $max_size = 10240;
 
-                $this->load->library('upload', $config);
+                $kk = upload_file('kk', $upload_path . 'kk/', $allowed_types, $max_size, random(6) . '-kk');
+                $akta = upload_file('akta', $upload_path . 'akta/', $allowed_types, $max_size, random(6) . '-akta');
+                $ktp_ayah = upload_file('ktp_ayah', $upload_path . 'ktp_ayah/', $allowed_types, $max_size, random(6) . '-ktp_ayah');
+                $ktp_ibu = upload_file('ktp_ibu', $upload_path . 'ktp_ibu/', $allowed_types, $max_size, random(6) . '-ktp_ibu');
+                $ijazah = upload_file('ijazah', $upload_path . 'ijazah/', $allowed_types, $max_size, random(6) . '-ijazah');
+                $kip = upload_file('kip', $upload_path . 'kip/', $allowed_types, $max_size, random(6) . '-kip');
+                $foto = upload_file('foto', $upload_path . 'foto/', $allowed_types, $max_size, random(6) . '-foto');
 
-                if (!$this->upload->do_upload('berkas')) {
-                    $data['error'] = $this->upload->display_errors();
+                if (is_string($ijazah)) {
+                    $ijazahOk = '';
                 } else {
+                    $ijazahOk = $ijazah['file_name'];
+                }
 
-                    $uploaded_data = $this->upload->data();
-                    $new_data = [
-                        'nis' => $nis,
-                        'kk' => $uploaded_data['file_name']
-                    ];
+                if (is_string($kip)) {
+                    $kipOk = '';
+                } else {
+                    $kipOk = $kip['file_name'];
+                }
 
-                    // proses simpan data
-                    $this->DaftarModel->input_data('tb_santri_sm', $data);
-                    $this->DaftarModel->input_data('berkas_file', $new_data);
-                    $this->DaftarModel->input_data('seragam', $data2);
+                $dataBerkas = [
+                    'id_file' => $id,
+                    'nis' => '',
+                    'kk' => $kk['file_name'],
+                    'akta' => $akta['file_name'],
+                    'ktp_ayah' => $ktp_ayah['file_name'],
+                    'ktp_ibu' => $ktp_ibu['file_name'],
+                    'skl' => $ijazahOk,
+                    'kip' => $kipOk,
+                ];
 
-                    if ($this->db->affected_rows() > 0) {
-                        // $this->session->set_flashdata('success', 'Pesan');
-                        //PEsan Grup
+                $dataFoto = [
+                    'id_file' => $id,
+                    'nis' => '',
+                    'diri' =>  $foto['file_name'],
+                ];
 
-                        if ($lembaga === 'MI' || $lembaga === 'RA') {
-                            // kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
-                            kirim_person($key->api_key, $hp, $pesanOk);
-                            kirim_person($key->api_key, '085236924510', $pesan2);
-                        } else {
-                            kirim_person($key->api_key, $hp, $pesanOk);
-                            // kirim_person($key->api_key, '085234980128', $pesanOk);
-                            kirim_person($key->api_key, '085236924510', $pesan2);
-                            redirect('daftar/sukses/', $nis);
-                        }
+                // proses simpan data
+                $this->DaftarModel->input_data('tb_santri_sm', $data);
+                $this->DaftarModel->input_data('berkas_file', $dataBerkas);
+                $this->DaftarModel->input_data('foto_file', $dataFoto);
+                $this->DaftarModel->input_data('seragam', $data2);
+
+                if ($this->db->affected_rows() > 0) {
+                    // $this->session->set_flashdata('success', 'Pesan');
+                    //PEsan Grup
+
+                    if ($lembaga === 'MI' || $lembaga === 'RA') {
+                        // kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
+                        kirim_person($key->api_key, $hp, $pesan);
+                        kirim_tmp($key->api_key, $hp, 'LINK GROUP', 'Link undangan group', 'Klik link diatas untuk gabung ke grup siswa baru ' . $lembaga . ' DWK', $linkImg, $linkgroup);
+                    } else {
+                        kirim_person($key->api_key, $hp, $pesan);
+                        // kirim_tmp($key->api_key, $hp, 'LINK UPLOAD', 'Link upload bukti transfer', 'Klik link diatas untuk upload bukti transfer pendaftaran', $linkImg, 'https://psb.ppdwk.com/data/uploadBukti/' . $id);
+                        kirim_tmp($key->api_key, $hp, 'LINK UPLOAD', 'Link upload bukti transfer', 'Klik link diatas untuk upload bukti transfer pendaftaran', $linkImg, 'http://localhost/psb/data/uploadBukti/' . $id);
+                        // kirim_person($key->api_key, '085234980128', $pesanOk);
+                        kirim_person($key->api_key, '085236924510', $pesan);
+                        redirect('daftar/sukses');
                     }
                 }
             }
         }
     }
 
-    public function sukses($nis)
+    public function sukses()
     {
-        $data['nis'] = $nis;
-        $this->load->view('sukses', $data);
+        // $data['nis'] = $nis;
+        // $this->load->view('sukses', $data);
+        $this->load->view('sukses');
     }
 }
