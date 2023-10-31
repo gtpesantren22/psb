@@ -50,6 +50,7 @@ Alamat : ' . $santri->desa . '-' . $santri->kec . '-' . $santri->kab . '
 Lembaga : ' . $santri->lembaga . '
 
 Dimohon untuk segera dicek di aplikasi Admin PSB Bendaharan.
+Menu *Biaya Pendaftaran -> Varifikasi Pembayaran*
 
 Terimakasih.';
 
