@@ -111,9 +111,9 @@
              <div class="row">
                <div class="col-sm-12 col-xl-6">
                  <div class="card">
-                   <div class="card-header bg-primary d-flex justify-content-between align-items-center">
-                     <h5 class="text-white">Jalur Reguler</h5>
-                     <div class="setting-list bg-primary">
+                   <div class="card-header bg-secondary d-flex justify-content-between align-items-center">
+                     <h5 class="text-white">Jalur Prestasi</h5>
+                     <div class="setting-list bg-secondary">
                        <ul class="list-unstyled setting-option">
                          <li>
                            <div class="setting-white"><i class="icon-settings"></i></div>
@@ -128,6 +128,21 @@
                    </div>
                    <div class="card-body">
                      <ul class="list-group">
+                       <li class="">
+                         <i class="fa fa-check text-success"></i> Fotocopy <strong>Sertifikat Prestasi Akademik dan Non Akademik</strong>
+                         <ol>
+                           <li><i class="fa fa-check-square text-warning"></i>Lulusan MI/SD Minimal Juara 3 Tingkat Kecamatan</li>
+                           <li><i class="fa fa-check-square text-warning"></i>Lulusan SMP/MTs Minimal Juara 3 Tingkat Kabupaten</li>
+                         </ol>
+                       </li>
+                       <li class="">
+                         <i class="fa fa-check text-success"></i> Fotocopy <strong>Sertifikat/Surat Keterangan Tahfidz Al-Qur'an</strong>
+                         <ol>
+                           <li><i class="fa fa-check-square text-warning"></i>Lulusan MI/SD Minimal 1 Juz</li>
+                           <li><i class="fa fa-check-square text-warning"></i>Lulusan SMP/MTs Minimal 3 Juz</li>
+                         </ol>
+                       </li>
+                       <li class=""><i class="fa fa-check text-success"></i><strong>Surat Keterangan Prestasi dari Sekolah/Madrasah</strong></li>
                        <li class=""><i class="fa fa-check text-success"></i> Fotocopy <strong>Kartu keluarga (KK)</strong> 4 Lembar</li>
                        <li class=""><i class="fa fa-check text-success"></i> Fotocopy <strong>Akta Kelahiran</strong> 4 Lembar</li>
                        <li class=""><i class="fa fa-check text-success"></i> Fotocopy <strong>Ijazah / SKL (Surat Keterangan Lulus)</strong> dari Sekolah sebelumnya</li>
@@ -139,9 +154,9 @@
                </div>
                <div class="col-sm-12 col-xl-6">
                  <div class="card">
-                   <div class="card-header bg-secondary d-flex justify-content-between align-items-center">
-                     <h5 class="text-white">Jalur Prestasi</h5>
-                     <div class="setting-list bg-secondary">
+                   <div class="card-header bg-primary d-flex justify-content-between align-items-center">
+                     <h5 class="text-white">Jalur Reguler</h5>
+                     <div class="setting-list bg-primary">
                        <ul class="list-unstyled setting-option">
                          <li>
                            <div class="setting-white"><i class="icon-settings"></i></div>
