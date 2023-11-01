@@ -204,6 +204,7 @@ class Daftar extends CI_Controller
         $cekMI = $this->DaftarModel->cekMI()->num_rows();
         $cekRA = $this->DaftarModel->cekRA()->num_rows();
         $cekLama = $this->DaftarModel->cekLama($nik)->num_rows();
+        $cekNikSm = $this->DaftarModel->geBy('tb_santri_sm', 'nik', $nik)->num_rows();
 
         $jl = date('Y-m-d');
         $g1 = '2023-12-14';
@@ -313,7 +314,7 @@ Gel :  ' . $gel . '
             'bawahan' => $this->input->post('bawahan', true),
         ];
 
-        if ($cekNik > 0) {
+        if (($cekNik + $cekNikSm) > 0) {
             echo "
             <script>
                 alert('Maaf. NIK anda sudah ada');

@@ -39,7 +39,14 @@ class DaftarModel extends CI_Model
     function cekNIK($nik)
     {
         $this->db->where('nik', $nik);
-        $this->db->from('tb_santri');
+        $this->db->from('tb_santri_sm');
+        return $this->db->get();
+    }
+
+    function getBy($table, $where, $dtwhere)
+    {
+        $this->db->where($where, $dtwhere);
+        $this->db->from($table);
         return $this->db->get();
     }
 
