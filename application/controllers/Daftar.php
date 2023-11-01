@@ -413,8 +413,8 @@ Gel :  ' . $gel . '
                         kirim_tmp($key->api_key, $hp, 'LINK GROUP', 'Link undangan group', 'Klik link diatas untuk gabung ke grup siswa baru ' . $lembaga . ' DWK', $linkImg, $linkgroup);
                     } else {
                         kirim_person($key->api_key, $hp, $pesan);
-                        // kirim_tmp($key->api_key, $hp, 'LINK UPLOAD', 'Link upload bukti transfer', 'Klik link diatas untuk upload bukti transfer pendaftaran', $linkImg, 'https://psb.ppdwk.com/data/uploadBukti/' . $id);
-                        kirim_tmp($key->api_key, $hp, 'LINK UPLOAD', 'Link upload bukti transfer', 'Klik link diatas untuk upload bukti transfer pendaftaran', $linkImg, 'http://localhost/psb/data/uploadBukti/' . $id);
+                        kirim_tmp($key->api_key, $hp, 'LINK UPLOAD', 'Link upload bukti transfer', 'Klik link diatas untuk upload bukti transfer pendaftaran', $linkImg, 'https://psb.ppdwk.com/data/uploadBukti/' . $id);
+                        // kirim_tmp($key->api_key, $hp, 'LINK UPLOAD', 'Link upload bukti transfer', 'Klik link diatas untuk upload bukti transfer pendaftaran', $linkImg, 'http://localhost/psb/data/uploadBukti/' . $id);
                         // kirim_person($key->api_key, '085234980128', $pesanOk);
                         kirim_person($key->api_key, '085236924510', $pesan);
                         redirect('daftar/sukses');
