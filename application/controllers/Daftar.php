@@ -204,7 +204,7 @@ class Daftar extends CI_Controller
         $cekMI = $this->DaftarModel->cekMI()->num_rows();
         $cekRA = $this->DaftarModel->cekRA()->num_rows();
         $cekLama = $this->DaftarModel->cekLama($nik)->num_rows();
-        $cekNikSm = $this->DaftarModel->geBy('tb_santri_sm', 'nik', $nik)->num_rows();
+        $cekNikSm = $this->DaftarModel->getBy('tb_santri_sm', 'nik', $nik)->num_rows();
 
         $jl = date('Y-m-d');
         $g1 = '2023-12-14';
