@@ -39,6 +39,40 @@
     <link id="color" rel="stylesheet" href="<?= base_url('viho/') ?>assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('viho/') ?>assets/css/responsive.css">
+
+    <style>
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body class="landing-wrraper">
@@ -64,6 +98,11 @@
                 </div>
             </header>
             <!-- header end-->
+
+            <!-- Spinner loader -->
+            <div id="loading-overlay">
+                <div class="loading-spinner"></div>
+            </div>
 
             <!--unic-cards start-->
             <section class="unique-cards section-py-space mt-10">
@@ -474,7 +513,35 @@
     <script src="<?= base_url('viho/') ?>assets/js/script.js"></script>
     <!-- login js-->
     <!-- Plugin used-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var loadingOverlay = document.getElementById("loading-overlay");
 
+            // Fungsi untuk menampilkan loading
+            function showLoading() {
+                loadingOverlay.style.display = "flex";
+            }
+
+            // Fungsi untuk menyembunyikan loading
+            function hideLoading() {
+                loadingOverlay.style.display = "none";
+            }
+
+            // Menambahkan event listener untuk mengatur tampilan loading saat halaman sedang dimuat
+            window.addEventListener("beforeunload", function() {
+                showLoading();
+            });
+
+            // Menambahkan event listener untuk menyembunyikan loading setelah halaman selesai dimuat
+            window.addEventListener("load", function() {
+                hideLoading();
+            });
+        });
+
+        $('.datepicker').datepicker({
+            autoclose: true
+        })
+    </script>
     <script>
         $(document).ready(function() { // Ketika halaman sudah siap (sudah selesai di load)
             // Kita sembunyikan dulu untuk loadingnya
@@ -607,11 +674,11 @@
                     fileDisplay.innerHTML = `Berkas yang dipilih: ${selectedFile.name}`;
 
                     // Tampilkan pesan sukses
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Sukses',
-                        text: 'Berkas valid : ' + selectedFile.name
-                    });
+                    // Swal.fire({
+                    //     icon: 'success',
+                    //     title: 'Sukses',
+                    //     text: 'Berkas valid : ' + selectedFile.name
+                    // });
                 } else {
                     Swal.fire({
                         icon: 'info',
