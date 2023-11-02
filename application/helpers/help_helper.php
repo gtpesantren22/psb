@@ -134,7 +134,7 @@ function gel($gel)
 
 function random($panjang)
 {
-    $karakter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $karakter = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $string = '';
     for ($i = 0; $i < $panjang; $i++) {
         $pos = rand(0, strlen($karakter) - 1);

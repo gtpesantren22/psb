@@ -361,13 +361,13 @@ Gel :  ' . $gel . '
                 $allowed_types = 'jpg|jpeg|png|pdf';
                 $max_size = 10240;
 
-                $kk = upload_file('kk', $upload_path . 'kk/', $allowed_types, $max_size, random(6) . '-kk');
-                $akta = upload_file('akta', $upload_path . 'akta/', $allowed_types, $max_size, random(6) . '-akta');
-                $ktp_ayah = upload_file('ktp_ayah', $upload_path . 'ktp_ayah/', $allowed_types, $max_size, random(6) . '-ktp_ayah');
-                $ktp_ibu = upload_file('ktp_ibu', $upload_path . 'ktp_ibu/', $allowed_types, $max_size, random(6) . '-ktp_ibu');
-                $ijazah = upload_file('ijazah', $upload_path . 'ijazah/', $allowed_types, $max_size, random(6) . '-ijazah');
-                $kip = upload_file('kip', $upload_path . 'kip/', $allowed_types, $max_size, random(6) . '-kip');
-                $foto = upload_file('foto', $upload_path . 'foto/', $allowed_types, $max_size, random(6) . '-foto');
+                $kk = upload_file('kk', $upload_path . 'kk/', $allowed_types, $max_size, random(10) . '-kk');
+                $akta = upload_file('akta', $upload_path . 'akta/', $allowed_types, $max_size, random(10) . '-akta');
+                $ktp_ayah = upload_file('ktp_ayah', $upload_path . 'ktp_ayah/', $allowed_types, $max_size, random(10) . '-ktp_ayah');
+                $ktp_ibu = upload_file('ktp_ibu', $upload_path . 'ktp_ibu/', $allowed_types, $max_size, random(10) . '-ktp_ibu');
+                $ijazah = upload_file('ijazah', $upload_path . 'ijazah/', $allowed_types, $max_size, random(10) . '-ijazah');
+                $kip = upload_file('kip', $upload_path . 'kip/', $allowed_types, $max_size, random(10) . '-kip');
+                $foto = upload_file('foto', $upload_path . 'foto/', $allowed_types, $max_size, random(10) . '-foto');
 
                 if (is_string($ijazah)) {
                     $ijazahOk = '';
