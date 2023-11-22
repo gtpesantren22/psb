@@ -271,6 +271,18 @@ Gel :  ' . $gel . '
     
 *Terimakasih*';
 
+        $pesan2 = '*Info tambahan santri baru*
+
+Nama : ' . $nama . '
+Alamat : ' .  $alm . '
+Lembaga tujuan : ' . $lembaga . ' DWK
+jalur : ' . $jalur . '
+Gel :  ' . $gel . '
+No. HP : ' . $hp . '
+Waktu Daftar : ' . date('d-m-Y H:i:s') . '
+            
+*Terimakasih*';
+
         $data = array(
             'id_santri' => $id,
             'nis' => '',
@@ -399,24 +411,26 @@ Gel :  ' . $gel . '
                 ];
 
                 // proses simpan data
-                $this->DaftarModel->input_data('tb_santri_sm', $data);
-                $this->DaftarModel->input_data('berkas_file', $dataBerkas);
-                $this->DaftarModel->input_data('foto_file', $dataFoto);
-                $this->DaftarModel->input_data('seragam', $data2);
 
-                if ($this->db->affected_rows() > 0) {
-                    // $this->session->set_flashdata('success', 'Pesan');
-                    //PEsan Grup
 
-                    if ($lembaga === 'MI' || $lembaga === 'RA') {
-                        // kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
+
+                if ($lembaga === 'MI' || $lembaga === 'RA') {
+                    $this->DaftarModel->input_data('tb_santri', $data);
+                    if ($this->db->affected_rows() > 0) {
                         kirim_person($key->api_key, $hp, $pesan);
                         kirim_tmp($key->api_key, $hp, 'LINK GROUP', 'Link undangan group', 'Klik link diatas untuk gabung ke grup siswa baru ' . $lembaga . ' DWK', $linkImg, $linkgroup);
-                    } else {
+                        kirim_group($key->api_key, '120363026604973091@g.us', $pesan2);
+                        redirect('daftar/sukses');
+                    }
+                } else {
+                    $this->DaftarModel->input_data('tb_santri_sm', $data);
+                    $this->DaftarModel->input_data('berkas_file', $dataBerkas);
+                    $this->DaftarModel->input_data('foto_file', $dataFoto);
+                    $this->DaftarModel->input_data('seragam', $data2);
+
+                    if ($this->db->affected_rows() > 0) {
                         kirim_person($key->api_key, $hp, $pesan);
                         kirim_tmp($key->api_key, $hp, 'LINK UPLOAD', 'Link upload bukti transfer', 'Klik link diatas untuk upload bukti transfer pendaftaran', $linkImg, 'https://psb.ppdwk.com/data/uploadBukti/' . $id);
-                        // kirim_tmp($key->api_key, $hp, 'LINK UPLOAD', 'Link upload bukti transfer', 'Klik link diatas untuk upload bukti transfer pendaftaran', $linkImg, 'http://localhost/psb/data/uploadBukti/' . $id);
-                        // kirim_person($key->api_key, '085234980128', $pesanOk);
                         kirim_person($key->api_key, '085236924510', $pesan);
                         redirect('daftar/sukses');
                     }
@@ -427,8 +441,6 @@ Gel :  ' . $gel . '
 
     public function sukses()
     {
-        // $data['nis'] = $nis;
-        // $this->load->view('sukses', $data);
         $this->load->view('sukses');
     }
 }

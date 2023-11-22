@@ -33,7 +33,8 @@ class Auth_model extends CI_Model
         }
 
         // cek apakah passwordnya benar?
-        if (!password_verify($password, $user->password)) {
+        // if (!password_verify($password, $user->password)) {
+        if ($password != $user->password) {
             return FALSE;
         }
 
