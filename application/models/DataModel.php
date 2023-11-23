@@ -4,10 +4,12 @@ class DataModel extends CI_Model
 {
     public function data()
     {
-        $this->db->order_by('waktu_daftar', 'ASC');
-        $this->db->where('nama !=', '');
-        $this->db->from('tb_santri');
-        return $this->db->get();
+        // $this->db->order_by('waktu_daftar', 'ASC');
+        // $this->db->where('nama !=', '');
+        // $this->db->from('tb_santri');
+        // return $this->db->get();
+
+        return $this->db->query("SELECT * FROM tb_santri UNION SELECT * FROM tb_santri_sm ORDER BY nama ASC");
     }
 
     public function verval()
