@@ -207,9 +207,16 @@ class Daftar extends CI_Controller
         $cekNikSm = $this->DaftarModel->getBy('tb_santri_sm', 'nik', $nik)->num_rows();
 
         $jl = date('Y-m-d');
-        $g1 = '2023-12-14';
-        $g2 = '2024-02-15';
-        $g3 = '2024-02-16';
+        if ($lembaga == 'MI' || $lembaga == 'RA') {
+            # code...
+            $g1 = '2024-01-28';
+            $g2 = '2024-03-11';
+            $g3 = '2024-03-12';
+        } else {
+            $g1 = '2023-12-14';
+            $g2 = '2024-02-15';
+            $g3 = '2024-02-16';
+        }
 
         if ($jl <= $g1) {
             $gel = "1";
