@@ -370,7 +370,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                     $this->session->set_flashdata('error', 'Maaf. Kuota MI sudah penuh');
                     redirect('daftar');
                 }
-                if ($cekRA >= 40 and $lembaga === 'RA') {
+                if ($cekRA >= 46 and $lembaga === 'RA') {
                     // return false;
                     $this->session->set_flashdata('error', 'Maaf. Kuota RA sudah penuh');
                     redirect('daftar');
