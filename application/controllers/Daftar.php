@@ -214,7 +214,7 @@ class Daftar extends CI_Controller
             $g3 = '2024-03-12';
         } else {
             $g1 = '2023-12-14';
-            $g2 = '2024-02-15';
+            $g2 = '2024-04-25';
             $g3 = '2024-02-16';
         }
 
@@ -229,7 +229,7 @@ class Daftar extends CI_Controller
             $by = 'Rp. 180.000';
         }
 
-        $jk = $jkl == 'Laki-laki' ? '1' : '2';
+        // $jk = $jkl == 'Laki-laki' ? '1' : '2';
 
         // $data = $this->db->query("SELECT max(substring(nis, 6)) as maxKode FROM tb_santri WHERE ket = 'baru' ")->row();
         // $kodeBarang = $data->maxKode ? $data->maxKode : '00000000';
