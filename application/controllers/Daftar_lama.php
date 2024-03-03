@@ -126,7 +126,7 @@ class Daftar_lama extends CI_Controller
         echo json_encode($data);
     }
 
-    public function daftarAct()
+    public function daftarActOkJKkjhkjdhfupohi()
     {
         $id = Uuid::uuid4();
         $nis = $this->input->post('nis', TRUE);
