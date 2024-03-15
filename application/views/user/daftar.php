@@ -28,8 +28,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Nominal Pendaftaran</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
@@ -39,19 +38,15 @@
                             <?php foreach ($list as $rw) {
                                 if ($rw->jml < gel($name->gel)) {
                             ?>
-                            <p class="text-center text-bold fs-3">Status Pembayaran : <span
-                                    class="label label-danger"><i class="fa fa-times"></i> Belum</span></p>
-                            <div class="alert alert-danger" role="alert">
-                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                <span class="sr-only">Error:</span>
-                                Nominal Pendaftaran bisa dibayarkan melalui transfer ke <b>No.Rek BRI 0582-0101-4254-500
-                                    a.n.
-                                    Hadiryanto Putra Pratama</b> dan melakukan konfirmasi
-                                pembayaran disertai bukti transfer ke No. WA 082338631044
-                            </div>
-                            <?php } else { ?>
-                            <p class="text-center text-bold fs-3">Status Pembayaran : <span
-                                    class="label label-success"><i class="fa fa-check"></i> Sudah</span></p>
+                                    <p class="text-center text-bold fs-3">Status Pembayaran : <span class="label label-danger"><i class="fa fa-times"></i> Belum</span></p>
+                                    <div class="alert alert-danger" role="alert">
+                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">Error:</span>
+                                        Nominal Pendaftaran bisa dibayarkan melalui transfer ke <b>No.Rek BRI 0582-01000-847-303 a.n. PP DARUL LUGHAH WAL KAROAH</b> dan melakukan konfirmasi
+                                        pembayaran disertai bukti transfer ke No. WA 082329641926
+                                    </div>
+                                <?php } else { ?>
+                                    <p class="text-center text-bold fs-3">Status Pembayaran : <span class="label label-success"><i class="fa fa-check"></i> Sudah</span></p>
                             <?php }
                             } ?>
                         </div>
@@ -62,8 +57,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Rincian Pembayaran</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
@@ -80,12 +74,12 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($data as $row) : ?>
-                                        <tr>
-                                            <td><?= rupiah($row->nominal) ?></td>
-                                            <td><?= $row->tgl_bayar; ?></td>
-                                            <td><?= $row->kasir; ?></td>
-                                            <td><?= $row->via; ?></td>
-                                        </tr>
+                                            <tr>
+                                                <td><?= rupiah($row->nominal) ?></td>
+                                                <td><?= $row->tgl_bayar; ?></td>
+                                                <td><?= $row->kasir; ?></td>
+                                                <td><?= $row->via; ?></td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
