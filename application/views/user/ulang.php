@@ -28,8 +28,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Rincian Daftar Ulang</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
@@ -45,43 +44,43 @@
                             <br><br>
 
                             <?php foreach ($tangg->result() as $row) : ?>
-                            <div class="table-responsive">
-                                <table id="" class="table table-bordered table-striped">
-                                    <tr>
-                                        <th>Seragam Pesantren</th>
-                                        <th><?= rupiah($row->seragam_pes); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Seragam Lembaga</th>
-                                        <th><?= rupiah($row->seragam_lem); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>ORSABA</th>
-                                        <th><?= rupiah($row->orsaba); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>KTS, Kartu Mahrom, Kartu Kesehatan & Foto</th>
-                                        <th><?= rupiah($row->kartu); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Buku Pedoman Wiridan, Perizinan & Tatib </th>
-                                        <th><?= rupiah($row->buku); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Kalender Pesantren</th>
-                                        <th><?= rupiah($row->kalender); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Uang Gedung</th>
-                                        <th><?= rupiah($row->infaq); ?></th>
-                                    </tr>
-                                    <tr style="color: white; background-color: #F39C12;">
-                                        <th>TOTAL</th>
-                                        <th><?= rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq); ?>
-                                        </th>
-                                    </tr>
-                                </table>
-                            </div>
+                                <div class="table-responsive">
+                                    <table id="" class="table table-bordered table-striped">
+                                        <tr>
+                                            <th>Seragam Pesantren</th>
+                                            <th><?= rupiah($row->seragam_pes); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Seragam Lembaga</th>
+                                            <th><?= rupiah($row->seragam_lem); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>ORSABA</th>
+                                            <th><?= rupiah($row->orsaba); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>KTS, Kartu Mahrom, Kartu Kesehatan & Foto</th>
+                                            <th><?= rupiah($row->kartu); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Buku Pedoman Wiridan, Perizinan & Tatib </th>
+                                            <th><?= rupiah($row->buku); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Kalender Pesantren</th>
+                                            <th><?= rupiah($row->kalender); ?></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Uang Gedung</th>
+                                            <th><?= rupiah($row->infaq); ?></th>
+                                        </tr>
+                                        <tr style="color: white; background-color: #F39C12;">
+                                            <th>TOTAL</th>
+                                            <th><?= rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq); ?>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -91,8 +90,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">History Pembayaran</h3>
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
                             </div>
                         </div>
@@ -109,12 +107,12 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($list as $row) : ?>
-                                        <tr>
-                                            <td><?= rupiah($row->nominal) ?></td>
-                                            <td><?= $row->tgl_bayar; ?></td>
-                                            <td><?= $row->kasir; ?></td>
-                                            <td><?= $row->via; ?></td>
-                                        </tr>
+                                            <tr>
+                                                <td><?= rupiah($row->nominal) ?></td>
+                                                <td><?= $row->tgl_bayar; ?></td>
+                                                <td><?= $row->kasir; ?></td>
+                                                <td><?= $row->via; ?></td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -147,10 +145,8 @@
                             </table>
                             <br>
                             <b>Catatan :</b><br>
-                            Nominal Pendaftaran bisa dibayarkan melalui transfer ke <b>No.Rek BRI 0582-0101-4254-500
-                                a.n.
-                                Hadiryanto Putra Pratama</b> dan melakukan konfirmasi
-                            pembayaran disertai bukti transfer ke No. WA 082338631044
+                            Nominal Pendaftaran bisa dibayarkan melalui transfer ke <b>No.Rek BRI 0582-01000-847-303 a.n. PP DARUL LUGHAH WAL KAROAH</b> dan melakukan konfirmasi
+                            pembayaran disertai bukti transfer ke No. WA 082329641926
                         </div>
                     </div>
                 </div>
