@@ -75,7 +75,7 @@
                                     <?php foreach ($diri as $diri) : ?>
                                         <tr>
                                             <th colspan="5">Identitas Santri</th>
-                                            <th rowspan="5"><img src="<?= base_url('assets/berkas/'.$diri->diri) ?>" height="180px"></th>
+                                            <th rowspan="5"><img src="<?= base_url('assets/berkas/' . $diri->diri) ?>" height="180px"></th>
                                         </tr>
                                         <tr>
                                             <th>NIS</th>
@@ -97,8 +97,8 @@
                                 </tbody>
                             </table>
                             <br>
-                            <p>Jika ada kesalahan silahkan menghubungi kami via WhatsApp Segera! <u style="color: red;">( PJ KTS : 085 236 924 510)</u></p>
-                            <p style="color: red;">* Batas pengajuan kesalahan pada <b>25 Februari 2023</b></p>
+                            <p>Jika ada kesalahan silahkan menghubungi kami via WhatsApp Segera! <u style="color: red;">( PJ KTS : 0852-3498-0128)</u></p>
+                            <!-- <p style="color: red;">* Batas pengajuan kesalahan pada <b>25 Februari 2023</b></p> -->
                         </div>
                     </div>
                 </div>
