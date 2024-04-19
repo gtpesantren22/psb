@@ -61,7 +61,8 @@ class Regist extends CI_Controller
             'kalender' => $list->kalender,
             'seragam_pes' => $list->seragam_pes,
             'seragam_lem' => $list->seragam_lem,
-            'orsaba' => $list->orsaba
+            'orsaba' => $list->orsaba,
+            'buku_bio' => $list->buku_bio
         ];
         if ($jml < 1) {
             $this->model->tambah('tanggungan', $data);

@@ -67,6 +67,10 @@
                                             <th><?= rupiah($row->buku); ?></th>
                                         </tr>
                                         <tr>
+                                            <th>Buku Biografi Pengasuh </th>
+                                            <th><?= rupiah($row->buku_bio); ?></th>
+                                        </tr>
+                                        <tr>
                                             <th>Kalender Pesantren</th>
                                             <th><?= rupiah($row->kalender); ?></th>
                                         </tr>
@@ -76,7 +80,7 @@
                                         </tr>
                                         <tr style="color: white; background-color: #F39C12;">
                                             <th>TOTAL</th>
-                                            <th><?= rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq); ?>
+                                            <th><?= rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq + $row->buku_bio); ?>
                                             </th>
                                         </tr>
                                     </table>
@@ -124,7 +128,7 @@
                                     <th>
                                         <?php
                                         foreach ($tangg->result() as $row) {
-                                            echo rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq);
+                                            echo rupiah($row->seragam_pes + $row->seragam_lem + $row->orsaba + $row->kartu + $row->buku + $row->kalender + $row->infaq + $row->buku_bio);
                                         }
                                         ?>
                                     </th>
@@ -139,7 +143,7 @@
                                 </tr>
                                 <tr style="color: red;">
                                     <th>Kurang</th>
-                                    <th><?= rupiah(($tangg->row('seragam_pes') + $tangg->row('seragam_lem') + $tangg->row('orsaba') + $tangg->row('kartu') + $tangg->row('buku') + $tangg->row('kalender') + $tangg->row('infaq')) - $listSum->row('nominal')) ?>
+                                    <th><?= rupiah(($tangg->row('seragam_pes') + $tangg->row('seragam_lem') + $tangg->row('orsaba') + $tangg->row('kartu') + $tangg->row('buku') + $tangg->row('kalender') + $tangg->row('infaq') + $tangg->row('buku_bio')) - $listSum->row('nominal')) ?>
                                     </th>
                                 </tr>
                             </table>

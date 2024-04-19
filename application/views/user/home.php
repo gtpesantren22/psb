@@ -202,7 +202,7 @@
                             <?php
 
                             if ($listSum && $tangg) {
-                                if ($listSum->nominal >= ($tangg->seragam_pes + $tangg->seragam_lem + $tangg->orsaba + $tangg->kartu + $tangg->buku + $tangg->kalender + $tangg->infaq)) {
+                                if ($listSum->nominal >= ($tangg->seragam_pes + $tangg->seragam_lem + $tangg->orsaba + $tangg->kartu + $tangg->buku + $tangg->kalender + $tangg->infaq + $tangg->buku_bio)) {
                                     echo "<span class='label label-success'><i class='fa fa-check'></i> Sudah Lunas</span><br><br>";
                                 } else {
                                     echo "<span class='label label-danger'><i class='fa fa-times'></i> Belum Lunas</span><br><br>";
