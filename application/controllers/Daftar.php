@@ -215,7 +215,7 @@ class Daftar extends CI_Controller
         } else {
             $g1 = '2023-12-14';
             $g2 = '2024-04-25';
-            $g3 = '2024-02-16';
+            $g3 = '2024-04-26';
         }
 
         if ($jl <= $g1) {

@@ -67,7 +67,7 @@
            <div class="ribbon-wrapper card">
              <div class="card-body">
                <div class="ribbon ribbon-clip ribbon-warning">Gelombang 2</div>
-               <h6 class="mt-3 f-14 f-w-600">15 Desember 2023 s/d 15 Februari 2024 </h6>
+               <h6 class="mt-3 f-14 f-w-600">15 Desember 2023 s/d 25 April 2024 </h6>
                <h6 class="mt-3 f-14 f-w-800 text-warning">Biaya Pendaftaran : <?= rupiah(130000) ?></h6>
              </div>
            </div>
@@ -83,7 +83,7 @@
            <div class="ribbon-wrapper card">
              <div class="card-body">
                <div class="ribbon ribbon-clip ribbon-danger">Gelombang 3</div>
-               <h6 class="mt-3 f-14 f-w-600">16 Februari 2024 s/d 23 Maret 2024 </h6>
+               <h6 class="mt-3 f-14 f-w-600">26 April 2024 s/d 12 Juli 2024 </h6>
                <h6 class="mt-3 f-14 f-w-800 text-danger">Biaya Pendaftaran : <?= rupiah(180000) ?></h6>
              </div>
            </div>
