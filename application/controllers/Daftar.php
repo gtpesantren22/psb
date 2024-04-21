@@ -365,7 +365,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
                     $this->session->set_flashdata('error', 'Maaf. Kuota SMP Putri sudah penuh');
                     redirect('daftar');
                 }
-                if ($cekMI >= 45 and $lembaga === 'MI') {
+                if ($cekMI >= 50 and $lembaga === 'MI') {
                     // return false;
                     $this->session->set_flashdata('error', 'Maaf. Kuota MI sudah penuh');
                     redirect('daftar');
