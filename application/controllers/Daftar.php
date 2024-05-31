@@ -165,7 +165,8 @@ class Daftar extends CI_Controller
         $anak_ke = $this->input->post('anak_ke', TRUE);
         $jml = $this->input->post('jml_sdr', TRUE);
         $lembaga = $this->input->post('lembaga', TRUE);
-        $hp = rupiah($this->input->post('hp', TRUE));
+        $hp = preg_replace("/[^0-9]/", "", $this->input->post('hp', TRUE));
+
         // $jln = $this->input->post('jln', TRUE);
         // $rt = $this->input->post('rt', TRUE);
         // $rw = $this->input->post('rw', TRUE);
