@@ -337,6 +337,10 @@
                                                 <input class="form-check-input" type="radio" id="radioXXXL" name="atasan" value="XXXL" required>
                                                 <label class="form-check-label" for="radioXXXL">XXXL</label>
                                             </div>
+                                            <div class="form-check radio radio-primary">
+                                                <input class="form-check-input" type="radio" id="radio0" name="atasan" value="0" required>
+                                                <label class="form-check-label" for="radio0">Tidak tahu</label>
+                                            </div>
                                             <div class="invalid-feedback">Jenis Kelamin Wajib diisi</div>
                                         </div>
                                     </div>
@@ -373,6 +377,10 @@
                                                 <input class="form-check-input" type="radio" id="radio32" name="bawahan" value="32" required>
                                                 <label class="form-check-label" for="radio32">No. 32</label>
                                             </div>
+                                            <div class="form-check radio radio-primary">
+                                                <input class="form-check-input" type="radio" id="radio01" name="atasan" value="0" required>
+                                                <label class="form-check-label" for="radio01">Tidak tahu</label>
+                                            </div>
                                             <div class="invalid-feedback">Jenis Kelamin Wajib diisi</div>
                                         </div>
                                     </div>
@@ -382,7 +390,7 @@
                                     <div class="col-sm-9">
                                         <input class="form-control" type="text" name="hp" placeholder="No. HP" required>
                                         <div class="invalid-feedback">No.HP Wajib diisi</div>
-                                        <small class="form-text text-danger"> Diisi dengan No.HP WhatsApp karena informasi akan di kirimkan ke No tersebut</small>
+                                        <small class="form-text text-danger"> Diisi dengan No.HP WhatsApp karena informasi akan di kirimkan ke No tersebut. dengan format : 085xxxxxxxxxx</small>
                                     </div>
                                 </div>
                                 <div class="alert alert-info dark" role="alert">
@@ -390,13 +398,13 @@
                                 </div>
                                 Berkas-berkas yang akan diupload
                                 <ol>
-                                    <li>Foto/Scan Kartu Keluarga</li>
-                                    <li>Foto/Scan Akta Kelahiran</li>
-                                    <li>Foto/Scan KTP Ayah</li>
+                                    <li>Foto/Scan Kartu Keluarga <i class="text-danger">(Wajib Upload)</i></li>
+                                    <li>Foto/Scan Akta Kelahiran <i class="text-danger">(Wajib Upload)</i></li>
+                                    <!-- <li>Foto/Scan KTP Ayah</li>
                                     <li>Foto/Scan KTP Ibu</li>
                                     <li>Foto/Scan Ijazah/SKL/Raport Terakhir <i class="text-danger">(Bisa menyusul)</i></li>
-                                    <li>Foto/Scan Kartu KIP (Bagi yang memiliki) <i class="text-danger">(Tidak wajib)</i></li>
-                                    <li>Pas Foto Santri 4x6 (Memakai Songkok/Kerudung Hitam, Baju putih)</li>
+                                    <li>Foto/Scan Kartu KIP (Bagi yang memiliki) <i class="text-danger">(Tidak wajib)</i></li> -->
+                                    <!-- <li>Pas Foto Santri 4x6 (Memakai Songkok/Kerudung Hitam, Baju putih)</li> -->
                                 </ol>
                                 <small class="form-text text-danger"> Upload foto/scan berkas-berkas diatas dalam bentuk Gambar (JPG/PNG/JPEG) atau PDF</small>
                                 <hr>
@@ -414,7 +422,7 @@
                                         <div id="fileDisplay_akta" style="display: none;"></div>
                                     </div>
                                 </div>
-                                <div class="mb-3 row">
+                                <!-- <div class="mb-3 row">
                                     <label class="col-sm-3 form-label" for="">Foto/Scan KTP Ayah <small class="text-danger">*</small></label>
                                     <div class="col-sm-9">
                                         <input class="form-control" type="file" name="ktp_ayah" id="fileInput_ktp_ayah" required>
@@ -448,15 +456,17 @@
                                         <input class="form-control" type="file" name="foto" id="fileInput_foto" required>
                                         <div id="fileDisplay_foto" style="display: none;"></div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="alert alert-info dark" role="alert">
                                     <!-- <b>Upload Berkas</b> -->
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="checkbox p-3">
-                                        <input class="form-check-input" id="invalidCheck" type="checkbox" required="">
-                                        <label class="form-check-label" for="invalidCheck">Saya yakin bahwa data diatas adalah data valid berdasarkan Kartu Keluarga</label>
+                                        <div class="checkbox checkbox-primary">
+                                            <input class="form-check-input" id="invalidCheck" type="checkbox" required="">
+                                            <label class="form-check-label" for="invalidCheck">Saya yakin bahwa data diatas adalah data valid berdasarkan Kartu Keluarga <i class="text-danger">(Centang)</i></label>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- <p>Saya yakin bahwa data diatas adalah data valid berdasarkan Kartu Keluarga</p> -->
@@ -691,11 +701,11 @@
 
         setupFileInput('fileInput_kk', 'fileDisplay_kk');
         setupFileInput('fileInput_akta', 'fileDisplay_akta');
-        setupFileInput('fileInput_ktp_ayah', 'fileDisplay_ktp_ayah');
-        setupFileInput('fileInput_ktp_ibu', 'fileDisplay_ktp_ibu');
-        setupFileInput('fileInput_ijazah', 'fileDisplay_ijazah');
-        setupFileInput('fileInput_kip', 'fileDisplay_kip');
-        setupFileInput('fileInput_foto', 'fileDisplay_foto');
+        // setupFileInput('fileInput_ktp_ayah', 'fileDisplay_ktp_ayah');
+        // setupFileInput('fileInput_ktp_ibu', 'fileDisplay_ktp_ibu');
+        // setupFileInput('fileInput_ijazah', 'fileDisplay_ijazah');
+        // setupFileInput('fileInput_kip', 'fileDisplay_kip');
+        // setupFileInput('fileInput_foto', 'fileDisplay_foto');
 
         function isValidFileType(file) {
             // Contoh: Hanya menerima gambar (jpg, jpeg, png) dan PDF

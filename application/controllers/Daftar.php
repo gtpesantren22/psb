@@ -165,7 +165,7 @@ class Daftar extends CI_Controller
         $anak_ke = $this->input->post('anak_ke', TRUE);
         $jml = $this->input->post('jml_sdr', TRUE);
         $lembaga = $this->input->post('lembaga', TRUE);
-        $hp = $this->input->post('hp', TRUE);
+        $hp = rupiah($this->input->post('hp', TRUE));
         // $jln = $this->input->post('jln', TRUE);
         // $rt = $this->input->post('rt', TRUE);
         // $rw = $this->input->post('rw', TRUE);
@@ -378,43 +378,43 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
 
                 $upload_path = FCPATH . '/assets/berkas/';
                 $allowed_types = 'jpg|jpeg|png|pdf';
-                $max_size = 10240;
+                $max_size = 20480;
 
                 $kk = upload_file('kk', $upload_path . 'kk/', $allowed_types, $max_size, random(10) . '-kk');
                 $akta = upload_file('akta', $upload_path . 'akta/', $allowed_types, $max_size, random(10) . '-akta');
-                $ktp_ayah = upload_file('ktp_ayah', $upload_path . 'ktp_ayah/', $allowed_types, $max_size, random(10) . '-ktp_ayah');
-                $ktp_ibu = upload_file('ktp_ibu', $upload_path . 'ktp_ibu/', $allowed_types, $max_size, random(10) . '-ktp_ibu');
-                $ijazah = upload_file('ijazah', $upload_path . 'ijazah/', $allowed_types, $max_size, random(10) . '-ijazah');
-                $kip = upload_file('kip', $upload_path . 'kip/', $allowed_types, $max_size, random(10) . '-kip');
-                $foto = upload_file('foto', $upload_path . 'foto/', $allowed_types, $max_size, random(10) . '-foto');
+                // $ktp_ayah = upload_file('ktp_ayah', $upload_path . 'ktp_ayah/', $allowed_types, $max_size, random(10) . '-ktp_ayah');
+                // $ktp_ibu = upload_file('ktp_ibu', $upload_path . 'ktp_ibu/', $allowed_types, $max_size, random(10) . '-ktp_ibu');
+                // $ijazah = upload_file('ijazah', $upload_path . 'ijazah/', $allowed_types, $max_size, random(10) . '-ijazah');
+                // $kip = upload_file('kip', $upload_path . 'kip/', $allowed_types, $max_size, random(10) . '-kip');
+                // $foto = upload_file('foto', $upload_path . 'foto/', $allowed_types, $max_size, random(10) . '-foto');
 
-                if (is_string($ijazah)) {
-                    $ijazahOk = '';
-                } else {
-                    $ijazahOk = $ijazah['file_name'];
-                }
+                // if (is_string($ijazah)) {
+                //     $ijazahOk = '';
+                // } else {
+                //     $ijazahOk = $ijazah['file_name'];
+                // }
 
-                if (is_string($kip)) {
-                    $kipOk = '';
-                } else {
-                    $kipOk = $kip['file_name'];
-                }
+                // if (is_string($kip)) {
+                //     $kipOk = '';
+                // } else {
+                //     $kipOk = $kip['file_name'];
+                // }
 
                 $dataBerkas = [
                     'id_file' => $id,
                     'nis' => '',
                     'kk' => $kk['file_name'],
                     'akta' => $akta['file_name'],
-                    'ktp_ayah' => $ktp_ayah['file_name'],
-                    'ktp_ibu' => $ktp_ibu['file_name'],
-                    'skl' => $ijazahOk,
-                    'kip' => $kipOk,
+                    // 'ktp_ayah' => $ktp_ayah['file_name'],
+                    // 'ktp_ibu' => $ktp_ibu['file_name'],
+                    // 'skl' => $ijazahOk,
+                    // 'kip' => $kipOk,
                 ];
 
                 $dataFoto = [
                     'id_file' => $id,
                     'nis' => '',
-                    'diri' =>  $foto['file_name'],
+                    // 'diri' =>  $foto['file_name'],
                 ];
 
                 // proses simpan data
