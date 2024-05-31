@@ -378,7 +378,7 @@
                                                 <label class="form-check-label" for="radio32">No. 32</label>
                                             </div>
                                             <div class="form-check radio radio-primary">
-                                                <input class="form-check-input" type="radio" id="radio01" name="atasan" value="0" required>
+                                                <input class="form-check-input" type="radio" id="radio01" name="bawahan" value="0" required>
                                                 <label class="form-check-label" for="radio01">Tidak tahu</label>
                                             </div>
                                             <div class="invalid-feedback">Jenis Kelamin Wajib diisi</div>
