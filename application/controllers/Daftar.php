@@ -318,6 +318,7 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             'jalur' => $jalur,
             'waktu_daftar' => date('Y-m-d H:i:s'),
             'anak_ke' => $anak_ke,
+            $data2 = [
             'jml_sdr' => $jml,
             // 'a_pkj' => $a_pkj,
             // 'i_pkj' => $i_pkj,
@@ -424,6 +425,9 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
 
                 if ($lembaga === 'MI' || $lembaga === 'RA') {
                     $this->DaftarModel->input_data('tb_santri', $data);
+                    $this->DaftarModel->input_data('seragam', $data2);
+                    $this->DaftarModel->input_data('berkas_file', $dataBerkas);
+                    $this->DaftarModel->input_data('foto_file', $dataFoto);
                     if ($this->db->affected_rows() > 0) {
                         kirim_person($key->api_key, $hp, $pesan);
                         kirim_tmp($key->api_key, $hp, 'LINK GROUP', 'Link undangan group', 'Klik link diatas untuk gabung ke grup siswa baru ' . $lembaga . ' DWK', $linkImg, $linkgroup);
