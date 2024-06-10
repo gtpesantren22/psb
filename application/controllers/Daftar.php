@@ -318,7 +318,6 @@ Waktu Daftar : ' . date('d-m-Y H:i:s') . '
             'jalur' => $jalur,
             'waktu_daftar' => date('Y-m-d H:i:s'),
             'anak_ke' => $anak_ke,
-            $data2 = [
             'jml_sdr' => $jml,
             // 'a_pkj' => $a_pkj,
             // 'i_pkj' => $i_pkj,
