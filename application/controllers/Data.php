@@ -31,7 +31,7 @@ class Data extends CI_Controller
     public function saveBukti()
     {
         $id =  $this->input->post('id', true);
-        $upload_path = 'assets/berkas/';
+        $upload_path = FCPATH . '/assets/berkas/';
         $allowed_types = 'jpg|jpeg|png|pdf';
         $max_size = 10240;
         $santri = $this->DataModel->getBy('tb_santri_sm', 'id_santri', $id)->row();
