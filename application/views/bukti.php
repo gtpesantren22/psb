@@ -132,7 +132,7 @@
                                             <td>Bukti Transfer</td>
                                             <td>:</td>
                                             <td>
-                                                <?php if ($berkas->bukti != '') { ?>
+                                                <?php if ($berkas && $berkas->bukti != '') { ?>
                                                     <strong style="color: #04B70D;">Sudah Upload</strong>
                                                 <?php } else { ?>
                                                     <strong style="color: red;">Belum Upload</strong>
