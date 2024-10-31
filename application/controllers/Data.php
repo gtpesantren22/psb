@@ -15,9 +15,10 @@ class Data extends CI_Controller
     {
         $data['daftar'] = $this->DataModel->data()->result();
 
-        $this->load->view('layout/head');
-        $this->load->view('data', $data);
-        $this->load->view('layout/foot');
+        // $this->load->view('layout/head');
+        // $this->load->view('data', $data);
+        // $this->load->view('layout/foot');
+        redirect('https://data.ppdwk.com/daftar');
     }
 
     public function uploadBukti($id)

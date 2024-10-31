@@ -17,8 +17,9 @@ class Login extends CI_Controller
         // $data['daftar'] = $this->DataModel->data()->result();
 
         // $this->load->view('layout/head');
-        $this->load->view('login_one');
+        // $this->load->view('login_one');
         // $this->load->view('layout/foot');
+        redirect('https://data.ppdwk.com/daftar');
     }
 
     public function masuk()

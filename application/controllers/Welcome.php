@@ -16,9 +16,10 @@ class Welcome extends CI_Controller
 		$data['belum'] = $this->DataModel->belum()->num_rows();
 		$data['down'] = $this->DataModel->down()->result();
 
-		$this->load->view('layout/head');
-		$this->load->view('home', $data);
-		$this->load->view('layout/foot');
+		// $this->load->view('layout/head');
+		// $this->load->view('home', $data);
+		// $this->load->view('layout/foot');
+		redirect('https://data.ppdwk.com/daftar');
 	}
 
 	public function unduh($id)

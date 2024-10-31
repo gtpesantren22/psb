@@ -29,8 +29,9 @@ class Daftar extends CI_Controller
         $data['provinsi'] = $this->ProvinsiModel->view();
 
         // $this->load->view('layout/head', $data);
-        $this->load->view('daftar_baru', $data);
+        // $this->load->view('daftar_baru', $data);
         // $this->load->view('layout/foot', $data);
+        redirect('https://data.ppdwk.com/daftar');
     }
 
     public function listKota()
