@@ -50,7 +50,7 @@
                             Mohon mengukur baju/celana santri dengan cermat dan memilih ukuran yang tepat, karena pemesanan ukuran tidak dapat ditukar.
                         </li>
                     </ul>
-                    <?php if ($seragam): ?>
+                    <?php if ($seragam && $seragam->atasan != '' && $seragam->bawahan != 0): ?>
                         <p><b class="text-success">!! Anda sudah pernah mengisi ukuran</b></p>
                     <?php endif ?>
                     <div class="mb-3">
