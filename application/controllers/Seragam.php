@@ -65,18 +65,22 @@ class Seragam extends CI_Controller
 
         $atasan = $this->input->post('atasan', true);
         $bawahan = $this->input->post('bawahan', true);
+        $songkok = $this->input->post('songkok', true);
         $nis = $this->input->post('nis', true);
         $id = $this->input->post('id', true);
 
+
+        $cek = $this->model->getBy('seragam', 'id_seragam', $id)->row();
+        $cekUrut = $this->db->query("SELECT MAX(urut) AS urut FROM seragam")->row();
+        $noUrut = $cek->urut == 0 ? $cekUrut->urut + 1 : $cek->urut;
         $data = [
             'id_seragam' => $id,
             'nis' => $nis,
             'atasan' => $atasan,
-            'bawahan' => $bawahan
+            'bawahan' => $bawahan,
+            'songkok' => $songkok,
+            'urut' => $noUrut
         ];
-
-        $cek = $this->model->getBy('seragam', 'id_seragam', $id)->row();
-
         if ($cek) {
             $this->model->edit('seragam', $data, 'id_seragam', $id);
         } else {

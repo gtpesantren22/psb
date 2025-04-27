@@ -50,7 +50,7 @@
                             Mohon mengukur baju/celana santri dengan cermat dan memilih ukuran yang tepat, karena pemesanan ukuran tidak dapat ditukar.
                         </li>
                     </ul>
-                    <?php if ($seragam && $seragam->atasan != '' && $seragam->bawahan != 0): ?>
+                    <?php if ($seragam): ?>
                         <p><b class="text-success">!! Anda sudah pernah mengisi ukuran</b></p>
                     <?php endif ?>
                     <div class="mb-3">
@@ -75,6 +75,17 @@
                                 </label>
                             <?php endforeach ?>
                             <div class="text-muted" id="hasil-bawah"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ukuran Songkok Nasional (khusus putra)</label>
+                        <div>
+                            <?php for ($s = 0; $s <= 9; $s++): ?>
+                                <label class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="songkok" <?= $seragam && $seragam->songkok == $s ? 'checked' : '' ?> value="<?= $s ?>">
+                                    <span class="form-check-label">No. <?= $s ?></span>
+                                </label>
+                            <?php endfor ?>
                         </div>
                     </div>
                     <div class="form-footer">
